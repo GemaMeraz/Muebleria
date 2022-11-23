@@ -25,7 +25,8 @@ namespace ProyectoFinalTallerBD
         {
             try
             {
-                cn.da = new SqlDataAdapter("Select * from Productos Where activo = 'S'", cn.conectarbd);
+                cn.da = new SqlDataAdapter("Select * from Productos", cn.conectarbd);
+                //cn.da = new SqlDataAdapter("Select * from Productos Where activo = 'S'", cn.conectarbd);
                 cn.dt = new DataTable();
                 cn.da.Fill(cn.dt);
                 dataGridView1.DataSource = cn.dt;

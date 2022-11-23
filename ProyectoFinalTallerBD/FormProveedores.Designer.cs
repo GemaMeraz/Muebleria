@@ -38,15 +38,15 @@ namespace ProyectoFinalTallerBD
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabRegistro = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtRFC = new System.Windows.Forms.TextBox();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.btnRegistrarProveedor = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txtIdProveedor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -150,15 +150,15 @@ namespace ProyectoFinalTallerBD
             // 
             // tabRegistro
             // 
-            this.tabRegistro.Controls.Add(this.textBox3);
-            this.tabRegistro.Controls.Add(this.textBox2);
-            this.tabRegistro.Controls.Add(this.textBox1);
-            this.tabRegistro.Controls.Add(this.btnBuscar);
+            this.tabRegistro.Controls.Add(this.dateTimePicker1);
+            this.tabRegistro.Controls.Add(this.label3);
+            this.tabRegistro.Controls.Add(this.txtRFC);
+            this.tabRegistro.Controls.Add(this.txtRazonSocial);
+            this.tabRegistro.Controls.Add(this.btnRegistrarProveedor);
             this.tabRegistro.Controls.Add(this.label7);
             this.tabRegistro.Controls.Add(this.label5);
-            this.tabRegistro.Controls.Add(this.label3);
             this.tabRegistro.Controls.Add(this.label2);
-            this.tabRegistro.Controls.Add(this.txtClave);
+            this.tabRegistro.Controls.Add(this.txtIdProveedor);
             this.tabRegistro.Location = new System.Drawing.Point(4, 22);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
@@ -167,46 +167,39 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.Text = "REGISTRO DE PROVEEDORES";
             this.tabRegistro.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtRFC
             // 
-            this.textBox3.Location = new System.Drawing.Point(256, 122);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(238, 20);
-            this.textBox3.TabIndex = 57;
+            this.txtRFC.Location = new System.Drawing.Point(256, 98);
+            this.txtRFC.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRFC.Name = "txtRFC";
+            this.txtRFC.Size = new System.Drawing.Size(238, 20);
+            this.txtRFC.TabIndex = 57;
             // 
-            // textBox2
+            // txtRazonSocial
             // 
-            this.textBox2.Location = new System.Drawing.Point(256, 89);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 20);
-            this.textBox2.TabIndex = 56;
+            this.txtRazonSocial.Location = new System.Drawing.Point(256, 62);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(238, 20);
+            this.txtRazonSocial.TabIndex = 56;
             // 
-            // textBox1
+            // btnRegistrarProveedor
             // 
-            this.textBox1.Location = new System.Drawing.Point(256, 58);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 20);
-            this.textBox1.TabIndex = 55;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.Location = new System.Drawing.Point(217, 189);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(128, 39);
-            this.btnBuscar.TabIndex = 34;
-            this.btnBuscar.Text = "REGISTRAR PROVEEDOR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnRegistrarProveedor.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarProveedor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegistrarProveedor.Location = new System.Drawing.Point(256, 228);
+            this.btnRegistrarProveedor.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistrarProveedor.Name = "btnRegistrarProveedor";
+            this.btnRegistrarProveedor.Size = new System.Drawing.Size(128, 39);
+            this.btnRegistrarProveedor.TabIndex = 34;
+            this.btnRegistrarProveedor.Text = "REGISTRAR PROVEEDOR";
+            this.btnRegistrarProveedor.UseVisualStyleBackColor = true;
+            this.btnRegistrarProveedor.Click += new System.EventHandler(this.btnRegistrarProveedor_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(62, 126);
+            this.label7.Location = new System.Drawing.Point(62, 102);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 13);
@@ -216,22 +209,12 @@ namespace ProyectoFinalTallerBD
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(62, 93);
+            this.label5.Location = new System.Drawing.Point(62, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 48;
             this.label5.Text = "RAZON SOCIAL";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 63);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 13);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "NOMBRE COMPLETO";
             // 
             // label2
             // 
@@ -243,13 +226,30 @@ namespace ProyectoFinalTallerBD
             this.label2.TabIndex = 46;
             this.label2.Text = "ID PROVEEDOR";
             // 
-            // txtClave
+            // txtIdProveedor
             // 
-            this.txtClave.Location = new System.Drawing.Point(256, 28);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(2);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(238, 20);
-            this.txtClave.TabIndex = 42;
+            this.txtIdProveedor.Location = new System.Drawing.Point(256, 28);
+            this.txtIdProveedor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdProveedor.Name = "txtIdProveedor";
+            this.txtIdProveedor.Size = new System.Drawing.Size(238, 20);
+            this.txtIdProveedor.TabIndex = 42;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(62, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "FECHA DE ALTA";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(256, 143);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 59;
             // 
             // FormProveedores
             // 
@@ -281,14 +281,14 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabRegistro;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtRFC;
+        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.Button btnRegistrarProveedor;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.TextBox txtIdProveedor;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label3;
     }
 }

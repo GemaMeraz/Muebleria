@@ -46,6 +46,7 @@ namespace ProyectoFinalTallerBD
             this.lblCerrar = new System.Windows.Forms.Label();
             this.pnlVistaDatos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverAdmin)).BeginInit();
@@ -249,6 +250,7 @@ namespace ProyectoFinalTallerBD
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.lblUsuario);
             this.panel3.Controls.Add(this.lblNombreSeccion);
             this.panel3.Controls.Add(this.iconCurrentChildForm);
             this.panel3.Controls.Add(this.lblCerrar);
@@ -313,6 +315,16 @@ namespace ProyectoFinalTallerBD
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(512, 9);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(53, 20);
+            this.lblUsuario.TabIndex = 4;
+            this.lblUsuario.Text = "label1";
+            // 
             // pantallaAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,5 +369,6 @@ namespace ProyectoFinalTallerBD
         private FontAwesome.Sharp.IconButton btnInventario;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblNombreSeccion;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }
