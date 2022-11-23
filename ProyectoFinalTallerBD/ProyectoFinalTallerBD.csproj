@@ -134,6 +134,9 @@
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pantallaAdministrador.resx">
       <DependentUpon>pantallaAdministrador.cs</DependentUpon>
     </EmbeddedResource>

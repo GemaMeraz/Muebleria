@@ -71,6 +71,7 @@ namespace ProyectoFinalTallerBD
             this.pnlBarraInicio.Name = "pnlBarraInicio";
             this.pnlBarraInicio.Size = new System.Drawing.Size(334, 36);
             this.pnlBarraInicio.TabIndex = 2;
+            this.pnlBarraInicio.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraInicio_Paint);
             // 
             // label2
             // 

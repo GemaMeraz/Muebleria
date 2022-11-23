@@ -48,5 +48,10 @@ namespace ProyectoFinalTallerBD
         {
             this.Close();
         }
+
+        private void pnlBarraInicio_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

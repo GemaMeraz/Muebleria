@@ -153,6 +153,7 @@ namespace ProyectoFinalTallerBD
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 41);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(600, 288);
             this.dataGridView1.TabIndex = 0;
@@ -181,7 +182,7 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.Location = new System.Drawing.Point(4, 22);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(653, 384);
+            this.tabRegistro.Size = new System.Drawing.Size(792, 424);
             this.tabRegistro.TabIndex = 1;
             this.tabRegistro.Text = "REGISTRO DE VENTAS";
             this.tabRegistro.UseVisualStyleBackColor = true;
@@ -368,6 +369,7 @@ namespace ProyectoFinalTallerBD
             this.Controls.Add(this.tabControl1);
             this.Name = "FormVentas";
             this.Text = "FormVentas";
+            this.Load += new System.EventHandler(this.FormVentas_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

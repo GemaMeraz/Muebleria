@@ -157,6 +157,7 @@ namespace ProyectoFinalTallerBD
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
+            openFormSecundario(new Inventario());
             ActivateButton(sender, Color.Chocolate);
             currentBtn.BackColor = Color.SandyBrown;
         }

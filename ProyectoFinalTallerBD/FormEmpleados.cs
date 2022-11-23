@@ -29,11 +29,21 @@ namespace ProyectoFinalTallerBD
 
         private void FormEmpleados_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                cn.da = new SqlDataAdapter("Select * from Empleados where status = 'AC'", cn.conectarbd);
+                cn.dt = new DataTable();
+                cn.da.Fill(cn.dt);
+                dataGridView1.DataSource = cn.dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        {/*
             try
             {
                 cn.da = new SqlDataAdapter("Select * from Empleados", cn.conectarbd);
@@ -45,7 +55,7 @@ namespace ProyectoFinalTallerBD
             {
 
                 throw;
-            }
+            }*/
         }
     }
 }

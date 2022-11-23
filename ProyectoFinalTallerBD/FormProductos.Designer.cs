@@ -162,6 +162,7 @@ namespace ProyectoFinalTallerBD
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 41);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(600, 288);
             this.dataGridView1.TabIndex = 0;
@@ -198,7 +199,7 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.Location = new System.Drawing.Point(4, 22);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(680, 406);
+            this.tabRegistro.Size = new System.Drawing.Size(656, 420);
             this.tabRegistro.TabIndex = 1;
             this.tabRegistro.Text = "REGISTRO DE PRODUCTOS";
             this.tabRegistro.UseVisualStyleBackColor = true;
@@ -206,17 +207,17 @@ namespace ProyectoFinalTallerBD
             // btnAgregarImagen
             // 
             this.btnAgregarImagen.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarImagen.Location = new System.Drawing.Point(578, 134);
+            this.btnAgregarImagen.Location = new System.Drawing.Point(561, 136);
             this.btnAgregarImagen.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
-            this.btnAgregarImagen.Size = new System.Drawing.Size(80, 64);
+            this.btnAgregarImagen.Size = new System.Drawing.Size(88, 64);
             this.btnAgregarImagen.TabIndex = 69;
             this.btnAgregarImagen.Text = "AGREGAR IMAGEN";
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
             // 
             // picBoxeador
             // 
-            this.picBoxeador.Location = new System.Drawing.Point(578, 5);
+            this.picBoxeador.Location = new System.Drawing.Point(561, 5);
             this.picBoxeador.Margin = new System.Windows.Forms.Padding(2);
             this.picBoxeador.Name = "picBoxeador";
             this.picBoxeador.Size = new System.Drawing.Size(88, 109);
@@ -460,6 +461,7 @@ namespace ProyectoFinalTallerBD
             this.Controls.Add(this.tabControl1);
             this.Name = "FormProductos";
             this.Text = "FormProductos";
+            this.Load += new System.EventHandler(this.FormProductos_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
