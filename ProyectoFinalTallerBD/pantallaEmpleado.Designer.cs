@@ -38,11 +38,11 @@ namespace ProyectoFinalTallerBD
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.pnlVistaDatos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
@@ -184,6 +184,15 @@ namespace ProyectoFinalTallerBD
             this.panel3.Size = new System.Drawing.Size(680, 38);
             this.panel3.TabIndex = 3;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(373, 10);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(0, 20);
+            this.lblUsuario.TabIndex = 5;
+            // 
             // iconCurrentChildForm
             // 
             this.iconCurrentChildForm.BackColor = System.Drawing.Color.Teal;
@@ -228,15 +237,6 @@ namespace ProyectoFinalTallerBD
             this.pictureBox1.Size = new System.Drawing.Size(331, 279);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(373, 10);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(0, 20);
-            this.lblUsuario.TabIndex = 5;
             // 
             // pantallaEmpleado
             // 
