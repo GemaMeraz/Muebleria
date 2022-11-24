@@ -29,15 +29,24 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.grbDatosProveedores = new System.Windows.Forms.GroupBox();
+            this.txtRC = new System.Windows.Forms.TextBox();
+            this.txtRSocial = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabRegistro = new System.Windows.Forms.TabPage();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtRFC = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.btnRegistrarProveedor = new System.Windows.Forms.Button();
@@ -45,10 +54,9 @@ namespace ProyectoFinalTallerBD
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdProveedor = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.grbDatosProveedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabRegistro.SuspendLayout();
             this.SuspendLayout();
@@ -61,12 +69,12 @@ namespace ProyectoFinalTallerBD
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(664, 446);
+            this.tabControl1.Size = new System.Drawing.Size(732, 485);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.grbDatosProveedores);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.button7);
@@ -75,28 +83,86 @@ namespace ProyectoFinalTallerBD
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(656, 420);
+            this.tabPage1.Size = new System.Drawing.Size(724, 459);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TODOS LOS PROVEEDORES";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // grbDatosProveedores
             // 
-            this.button4.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(15, 292);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 37);
-            this.button4.TabIndex = 42;
-            this.button4.Text = "MOSTRAR";
-            this.button4.UseVisualStyleBackColor = true;
+            this.grbDatosProveedores.Controls.Add(this.txtRC);
+            this.grbDatosProveedores.Controls.Add(this.txtRSocial);
+            this.grbDatosProveedores.Controls.Add(this.label4);
+            this.grbDatosProveedores.Controls.Add(this.label6);
+            this.grbDatosProveedores.Controls.Add(this.label8);
+            this.grbDatosProveedores.Controls.Add(this.txtid);
+            this.grbDatosProveedores.Location = new System.Drawing.Point(516, 87);
+            this.grbDatosProveedores.Name = "grbDatosProveedores";
+            this.grbDatosProveedores.Size = new System.Drawing.Size(200, 238);
+            this.grbDatosProveedores.TabIndex = 42;
+            this.grbDatosProveedores.TabStop = false;
+            this.grbDatosProveedores.Text = "groupBox1";
+            this.grbDatosProveedores.Visible = false;
+            // 
+            // txtRC
+            // 
+            this.txtRC.Location = new System.Drawing.Point(39, 177);
+            this.txtRC.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRC.Name = "txtRC";
+            this.txtRC.Size = new System.Drawing.Size(143, 20);
+            this.txtRC.TabIndex = 63;
+            // 
+            // txtRSocial
+            // 
+            this.txtRSocial.Location = new System.Drawing.Point(39, 120);
+            this.txtRSocial.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRSocial.Name = "txtRSocial";
+            this.txtRSocial.Size = new System.Drawing.Size(156, 20);
+            this.txtRSocial.TabIndex = 62;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "RFC";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 90);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 60;
+            this.label6.Text = "RAZON SOCIAL";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 31);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "ID PROVEEDOR";
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(39, 55);
+            this.txtid.Margin = new System.Windows.Forms.Padding(2);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(143, 20);
+            this.txtid.TabIndex = 58;
             // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(302, 292);
+            this.button5.Location = new System.Drawing.Point(226, 330);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(109, 37);
@@ -108,7 +174,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.button6.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.Location = new System.Drawing.Point(470, 292);
+            this.button6.Location = new System.Drawing.Point(394, 330);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(102, 37);
@@ -120,7 +186,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.button7.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(152, 292);
+            this.button7.Location = new System.Drawing.Point(76, 330);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(93, 37);
@@ -140,11 +206,25 @@ namespace ProyectoFinalTallerBD
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 87);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(557, 238);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -162,10 +242,27 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.Location = new System.Drawing.Point(4, 22);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(656, 420);
+            this.tabRegistro.Size = new System.Drawing.Size(724, 459);
             this.tabRegistro.TabIndex = 1;
             this.tabRegistro.Text = "REGISTRO DE PROVEEDORES";
             this.tabRegistro.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(256, 143);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 59;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(62, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "FECHA DE ALTA";
             // 
             // txtRFC
             // 
@@ -234,35 +331,21 @@ namespace ProyectoFinalTallerBD
             this.txtIdProveedor.Size = new System.Drawing.Size(238, 20);
             this.txtIdProveedor.TabIndex = 42;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 143);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "FECHA DE ALTA";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(256, 143);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 59;
-            // 
             // FormProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 446);
+            this.ClientSize = new System.Drawing.Size(732, 485);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProveedores";
             this.Text = "FormProveedores";
             this.Load += new System.EventHandler(this.FormProveedores_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.grbDatosProveedores.ResumeLayout(false);
+            this.grbDatosProveedores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
@@ -274,7 +357,6 @@ namespace ProyectoFinalTallerBD
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
@@ -290,5 +372,12 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.TextBox txtIdProveedor;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox grbDatosProveedores;
+        private System.Windows.Forms.TextBox txtRC;
+        private System.Windows.Forms.TextBox txtRSocial;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtid;
     }
 }

@@ -41,12 +41,12 @@ namespace ProyectoFinalTallerBD
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnVolverAdmin = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblNombreSeccion = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.pnlVistaDatos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverAdmin)).BeginInit();
@@ -257,8 +257,18 @@ namespace ProyectoFinalTallerBD
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(211, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(680, 38);
+            this.panel3.Size = new System.Drawing.Size(732, 38);
             this.panel3.TabIndex = 2;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(512, 9);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(53, 20);
+            this.lblUsuario.TabIndex = 4;
+            this.lblUsuario.Text = "label1";
             // 
             // lblNombreSeccion
             // 
@@ -290,7 +300,7 @@ namespace ProyectoFinalTallerBD
             this.lblCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblCerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar.Location = new System.Drawing.Point(638, 0);
+            this.lblCerrar.Location = new System.Drawing.Point(690, 0);
             this.lblCerrar.Name = "lblCerrar";
             this.lblCerrar.Size = new System.Drawing.Size(42, 18);
             this.lblCerrar.TabIndex = 1;
@@ -303,7 +313,7 @@ namespace ProyectoFinalTallerBD
             this.pnlVistaDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlVistaDatos.Location = new System.Drawing.Point(211, 38);
             this.pnlVistaDatos.Name = "pnlVistaDatos";
-            this.pnlVistaDatos.Size = new System.Drawing.Size(680, 485);
+            this.pnlVistaDatos.Size = new System.Drawing.Size(732, 485);
             this.pnlVistaDatos.TabIndex = 3;
             // 
             // pictureBox1
@@ -315,22 +325,12 @@ namespace ProyectoFinalTallerBD
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(512, 9);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(53, 20);
-            this.lblUsuario.TabIndex = 4;
-            this.lblUsuario.Text = "label1";
-            // 
             // pantallaAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(891, 523);
+            this.ClientSize = new System.Drawing.Size(943, 523);
             this.Controls.Add(this.pnlVistaDatos);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlMenu);

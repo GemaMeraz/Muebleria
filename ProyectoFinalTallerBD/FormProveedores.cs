@@ -24,13 +24,16 @@ namespace ProyectoFinalTallerBD
 
         private void FormProveedores_Load(object sender, EventArgs e)
         {
+
+            
             try
             {
-                cn.da = new SqlDataAdapter("Select * from Proveedores", cn.conectarbd);
-                //cn.da = new SqlDataAdapter("Select * from Proveedores Where activo = 'S'", cn.conectarbd);
+                //cn.da = new SqlDataAdapter("Select * from Proveedores", cn.conectarbd);
+                cn.da = new SqlDataAdapter("Select * from Proveedores Where activo = 'S'", cn.conectarbd);
                 cn.dt = new DataTable();
                 cn.da.Fill(cn.dt);
                 dataGridView1.DataSource = cn.dt;
+               
             }
             catch (Exception)
             {
@@ -58,7 +61,7 @@ namespace ProyectoFinalTallerBD
                 catch (Exception ex)
                 {
 
-                    throw;
+                    MessageBox.Show("Error:" + ex);
                 }
             }
             else
@@ -66,7 +69,7 @@ namespace ProyectoFinalTallerBD
                 txtIdProveedor.Text = "";
                 txtIdProveedor.Focus();
                 
-                MessageBox.Show("El ID ya se encuentra registrado");
+                MessageBox.Show("El ID ya se encuentra registrado, intente con un nuevo id","Id duplicado",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             
            
@@ -83,6 +86,7 @@ namespace ProyectoFinalTallerBD
                 {
                     intCont++;
                 }
+                cn.dr.Close();
                 return intCont;
             }
             catch (Exception x)
@@ -91,5 +95,7 @@ namespace ProyectoFinalTallerBD
                 throw;
             }
         }
+
+       
     }
 }
