@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace ProyectoFinalTallerBD
 {
@@ -17,9 +19,9 @@ namespace ProyectoFinalTallerBD
         private IconButton currentBtn;
         //panel para crear un borde izquierdo
         private Panel leftBorderBtn;
+        conexion cn = new conexion();
 
         Form1 principal = new Form1();
-
         public pantallaAdministrador()
         {
             InitializeComponent();
@@ -160,6 +162,35 @@ namespace ProyectoFinalTallerBD
             openFormSecundario(new Inventario());
             ActivateButton(sender, Color.Chocolate);
             currentBtn.BackColor = Color.SandyBrown;
+        }
+
+        private void pnlVistaDatos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pantallaAdministrador_Load(object sender, EventArgs e)
+        {   //Muestra el nombre y apellido del usuario en la ventana principal de control - Jafet
+            try
+            {
+                cn.cmd = new SqlCommand("sp_mostrarUsuario", cn.conectarbd);
+                cn.cmd.CommandType = CommandType.StoredProcedure;
+                cn.cmd.Parameters.AddWithValue("@par_user", Form1.usuario);
+                cn.dr = cn.cmd.ExecuteReader();
+                if (cn.dr.Read())
+                {
+                    lblUsuario.Text = "¡Bienvenido, " + cn.dr.GetString(0) + "!";
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
         }
     }
 }

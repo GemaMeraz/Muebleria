@@ -42,6 +42,7 @@ namespace ProyectoFinalTallerBD
             this.lblCerrar = new System.Windows.Forms.Label();
             this.pnlVistaDatos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
@@ -174,6 +175,7 @@ namespace ProyectoFinalTallerBD
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.lblUsuario);
             this.panel3.Controls.Add(this.iconCurrentChildForm);
             this.panel3.Controls.Add(this.lblCerrar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -227,6 +229,15 @@ namespace ProyectoFinalTallerBD
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(373, 10);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(0, 20);
+            this.lblUsuario.TabIndex = 5;
+            // 
             // pantallaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +252,7 @@ namespace ProyectoFinalTallerBD
             this.Name = "pantallaEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pantallaEmpleado";
+            this.Load += new System.EventHandler(this.pantallaEmpleado_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
@@ -267,5 +279,6 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Panel pnlVistaDatos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

@@ -264,11 +264,10 @@ namespace ProyectoFinalTallerBD
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(512, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(461, 12);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(53, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(0, 20);
             this.lblUsuario.TabIndex = 4;
-            this.lblUsuario.Text = "label1";
             // 
             // lblNombreSeccion
             // 
@@ -315,6 +314,7 @@ namespace ProyectoFinalTallerBD
             this.pnlVistaDatos.Name = "pnlVistaDatos";
             this.pnlVistaDatos.Size = new System.Drawing.Size(732, 485);
             this.pnlVistaDatos.TabIndex = 3;
+            this.pnlVistaDatos.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlVistaDatos_Paint);
             // 
             // pictureBox1
             // 
@@ -339,6 +339,7 @@ namespace ProyectoFinalTallerBD
             this.Name = "pantallaAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pantallaAdministrador";
+            this.Load += new System.EventHandler(this.pantallaAdministrador_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverAdmin)).EndInit();
