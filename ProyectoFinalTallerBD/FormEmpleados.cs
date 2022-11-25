@@ -40,14 +40,6 @@ namespace ProyectoFinalTallerBD
                 cn.dt = new DataTable();
                 cn.da.Fill(cn.dt);
                 dgvEmpleados.DataSource = cn.dt;
-                //dgvEmpleados.Columns["id"].DisplayIndex = 0;
-                //dgvEmpleados.Columns["primerNombre"].DisplayIndex = 1;
-                //dgvEmpleados.Columns["SegundoNombre"].DisplayIndex = 2;
-                //dgvEmpleados.Columns["apellidoPaterno"].DisplayIndex = 3;
-                //dgvEmpleados.Columns["apellidoMaterno"].DisplayIndex = 4;
-                //dgvEmpleados.Columns["puesto"].DisplayIndex = 5;
-                //dgvEmpleados.Columns["salario"].DisplayIndex = 6;
-                //dgvEmpleados.Columns["status"].DisplayIndex = 7;
                 dgvEmpleados.Columns["Editar"].DisplayIndex = 8;
             }
             catch (Exception)
@@ -61,19 +53,7 @@ namespace ProyectoFinalTallerBD
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {/*
-            try
-            {
-                cn.da = new SqlDataAdapter("Select * from Empleados", cn.conectarbd);
-                cn.dt = new DataTable();
-                cn.da.Fill(cn.dt);
-                dataGridView1.DataSource = cn.dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }*/
+        {
         }
         private void btnRegistrarEmpleado_Click(object sender, EventArgs e)
         {
@@ -261,7 +241,18 @@ namespace ProyectoFinalTallerBD
 
         private void cmbTipoUsuario_SelectedValueChanged(object sender, EventArgs e)
         {
-
+            if (cmbTipoUsuario.Text == "ADM")
+            {
+                numAdm = BuscarId();
+                idEmpleado = cmbTipoUsuario.Text + numAdm;
+                txtIdEmpleado.Text = idEmpleado;
+            }
+            if (cmbTipoUsuario.Text == "EMP")
+            {
+                numUsu = BuscarId();
+                idEmpleado = cmbTipoUsuario.Text + numUsu;
+                txtIdEmpleado.Text = idEmpleado;
+            }
         }
     }
 }

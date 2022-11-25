@@ -47,6 +47,7 @@ namespace ProyectoFinalTallerBD
             this.lblCerrar = new System.Windows.Forms.Label();
             this.pnlVistaDatos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEntregas = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverAdmin)).BeginInit();
@@ -59,6 +60,7 @@ namespace ProyectoFinalTallerBD
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(37)))));
+            this.pnlMenu.Controls.Add(this.btnEntregas);
             this.pnlMenu.Controls.Add(this.btnCerrarSesion);
             this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.Controls.Add(this.btnInventario);
@@ -75,7 +77,7 @@ namespace ProyectoFinalTallerBD
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,7 +89,7 @@ namespace ProyectoFinalTallerBD
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.Location = new System.Drawing.Point(0, 411);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(211, 50);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(211, 145);
             this.btnCerrarSesion.TabIndex = 8;
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -325,6 +327,27 @@ namespace ProyectoFinalTallerBD
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnEntregas
+            // 
+            this.btnEntregas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEntregas.FlatAppearance.BorderSize = 0;
+            this.btnEntregas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntregas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntregas.ForeColor = System.Drawing.Color.White;
+            this.btnEntregas.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            this.btnEntregas.IconColor = System.Drawing.Color.White;
+            this.btnEntregas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEntregas.IconSize = 35;
+            this.btnEntregas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntregas.Location = new System.Drawing.Point(0, 411);
+            this.btnEntregas.Name = "btnEntregas";
+            this.btnEntregas.Size = new System.Drawing.Size(211, 50);
+            this.btnEntregas.TabIndex = 10;
+            this.btnEntregas.Text = "Entregas";
+            this.btnEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEntregas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEntregas.UseVisualStyleBackColor = true;
+            // 
             // pantallaAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,5 +394,6 @@ namespace ProyectoFinalTallerBD
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblNombreSeccion;
         private System.Windows.Forms.Label lblUsuario;
+        private FontAwesome.Sharp.IconButton btnEntregas;
     }
 }

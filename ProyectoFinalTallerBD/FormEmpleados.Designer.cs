@@ -29,7 +29,7 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpleados));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -367,8 +367,8 @@ namespace ProyectoFinalTallerBD
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmpleados.Size = new System.Drawing.Size(616, 288);
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -422,6 +422,7 @@ namespace ProyectoFinalTallerBD
             this.cmbTipoUsuario.Size = new System.Drawing.Size(67, 21);
             this.cmbTipoUsuario.TabIndex = 66;
             this.cmbTipoUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbTipoUsuario_SelectedIndexChanged);
+            this.cmbTipoUsuario.SelectedValueChanged += new System.EventHandler(this.cmbTipoUsuario_SelectedValueChanged);
             // 
             // iconButton2
             // 
@@ -574,7 +575,7 @@ namespace ProyectoFinalTallerBD
             this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
             this.btnRegistrarEmpleado.Size = new System.Drawing.Size(160, 45);
             this.btnRegistrarEmpleado.TabIndex = 34;
-            this.btnRegistrarEmpleado.Text = "REGISTRAR USUARIO";
+            this.btnRegistrarEmpleado.Text = "REGISTRAR EMPLEADO";
             this.btnRegistrarEmpleado.UseVisualStyleBackColor = false;
             this.btnRegistrarEmpleado.Click += new System.EventHandler(this.btnRegistrarEmpleado_Click);
             // 
