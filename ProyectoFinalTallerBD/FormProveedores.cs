@@ -36,6 +36,7 @@ namespace ProyectoFinalTallerBD
                 dgvProveedores.Columns["fechaAlta"].DisplayIndex = 3;
                 dgvProveedores.Columns["fechaBaja"].DisplayIndex = 4;
                 dgvProveedores.Columns["Editar"].DisplayIndex = 5;
+                dgvProveedores.Columns["Eliminar"].DisplayIndex = 6;
 
 
             }
@@ -70,6 +71,7 @@ namespace ProyectoFinalTallerBD
                     cn.cmd.ExecuteNonQuery();
                     
                     MessageBox.Show("Proveedor ingresado al sistema");
+                    Cargardgv();
                 }
                 catch (Exception ex)
                 {
@@ -122,14 +124,14 @@ namespace ProyectoFinalTallerBD
         {
             if (dgvProveedores.Columns[e.ColumnIndex].Name == "Editar")
             {
-                dgvProveedores.Size = new Size(485, 238);
+                dgvProveedores.Size = new Size(421, 238);
                grbDatosProveedores.Visible = true;
                 //int idProvedorCon =Convert.ToInt32(dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString());
                 //txtIdProveedor.Text = idProvedorCon.ToString();
                 txtid.Text = dgvProveedores.CurrentRow.Cells["idProveedor"].Value.ToString();
                 txtRSocial.Text = dgvProveedores.CurrentRow.Cells["razonSocial"].Value.ToString();
                 txtRC.Text = dgvProveedores.CurrentRow.Cells["RFC"].Value.ToString();
-                dateTimePicker2.Value = Convert.ToDateTime(dgvProveedores.CurrentRow.Cells["fechaAlta"].Value.ToString());
+                dtpEdFechaAlta.Value = Convert.ToDateTime(dgvProveedores.CurrentRow.Cells["fechaAlta"].Value.ToString());
                 dgvProveedores.CurrentRow.Cells["Editar"].Style.SelectionBackColor = Color.CadetBlue;
                 //dgvProveedores.AllowUserToAddRows = false;
                 //dgvProveedores.AllowUserToDeleteRows = false;
@@ -143,12 +145,12 @@ namespace ProyectoFinalTallerBD
                 string eliminarUsuario = dgvProveedores.CurrentRow.Cells["idProveedor"].Value.ToString();
                 string modactivo = "N";
 
-                if (MessageBox.Show("¿Desea dar de baja a este empleado? " + eliminarUsuario, "Confirmar operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Desea dar de baja a este proveedor? " + eliminarUsuario, "Confirmar operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
                         cn.conectarbd.Open();
-                        cn.cmd = new SqlCommand("Update Proveedores SET status = '" + modactivo + "' where idProveedor='" + eliminarUsuario + "'", cn.conectarbd);
+                        cn.cmd = new SqlCommand("Update Proveedores SET activo = '" + modactivo + "', fechaBaja = GETDATE() where idProveedor='" + eliminarUsuario + "'", cn.conectarbd);
                         cn.cmd.ExecuteNonQuery();
 
                         Cargardgv();
@@ -168,6 +170,56 @@ namespace ProyectoFinalTallerBD
 
                 }
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            dgvProveedores.Size = new Size(557, 238);
+            grbDatosProveedores.Visible = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int modIdProv = int.Parse(txtid.Text);
+            string modRSocial = txtRSocial.Text;
+            string modRFC = txtRC.Text;
+            string modFechaAlta = dtpEdFechaAlta.Value.ToString("yyyy-MM-dd");
+            try
+            {
+                cn.conectarbd.Open();
+                cn.cmd = new SqlCommand("Update Proveedores SET razonSocial='" + modRSocial + "', RFC='" + modRFC + "',fechaAlta='" + modFechaAlta
+                   + "' where idProveedor=" + modIdProv, cn.conectarbd);
+                cn.cmd.ExecuteNonQuery();
+
+                dgvProveedores.Size = new Size(557, 238);
+                grbDatosProveedores.Visible = false;
+                MessageBox.Show("Proveedor ingresado al sistema");
+                Cargardgv();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex);
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string buscarID = txtBuscar.Text;
+            foreach (DataGridViewRow row in dgvProveedores.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == buscarID)
+                {
+                    MessageBox.Show("Proveedor encontrado: \nId Proveedor: " + row.Cells[0].Value.ToString() + "\nRazon Social: " + row.Cells[1].Value.ToString() + "\nRFC: " + row.Cells[2].Value.ToString());
+                    return;
+                }
+            }
+            MessageBox.Show("No existe el proveedor ingresado.", "PROVEEDOR NO ENCONTRADA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

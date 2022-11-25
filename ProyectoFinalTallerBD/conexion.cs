@@ -21,8 +21,8 @@ namespace ProyectoFinalTallerBD
         {
             try
             {
-                //conectarbd = new SqlConnection("Data Source=JAFET;Initial Catalog=PROYECTO;User ID=admon;Password=admon");
-                conectarbd = new SqlConnection("Data Source=PC1\\SQLEXPRESS;Initial Catalog=PROYECTO;Integrated Security=True");
+                conectarbd = new SqlConnection("Data Source=JAFET;Initial Catalog=PROYECTO;User ID=admon;Password=admon");
+                //conectarbd = new SqlConnection("Data Source=PC1\\SQLEXPRESS;Initial Catalog=PROYECTO;Integrated Security=True");
                 //conectarbd.Open();
                 //MessageBox.Show("Conexión Realizada Correctamente");
             }
@@ -33,20 +33,20 @@ namespace ProyectoFinalTallerBD
             }
         }
 
-        public void mostrarProducto(DataGridView dgv)
-        {
-            try
-            {
-                da = new SqlDataAdapter("Select * from Empleados",conectarbd);
-                da.Fill(dt);
-                dgv.DataSource = dt;
-            }
-            catch (Exception)
-            {
+        //public void mostrarProducto(DataGridView dgv)
+        //{
+        //    try
+        //    {
+        //        da = new SqlDataAdapter("Select * from Empleados",conectarbd);
+        //        da.Fill(dt);
+        //        dgv.DataSource = dt;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
 
     }
 }

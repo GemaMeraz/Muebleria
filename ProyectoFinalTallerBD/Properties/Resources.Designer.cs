@@ -63,6 +63,16 @@ namespace ProyectoFinalTallerBD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap img_baja {
+            get {
+                object obj = ResourceManager.GetObject("img_baja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_editar {
             get {
                 object obj = ResourceManager.GetObject("img_editar", resourceCulture);

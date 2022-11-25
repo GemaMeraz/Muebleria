@@ -29,20 +29,19 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProveedores));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grbDatosProveedores = new System.Windows.Forms.GroupBox();
+            this.dtpEdFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.txtRC = new System.Windows.Forms.TextBox();
             this.txtRSocial = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.tabRegistro = new System.Windows.Forms.TabPage();
@@ -55,9 +54,14 @@ namespace ProyectoFinalTallerBD
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdProveedor = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grbDatosProveedores.SuspendLayout();
@@ -78,10 +82,9 @@ namespace ProyectoFinalTallerBD
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.grbDatosProveedores);
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.button6);
-            this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.dgvProveedores);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -94,32 +97,42 @@ namespace ProyectoFinalTallerBD
             // 
             // grbDatosProveedores
             // 
-            this.grbDatosProveedores.Controls.Add(this.dateTimePicker2);
+            this.grbDatosProveedores.Controls.Add(this.btnCancelar);
+            this.grbDatosProveedores.Controls.Add(this.label9);
+            this.grbDatosProveedores.Controls.Add(this.btnEditar);
+            this.grbDatosProveedores.Controls.Add(this.dtpEdFechaAlta);
             this.grbDatosProveedores.Controls.Add(this.txtRC);
             this.grbDatosProveedores.Controls.Add(this.txtRSocial);
             this.grbDatosProveedores.Controls.Add(this.label4);
             this.grbDatosProveedores.Controls.Add(this.label6);
             this.grbDatosProveedores.Controls.Add(this.label8);
             this.grbDatosProveedores.Controls.Add(this.txtid);
-            this.grbDatosProveedores.Location = new System.Drawing.Point(516, 87);
+            this.grbDatosProveedores.Location = new System.Drawing.Point(435, 72);
             this.grbDatosProveedores.Name = "grbDatosProveedores";
-            this.grbDatosProveedores.Size = new System.Drawing.Size(200, 238);
+            this.grbDatosProveedores.Size = new System.Drawing.Size(266, 274);
             this.grbDatosProveedores.TabIndex = 42;
             this.grbDatosProveedores.TabStop = false;
             this.grbDatosProveedores.Text = "Informacion Proveedor";
             this.grbDatosProveedores.Visible = false;
             // 
+            // dtpEdFechaAlta
+            // 
+            this.dtpEdFechaAlta.Location = new System.Drawing.Point(98, 168);
+            this.dtpEdFechaAlta.Name = "dtpEdFechaAlta";
+            this.dtpEdFechaAlta.Size = new System.Drawing.Size(164, 20);
+            this.dtpEdFechaAlta.TabIndex = 64;
+            // 
             // txtRC
             // 
-            this.txtRC.Location = new System.Drawing.Point(39, 177);
+            this.txtRC.Location = new System.Drawing.Point(98, 124);
             this.txtRC.Margin = new System.Windows.Forms.Padding(2);
             this.txtRC.Name = "txtRC";
-            this.txtRC.Size = new System.Drawing.Size(143, 20);
+            this.txtRC.Size = new System.Drawing.Size(156, 20);
             this.txtRC.TabIndex = 63;
             // 
             // txtRSocial
             // 
-            this.txtRSocial.Location = new System.Drawing.Point(39, 120);
+            this.txtRSocial.Location = new System.Drawing.Point(98, 79);
             this.txtRSocial.Margin = new System.Windows.Forms.Padding(2);
             this.txtRSocial.Name = "txtRSocial";
             this.txtRSocial.Size = new System.Drawing.Size(156, 20);
@@ -128,7 +141,7 @@ namespace ProyectoFinalTallerBD
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 153);
+            this.label4.Location = new System.Drawing.Point(5, 127);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
@@ -138,7 +151,7 @@ namespace ProyectoFinalTallerBD
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 90);
+            this.label6.Location = new System.Drawing.Point(5, 82);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
@@ -158,47 +171,25 @@ namespace ProyectoFinalTallerBD
             // txtid
             // 
             this.txtid.Enabled = false;
-            this.txtid.Location = new System.Drawing.Point(39, 55);
+            this.txtid.Location = new System.Drawing.Point(98, 28);
             this.txtid.Margin = new System.Windows.Forms.Padding(2);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(143, 20);
+            this.txtid.ReadOnly = true;
+            this.txtid.Size = new System.Drawing.Size(156, 20);
             this.txtid.TabIndex = 58;
             // 
-            // button5
+            // btnBuscar
             // 
-            this.button5.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(226, 330);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 37);
-            this.button5.TabIndex = 41;
-            this.button5.Text = "BUSCAR";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.Location = new System.Drawing.Point(394, 330);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(102, 37);
-            this.button6.TabIndex = 40;
-            this.button6.Text = "ELIMINAR";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(76, 330);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(93, 37);
-            this.button7.TabIndex = 39;
-            this.button7.Text = "EDITAR";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscar.Location = new System.Drawing.Point(580, 21);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(109, 37);
+            this.btnBuscar.TabIndex = 41;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
@@ -212,17 +203,18 @@ namespace ProyectoFinalTallerBD
             // 
             // dgvProveedores
             // 
+            this.dgvProveedores.AllowUserToAddRows = false;
             this.dgvProveedores.AllowUserToDeleteRows = false;
             this.dgvProveedores.AllowUserToResizeColumns = false;
             this.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
@@ -230,6 +222,7 @@ namespace ProyectoFinalTallerBD
             this.dgvProveedores.Location = new System.Drawing.Point(8, 87);
             this.dgvProveedores.MultiSelect = false;
             this.dgvProveedores.Name = "dgvProveedores";
+            this.dgvProveedores.ReadOnly = true;
             this.dgvProveedores.RowHeadersVisible = false;
             this.dgvProveedores.RowHeadersWidth = 51;
             this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -340,23 +333,78 @@ namespace ProyectoFinalTallerBD
             this.txtIdProveedor.Size = new System.Drawing.Size(238, 20);
             this.txtIdProveedor.TabIndex = 42;
             // 
-            // dateTimePicker2
+            // dataGridViewImageColumn1
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(18, 202);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(164, 20);
-            this.dateTimePicker2.TabIndex = 64;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 277;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Dar de baja";
+            this.dataGridViewImageColumn2.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_baja;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 277;
             // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Dar de baja";
+            this.Eliminar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_baja;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditar.Location = new System.Drawing.Point(22, 216);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(93, 37);
+            this.btnEditar.TabIndex = 65;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 174);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 66;
+            this.label9.Text = "FECHA ALTA";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(152, 216);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(93, 37);
+            this.btnCancelar.TabIndex = 69;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(465, 30);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.TabIndex = 43;
             // 
             // FormProveedores
             // 
@@ -384,9 +432,7 @@ namespace ProyectoFinalTallerBD
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvProveedores;
         private System.Windows.Forms.TabPage tabRegistro;
@@ -406,8 +452,14 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpEdFechaAlta;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

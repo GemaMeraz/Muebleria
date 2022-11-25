@@ -131,6 +131,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEntregas.resx">
+      <DependentUpon>FormEntregas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imagenes\img_editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\img_baja.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,6 +31,7 @@ namespace ProyectoFinalTallerBD
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pantallaAdministrador));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnEntregas = new FontAwesome.Sharp.IconButton();
             this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.btnClientes = new FontAwesome.Sharp.IconButton();
             this.btnInventario = new FontAwesome.Sharp.IconButton();
@@ -47,7 +48,6 @@ namespace ProyectoFinalTallerBD
             this.lblCerrar = new System.Windows.Forms.Label();
             this.pnlVistaDatos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEntregas = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverAdmin)).BeginInit();
@@ -74,6 +74,28 @@ namespace ProyectoFinalTallerBD
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(211, 556);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnEntregas
+            // 
+            this.btnEntregas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEntregas.FlatAppearance.BorderSize = 0;
+            this.btnEntregas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntregas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntregas.ForeColor = System.Drawing.Color.White;
+            this.btnEntregas.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            this.btnEntregas.IconColor = System.Drawing.Color.White;
+            this.btnEntregas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEntregas.IconSize = 35;
+            this.btnEntregas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntregas.Location = new System.Drawing.Point(0, 411);
+            this.btnEntregas.Name = "btnEntregas";
+            this.btnEntregas.Size = new System.Drawing.Size(211, 50);
+            this.btnEntregas.TabIndex = 10;
+            this.btnEntregas.Text = "Entregas";
+            this.btnEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEntregas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEntregas.UseVisualStyleBackColor = true;
+            this.btnEntregas.Click += new System.EventHandler(this.btnEntregas_Click);
             // 
             // btnCerrarSesion
             // 
@@ -326,28 +348,6 @@ namespace ProyectoFinalTallerBD
             this.pictureBox1.Size = new System.Drawing.Size(331, 279);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnEntregas
-            // 
-            this.btnEntregas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEntregas.FlatAppearance.BorderSize = 0;
-            this.btnEntregas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntregas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntregas.ForeColor = System.Drawing.Color.White;
-            this.btnEntregas.IconChar = FontAwesome.Sharp.IconChar.Truck;
-            this.btnEntregas.IconColor = System.Drawing.Color.White;
-            this.btnEntregas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEntregas.IconSize = 35;
-            this.btnEntregas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntregas.Location = new System.Drawing.Point(0, 411);
-            this.btnEntregas.Name = "btnEntregas";
-            this.btnEntregas.Size = new System.Drawing.Size(211, 50);
-            this.btnEntregas.TabIndex = 10;
-            this.btnEntregas.Text = "Entregas";
-            this.btnEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEntregas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEntregas.UseVisualStyleBackColor = true;
-            this.btnEntregas.Click += new System.EventHandler(this.btnEntregas_Click);
             // 
             // pantallaAdministrador
             // 
