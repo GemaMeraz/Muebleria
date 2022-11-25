@@ -29,7 +29,7 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpleados));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -100,7 +100,6 @@ namespace ProyectoFinalTallerBD
             this.tabPage1.Controls.Add(this.txtBuscarId);
             this.tabPage1.Controls.Add(this.grbModificarEmpleado);
             this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.dgvEmpleados);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -145,6 +144,7 @@ namespace ProyectoFinalTallerBD
             this.grbModificarEmpleado.Controls.Add(this.txtModSalario);
             this.grbModificarEmpleado.Controls.Add(this.txtModPuesto);
             this.grbModificarEmpleado.Controls.Add(this.btnEditar);
+            this.grbModificarEmpleado.Controls.Add(this.button2);
             this.grbModificarEmpleado.Controls.Add(this.txtModApePater);
             this.grbModificarEmpleado.Controls.Add(this.txtModSegundoNom);
             this.grbModificarEmpleado.Controls.Add(this.txtModPrimerNom);
@@ -196,7 +196,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnEditar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEditar.Location = new System.Drawing.Point(107, 278);
+            this.btnEditar.Location = new System.Drawing.Point(28, 279);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(93, 37);
@@ -335,12 +335,12 @@ namespace ProyectoFinalTallerBD
             // 
             this.button2.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(215, 406);
+            this.button2.Location = new System.Drawing.Point(168, 279);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 37);
             this.button2.TabIndex = 36;
-            this.button2.Text = "ELIMINAR";
+            this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -367,8 +367,8 @@ namespace ProyectoFinalTallerBD
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmpleados.Size = new System.Drawing.Size(616, 288);
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

@@ -181,8 +181,10 @@ namespace ProyectoFinalTallerBD
                    + "',apellidoMaterno='"+modAMaterno+"',puesto='"+modPuesto+"',salario="+modSalario+" where idEmpleado='"+modId+"'", cn.conectarbd);
                 cn.cmd.ExecuteNonQuery();
 
-
+                dgvEmpleados.Size = new Size(616, 288);
+                grbModificarEmpleado.Visible = false;
                 MessageBox.Show("Empleado ingresado al sistema");
+
             }
             catch (Exception ex)
             {
