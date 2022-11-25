@@ -38,6 +38,7 @@ namespace ProyectoFinalTallerBD
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblNombreSeccion = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.lblCerrar = new System.Windows.Forms.Label();
@@ -108,6 +109,7 @@ namespace ProyectoFinalTallerBD
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnVentas
             // 
@@ -129,6 +131,7 @@ namespace ProyectoFinalTallerBD
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnProductos
             // 
@@ -150,6 +153,7 @@ namespace ProyectoFinalTallerBD
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // pnlLogo
             // 
@@ -175,6 +179,7 @@ namespace ProyectoFinalTallerBD
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.lblNombreSeccion);
             this.panel3.Controls.Add(this.lblUsuario);
             this.panel3.Controls.Add(this.iconCurrentChildForm);
             this.panel3.Controls.Add(this.lblCerrar);
@@ -183,6 +188,16 @@ namespace ProyectoFinalTallerBD
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(680, 38);
             this.panel3.TabIndex = 3;
+            // 
+            // lblNombreSeccion
+            // 
+            this.lblNombreSeccion.AutoSize = true;
+            this.lblNombreSeccion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreSeccion.Location = new System.Drawing.Point(55, 12);
+            this.lblNombreSeccion.Name = "lblNombreSeccion";
+            this.lblNombreSeccion.Size = new System.Drawing.Size(52, 20);
+            this.lblNombreSeccion.TabIndex = 6;
+            this.lblNombreSeccion.Text = "Home";
             // 
             // lblUsuario
             // 
@@ -200,7 +215,7 @@ namespace ProyectoFinalTallerBD
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentChildForm.IconColor = System.Drawing.SystemColors.Control;
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(24, 3);
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(17, 4);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
             this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
             this.iconCurrentChildForm.TabIndex = 3;
@@ -280,5 +295,6 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblNombreSeccion;
     }
 }

@@ -47,6 +47,11 @@ namespace ProyectoFinalTallerBD
             int respuesta = Login();
             switch (respuesta)
             {
+                case 3: MessageBox.Show("El usuario no se encuentra activo actualmente.","USUARIO INACTIVO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtUsuario.Texts = "";
+                    txtPassword.Texts = "";
+                    txtUsuario.Focus();
+                    break;
                 case 2: pantAdmin.ShowDialog();
                     this.Hide();
                     break;
@@ -54,6 +59,9 @@ namespace ProyectoFinalTallerBD
                     this.Hide();
                     break;
                 case 0: MessageBox.Show("Contraseña o usuario incorrecto", "ACCESSO DENEGADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUsuario.Texts = "";
+                    txtPassword.Texts = "";
+                    txtUsuario.Focus();
                     break;
             }
         }
@@ -62,6 +70,7 @@ namespace ProyectoFinalTallerBD
         {
             try
             {
+                cn.conectarbd.Open();
                 cn.cmd = new SqlCommand("sp_login", cn.conectarbd);
                 cn.cmd.CommandType = CommandType.StoredProcedure;
                 cn.cmd.Parameters.AddWithValue("@par_user", txtUsuario.Texts);

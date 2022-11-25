@@ -53,6 +53,7 @@ namespace ProyectoFinalTallerBD
             {
                 try
                 {
+                    cn.conectarbd.Open();
                     cn.cmd = new SqlCommand("Insert into Proveedores(idProveedor,razonSocial,RFC,fechaAlta,activo) values(" + idProveedor + ",'" + razonSocial + "','" + RFC + "','" + fechaAlta + "', '" + activo + "')", cn.conectarbd);
                     cn.cmd.ExecuteNonQuery();
                     
@@ -62,6 +63,10 @@ namespace ProyectoFinalTallerBD
                 {
 
                     MessageBox.Show("Error:" + ex);
+                }
+                finally
+                {
+                    cn.conectarbd.Close();
                 }
             }
             else
@@ -80,6 +85,7 @@ namespace ProyectoFinalTallerBD
             int intCont = 0;
             try
             {
+                cn.conectarbd.Open();
                 cn.cmd = new SqlCommand("SELECT * FROM Proveedores WHERE idProveedor = '" + idProveedor + "'", cn.conectarbd);
                 cn.dr = cn.cmd.ExecuteReader();
                 while (cn.dr.Read())
@@ -93,6 +99,10 @@ namespace ProyectoFinalTallerBD
             {
                 MessageBox.Show("Error: " + x.Message);
                 throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
             }
         }
 

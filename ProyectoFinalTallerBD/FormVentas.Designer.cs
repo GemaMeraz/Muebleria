@@ -57,22 +57,46 @@ namespace ProyectoFinalTallerBD
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
+            this.tabVentasCrd = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvVentasCrd = new System.Windows.Forms.DataGridView();
+            this.tabRegVentasCrd = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dtpLiquidacion = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dtpNuevoPago = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtpFechaInicioVentaCrd = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtVenta = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtVentasCredito = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabRegistro.SuspendLayout();
+            this.tabVentasCrd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentasCrd)).BeginInit();
+            this.tabRegVentasCrd.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabRegistro);
+            this.tabControl1.Controls.Add(this.tabVentasCrd);
+            this.tabControl1.Controls.Add(this.tabRegVentasCrd);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 450);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl1.TabIndexChanged += new System.EventHandler(this.tabControl1_TabIndexChanged);
             // 
             // tabPage1
             // 
@@ -150,9 +174,14 @@ namespace ProyectoFinalTallerBD
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar});
             this.dataGridView1.Location = new System.Drawing.Point(15, 41);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(600, 288);
@@ -361,6 +390,165 @@ namespace ProyectoFinalTallerBD
             this.txtClave.Size = new System.Drawing.Size(175, 20);
             this.txtClave.TabIndex = 42;
             // 
+            // tabVentasCrd
+            // 
+            this.tabVentasCrd.Controls.Add(this.label9);
+            this.tabVentasCrd.Controls.Add(this.dgvVentasCrd);
+            this.tabVentasCrd.Location = new System.Drawing.Point(4, 22);
+            this.tabVentasCrd.Name = "tabVentasCrd";
+            this.tabVentasCrd.Size = new System.Drawing.Size(792, 424);
+            this.tabVentasCrd.TabIndex = 2;
+            this.tabVentasCrd.Text = "TODAS LAS VENTAS A CREDITO";
+            this.tabVentasCrd.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(205, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(200, 24);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "VENTAS A CREDITO";
+            // 
+            // dgvVentasCrd
+            // 
+            this.dgvVentasCrd.AllowUserToAddRows = false;
+            this.dgvVentasCrd.AllowUserToDeleteRows = false;
+            this.dgvVentasCrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentasCrd.Location = new System.Drawing.Point(8, 45);
+            this.dgvVentasCrd.MultiSelect = false;
+            this.dgvVentasCrd.Name = "dgvVentasCrd";
+            this.dgvVentasCrd.ReadOnly = true;
+            this.dgvVentasCrd.RowHeadersVisible = false;
+            this.dgvVentasCrd.RowHeadersWidth = 51;
+            this.dgvVentasCrd.Size = new System.Drawing.Size(600, 288);
+            this.dgvVentasCrd.TabIndex = 2;
+            // 
+            // tabRegVentasCrd
+            // 
+            this.tabRegVentasCrd.Controls.Add(this.textBox1);
+            this.tabRegVentasCrd.Controls.Add(this.label17);
+            this.tabRegVentasCrd.Controls.Add(this.dtpLiquidacion);
+            this.tabRegVentasCrd.Controls.Add(this.label16);
+            this.tabRegVentasCrd.Controls.Add(this.dtpNuevoPago);
+            this.tabRegVentasCrd.Controls.Add(this.label15);
+            this.tabRegVentasCrd.Controls.Add(this.dtpFechaInicioVentaCrd);
+            this.tabRegVentasCrd.Controls.Add(this.label14);
+            this.tabRegVentasCrd.Controls.Add(this.txtVenta);
+            this.tabRegVentasCrd.Controls.Add(this.label13);
+            this.tabRegVentasCrd.Controls.Add(this.txtVentasCredito);
+            this.tabRegVentasCrd.Controls.Add(this.label12);
+            this.tabRegVentasCrd.Location = new System.Drawing.Point(4, 22);
+            this.tabRegVentasCrd.Name = "tabRegVentasCrd";
+            this.tabRegVentasCrd.Size = new System.Drawing.Size(792, 424);
+            this.tabRegVentasCrd.TabIndex = 3;
+            this.tabRegVentasCrd.Text = "REGISTRO DE VENTAS A CREDITO";
+            this.tabRegVentasCrd.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(341, 205);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(212, 208);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 13);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Pago Realizado";
+            // 
+            // dtpLiquidacion
+            // 
+            this.dtpLiquidacion.Location = new System.Drawing.Point(341, 169);
+            this.dtpLiquidacion.Name = "dtpLiquidacion";
+            this.dtpLiquidacion.Size = new System.Drawing.Size(200, 20);
+            this.dtpLiquidacion.TabIndex = 9;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(168, 175);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(114, 13);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "FECHA LIQUIDACION";
+            // 
+            // dtpNuevoPago
+            // 
+            this.dtpNuevoPago.Location = new System.Drawing.Point(341, 133);
+            this.dtpNuevoPago.Name = "dtpNuevoPago";
+            this.dtpNuevoPago.Size = new System.Drawing.Size(200, 20);
+            this.dtpNuevoPago.TabIndex = 7;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(168, 139);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(134, 13);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "FECHA DE NUEVO PAGO";
+            // 
+            // dtpFechaInicioVentaCrd
+            // 
+            this.dtpFechaInicioVentaCrd.Location = new System.Drawing.Point(341, 96);
+            this.dtpFechaInicioVentaCrd.Name = "dtpFechaInicioVentaCrd";
+            this.dtpFechaInicioVentaCrd.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicioVentaCrd.TabIndex = 5;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(168, 102);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(152, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "FECHA DE INICIO DE VENTA";
+            // 
+            // txtVenta
+            // 
+            this.txtVenta.Location = new System.Drawing.Point(341, 61);
+            this.txtVenta.Name = "txtVenta";
+            this.txtVenta.Size = new System.Drawing.Size(100, 20);
+            this.txtVenta.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(212, 64);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "ID VENTA";
+            // 
+            // txtVentasCredito
+            // 
+            this.txtVentasCredito.Location = new System.Drawing.Point(341, 29);
+            this.txtVentasCredito.Name = "txtVentasCredito";
+            this.txtVentasCredito.Size = new System.Drawing.Size(100, 20);
+            this.txtVentasCredito.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(212, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(108, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "ID VENTA CREDITO";
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +564,11 @@ namespace ProyectoFinalTallerBD
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
+            this.tabVentasCrd.ResumeLayout(false);
+            this.tabVentasCrd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentasCrd)).EndInit();
+            this.tabRegVentasCrd.ResumeLayout(false);
+            this.tabRegVentasCrd.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -410,5 +603,22 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.TabPage tabVentasCrd;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvVentasCrd;
+        private System.Windows.Forms.TabPage tabRegVentasCrd;
+        private System.Windows.Forms.TextBox txtVenta;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtVentasCredito;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker dtpLiquidacion;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DateTimePicker dtpNuevoPago;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicioVentaCrd;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

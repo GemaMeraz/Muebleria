@@ -17,8 +17,10 @@ namespace ProyectoFinalTallerBD
     {
         conexion cn = new conexion();
         string idEmpleado;
-        int numAdm = 2;
-        int numUsu = 6;
+        //int numAdm = 2;
+        //int numUsu = 6;
+        string numAdm = "";
+        string numUsu = "";
         string conve;
 
         public FormEmpleados()
@@ -30,8 +32,7 @@ namespace ProyectoFinalTallerBD
         {
 
         }
-
-        private void FormEmpleados_Load(object sender, EventArgs e)
+        public void MostrarEmpleados()
         {
             try
             {
@@ -53,10 +54,10 @@ namespace ProyectoFinalTallerBD
             {
                 throw;
             }
-
-            
-           
-           
+        }
+        private void FormEmpleados_Load(object sender, EventArgs e)
+        {
+            MostrarEmpleados();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -83,29 +84,50 @@ namespace ProyectoFinalTallerBD
             string puesto = txtPuesto.Text;
             double salario = double.Parse(txtSalario.Text);
             string status = "AC";
-
-            try
+            if (ComprobarEmpleado() > 0)
             {
-                cn.cmd = new SqlCommand("Insert into Empleados(idEmpleado,primerNombre,segundoNombre,apellidoPaterno,apellidoMaterno,puesto,salario,status) values('" + txtIdEmpleado.Text + "','" + primerNombre + "','" +segundoNombre + "','" + apellidoPaterno + "', '" + apellidoMaterno + "','"+puesto+"',"+salario+",'"+status+"')", cn.conectarbd);
-                cn.cmd.ExecuteNonQuery();
-                
+                txtIdEmpleado.Text = "";
+                txtIdEmpleado.Focus();
 
-                MessageBox.Show("Empleado ingresado al sistema");
+                MessageBox.Show("El ID ya se encuentra registrado, intente con un nuevo id", "Id duplicado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            catch (Exception ex)
+            if (idEmpleado != null && idEmpleado != "00")
             {
+                try
+                {
+                    cn.conectarbd.Open();
+                    cn.cmd = new SqlCommand("Insert into Empleados(idEmpleado,primerNombre,segundoNombre,apellidoPaterno,apellidoMaterno,puesto,salario,status) values('" + txtIdEmpleado.Text + "','" + primerNombre + "','" + segundoNombre + "','" + apellidoPaterno + "', '" + apellidoMaterno + "','" + puesto + "'," + salario + ",'" + status + "')", cn.conectarbd);
+                    cn.cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Error:" + ex);
-            }
-            if (cmbTipoUsuario.SelectedItem.ToString() == "ADMINISTRADOR")
-            {
-                numAdm++;
-            }
-            if (cmbTipoUsuario.SelectedItem.ToString() == "USUARIO")
-            {
+                    MostrarEmpleados();
+                    MessageBox.Show("Empleado ingresado al sistema");
+                    tabControl1.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
 
-                numUsu++;
+                    MessageBox.Show("Error:" + ex);
+                }
+                finally
+                {
+                    cn.conectarbd.Close();
+                }
             }
+            else
+            {
+                MessageBox.Show("No deje el id del empleado vacío.");
+            }
+            
+            //if (cmbTipoUsuario.SelectedItem.ToString() == "ADMINISTRADOR")
+            //{
+            //    numAdm++;
+            //}
+            //if (cmbTipoUsuario.SelectedItem.ToString() == "USUARIO")
+            //{
+
+            //    numUsu++;
+            //}
 
         }
 
@@ -131,19 +153,35 @@ namespace ProyectoFinalTallerBD
 
         private void cmbTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTipoUsuario.SelectedItem.ToString() == "ADMINISTRADOR")
+            
+        }
+        public string BuscarId()
+        {
+            try
             {
-
-                idEmpleado = "ADM" + numAdm.ToString("00");
-                txtIdEmpleado.Text = idEmpleado;
-               
+                int Id;
+                cn.conectarbd.Open();
+                cn.cmd = new SqlCommand("SELECT (COUNT(idEmpleado) + 1) FROM Empleados WHERE idEmpleado LIKE '%" + cmbTipoUsuario.Text + "%'", cn.conectarbd);
+                cn.dr = cn.cmd.ExecuteReader();
+                if (cn.dr.Read())
+                {
+                    Id = cn.dr.GetInt32(0);
+                    return Id.ToString("00");
+                }
+                else
+                {
+                    return "00";
+                }
             }
-            if (cmbTipoUsuario.SelectedItem.ToString() == "USUARIO")
+            catch (Exception x)
             {
-
-                idEmpleado = "EMP" + numUsu.ToString("00");
-                txtIdEmpleado.Text = idEmpleado;
-                
+                return "00";
+                throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+                cn.dr.Close();
             }
         }
 
@@ -158,6 +196,7 @@ namespace ProyectoFinalTallerBD
             string modId = txtModIdEm.Text;
             try
             {
+                cn.conectarbd.Open();
                 cn.cmd = new SqlCommand("Update Empleados SET primerNombre='"+modPNombre+"', segundoNombre='"+modSNombre+"',apellidoPaterno='"+modAPaterno
                    + "',apellidoMaterno='"+modAMaterno+"',puesto='"+modPuesto+"',salario="+modSalario+" where idEmpleado='"+modId+"'", cn.conectarbd);
                 cn.cmd.ExecuteNonQuery();
@@ -169,6 +208,10 @@ namespace ProyectoFinalTallerBD
             {
 
                 MessageBox.Show("Error:" + ex);
+            }
+            finally
+            {
+                cn.conectarbd.Close();
             }
            
         }
@@ -189,6 +232,36 @@ namespace ProyectoFinalTallerBD
 
             //    MessageBox.Show("Error:" + ex);
             //}
+        }
+        private int ComprobarEmpleado()
+        {
+            int intCont = 0;
+            try
+            {
+                cn.conectarbd.Open();
+                cn.cmd = new SqlCommand("SELECT * FROM Empleados WHERE idEmpleado = '" + idEmpleado + "'", cn.conectarbd);
+                cn.dr = cn.cmd.ExecuteReader();
+                while (cn.dr.Read())
+                {
+                    intCont++;
+                }
+                cn.dr.Close();
+                return intCont;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("Error: " + x.Message);
+                throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
+        }
+
+        private void cmbTipoUsuario_SelectedValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

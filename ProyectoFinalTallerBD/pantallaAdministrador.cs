@@ -118,15 +118,15 @@ namespace ProyectoFinalTallerBD
         private void btnVentas_Click(object sender, EventArgs e)
         {
             openFormSecundario(new FormVentas());
-            ActivateButton(sender, Color.Chocolate);
-            currentBtn.BackColor = Color.SandyBrown;
+            ActivateButton(sender, Color.White);
+            currentBtn.BackColor = Color.FromArgb(255, 100, 100);
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             openFormSecundario(new FormClientes());
-            ActivateButton(sender, Color.Chocolate);
-            currentBtn.BackColor = Color.SandyBrown;
+            ActivateButton(sender, Color.White);
+            currentBtn.BackColor = Color.FromArgb(180, 50, 40);
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -173,6 +173,7 @@ namespace ProyectoFinalTallerBD
         {   //Muestra el nombre y apellido del usuario en la ventana principal de control - Jafet
             try
             {
+                cn.conectarbd.Open();
                 cn.cmd = new SqlCommand("sp_mostrarUsuario", cn.conectarbd);
                 cn.cmd.CommandType = CommandType.StoredProcedure;
                 cn.cmd.Parameters.AddWithValue("@par_user", Form1.usuario);
