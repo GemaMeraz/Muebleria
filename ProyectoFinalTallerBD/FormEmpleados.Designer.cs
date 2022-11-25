@@ -29,7 +29,7 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpleados));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -367,8 +367,8 @@ namespace ProyectoFinalTallerBD
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmpleados.Size = new System.Drawing.Size(616, 288);
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -488,7 +488,7 @@ namespace ProyectoFinalTallerBD
             this.txtAMaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtAMaterno.Name = "txtAMaterno";
             this.txtAMaterno.Size = new System.Drawing.Size(238, 20);
-            this.txtAMaterno.TabIndex = 62;
+            this.txtAMaterno.TabIndex = 58;
             // 
             // txtSalario
             // 
@@ -496,7 +496,7 @@ namespace ProyectoFinalTallerBD
             this.txtSalario.Margin = new System.Windows.Forms.Padding(2);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(238, 20);
-            this.txtSalario.TabIndex = 61;
+            this.txtSalario.TabIndex = 60;
             // 
             // txtPuesto
             // 
@@ -504,7 +504,7 @@ namespace ProyectoFinalTallerBD
             this.txtPuesto.Margin = new System.Windows.Forms.Padding(2);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(238, 20);
-            this.txtPuesto.TabIndex = 58;
+            this.txtPuesto.TabIndex = 59;
             // 
             // txtAPaterno
             // 
@@ -570,11 +570,11 @@ namespace ProyectoFinalTallerBD
             this.btnRegistrarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarEmpleado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(282, 338);
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(308, 305);
             this.btnRegistrarEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
             this.btnRegistrarEmpleado.Size = new System.Drawing.Size(160, 45);
-            this.btnRegistrarEmpleado.TabIndex = 34;
+            this.btnRegistrarEmpleado.TabIndex = 61;
             this.btnRegistrarEmpleado.Text = "REGISTRAR EMPLEADO";
             this.btnRegistrarEmpleado.UseVisualStyleBackColor = false;
             this.btnRegistrarEmpleado.Click += new System.EventHandler(this.btnRegistrarEmpleado_Click);

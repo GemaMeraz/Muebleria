@@ -193,5 +193,12 @@ namespace ProyectoFinalTallerBD
                 cn.conectarbd.Close();
             }
         }
+
+        private void btnEntregas_Click(object sender, EventArgs e)
+        {
+            openFormSecundario(new FormEntregas());
+            ActivateButton(sender, Color.White);
+            currentBtn.BackColor = Color.FromArgb(255, 100, 100);
+        }
     }
 }

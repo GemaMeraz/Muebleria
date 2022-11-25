@@ -347,6 +347,7 @@ namespace ProyectoFinalTallerBD
             this.btnEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEntregas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEntregas.UseVisualStyleBackColor = true;
+            this.btnEntregas.Click += new System.EventHandler(this.btnEntregas_Click);
             // 
             // pantallaAdministrador
             // 
