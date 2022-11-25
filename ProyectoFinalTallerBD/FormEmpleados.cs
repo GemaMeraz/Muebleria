@@ -198,22 +198,25 @@ namespace ProyectoFinalTallerBD
            
         }
 
+        //botón de buscar
         private void button3_Click(object sender, EventArgs e)
         {
-            //string buscarID=txtBuscarId.Text;
-            //try
-            //{
-            //    cn.cmd = new SqlCommand("SELECT * FROM WHERE I", cn.conectarbd);
-            //    cn.cmd.ExecuteNonQuery();
+            string buscarID = txtBuscarId.Text;
+            try
+            {
+                cn.conectarbd.Open();
+                cn.cmd = new SqlCommand("SELECT * FROM WHERE idEmpleado='"+buscarID+"'", cn.conectarbd);
+                //cn.dr.
+                cn.cmd.ExecuteNonQuery();
 
 
-            //    MessageBox.Show("Empleado ingresado al sistema");
-            //}
-            //catch (Exception ex)
-            //{
+                MessageBox.Show("Empleado encontrado");
+            }
+            catch (Exception ex)
+            {
 
-            //    MessageBox.Show("Error:" + ex);
-            //}
+                MessageBox.Show("Error:" + ex);
+            }
         }
         private int ComprobarEmpleado()
         {
@@ -256,5 +259,13 @@ namespace ProyectoFinalTallerBD
                 txtIdEmpleado.Text = idEmpleado;
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            dgvEmpleados.Size = new Size(616, 288);
+            grbModificarEmpleado.Visible = false;
+
+        }
+
     }
 }
