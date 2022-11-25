@@ -40,7 +40,16 @@ namespace ProyectoFinalTallerBD
                 cn.dt = new DataTable();
                 cn.da.Fill(cn.dt);
                 dgvEmpleados.DataSource = cn.dt;
+                dgvEmpleados.Columns["idEmpleado"].DisplayIndex = 0;
+                dgvEmpleados.Columns["primerNombre"].DisplayIndex = 1;
+                dgvEmpleados.Columns["segundoNombre"].DisplayIndex = 2;
+                dgvEmpleados.Columns["apellidoPaterno"].DisplayIndex = 3;
+                dgvEmpleados.Columns["apellidoMaterno"].DisplayIndex = 4;
+                dgvEmpleados.Columns["puesto"].DisplayIndex = 5;
+                dgvEmpleados.Columns["salario"].DisplayIndex =6;
+                dgvEmpleados.Columns["status"].DisplayIndex = 7;
                 dgvEmpleados.Columns["Editar"].DisplayIndex = 8;
+                dgvEmpleados.Columns["Eliminar"].DisplayIndex = 9;
             }
             catch (Exception)
             {
@@ -129,6 +138,37 @@ namespace ProyectoFinalTallerBD
                 txtModSalario.Text = dgvEmpleados.CurrentRow.Cells["salario"].Value.ToString();
 
             }
+            if (dgvEmpleados.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                string eliminarUsuario= dgvEmpleados.CurrentRow.Cells["idEmpleado"].Value.ToString();
+                string modStatus = "IN";
+
+                if (MessageBox.Show("¿Desea dar de baja a este empleado? "+eliminarUsuario,"Confirmar operación",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    try
+                    {
+                        cn.conectarbd.Open();
+                        cn.cmd = new SqlCommand("Update Empleados SET status = '" + modStatus + "' where idEmpleado='" + eliminarUsuario + "'", cn.conectarbd);
+                        cn.cmd.ExecuteNonQuery();
+
+                        MostrarEmpleados();
+                        //MessageBox.Show("Empleado ingresado al sistema");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error:"+ex);
+                    }
+                    finally
+                    {
+                        cn.conectarbd.Close();
+                    }
+                    
+                    
+                   
+                }
+
+            }
         }
 
         private void cmbTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,21 +242,16 @@ namespace ProyectoFinalTallerBD
         private void button3_Click(object sender, EventArgs e)
         {
             string buscarID = txtBuscarId.Text;
-            try
+            foreach (DataGridViewRow row in dgvEmpleados.Rows)
             {
-                cn.conectarbd.Open();
-                cn.cmd = new SqlCommand("SELECT * FROM WHERE idEmpleado='"+buscarID+"'", cn.conectarbd);
-                //cn.dr.
-                cn.cmd.ExecuteNonQuery();
-
-
-                MessageBox.Show("Empleado encontrado");
+                if (row.Cells["idEmpleado"].Value.ToString()==buscarID)
+                {
+                    MessageBox.Show("Usuario encontrado:"+ row.Cells["idEmpleado"].Value.ToString() +"\n"+ row.Cells["primerNombre"].Value.ToString());
+                    break;
+                }
+               
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error:" + ex);
-            }
+           
         }
         private int ComprobarEmpleado()
         {

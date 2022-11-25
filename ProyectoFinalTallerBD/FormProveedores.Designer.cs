@@ -30,6 +30,7 @@ namespace ProyectoFinalTallerBD
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProveedores));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grbDatosProveedores = new System.Windows.Forms.GroupBox();
@@ -43,7 +44,7 @@ namespace ProyectoFinalTallerBD
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,10 +55,13 @@ namespace ProyectoFinalTallerBD
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdProveedor = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grbDatosProveedores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.tabRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +83,7 @@ namespace ProyectoFinalTallerBD
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dgvProveedores);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -90,6 +94,7 @@ namespace ProyectoFinalTallerBD
             // 
             // grbDatosProveedores
             // 
+            this.grbDatosProveedores.Controls.Add(this.dateTimePicker2);
             this.grbDatosProveedores.Controls.Add(this.txtRC);
             this.grbDatosProveedores.Controls.Add(this.txtRSocial);
             this.grbDatosProveedores.Controls.Add(this.label4);
@@ -152,6 +157,7 @@ namespace ProyectoFinalTallerBD
             // 
             // txtid
             // 
+            this.txtid.Enabled = false;
             this.txtid.Location = new System.Drawing.Point(39, 55);
             this.txtid.Margin = new System.Windows.Forms.Padding(2);
             this.txtid.Name = "txtid";
@@ -204,11 +210,11 @@ namespace ProyectoFinalTallerBD
             this.label1.TabIndex = 1;
             this.label1.Text = "PROVEEDORES";
             // 
-            // dataGridView1
+            // dgvProveedores
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProveedores.AllowUserToDeleteRows = false;
+            this.dgvProveedores.AllowUserToResizeColumns = false;
+            this.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,17 +222,20 @@ namespace ProyectoFinalTallerBD
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 87);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(557, 238);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Eliminar});
+            this.dgvProveedores.Location = new System.Drawing.Point(8, 87);
+            this.dgvProveedores.MultiSelect = false;
+            this.dgvProveedores.Name = "dgvProveedores";
+            this.dgvProveedores.RowHeadersVisible = false;
+            this.dgvProveedores.RowHeadersWidth = 51;
+            this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProveedores.Size = new System.Drawing.Size(557, 238);
+            this.dgvProveedores.TabIndex = 0;
+            this.dgvProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedores_CellDoubleClick);
             // 
             // tabRegistro
             // 
@@ -331,6 +340,24 @@ namespace ProyectoFinalTallerBD
             this.txtIdProveedor.Size = new System.Drawing.Size(238, 20);
             this.txtIdProveedor.TabIndex = 42;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(18, 202);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(164, 20);
+            this.dateTimePicker2.TabIndex = 64;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Dar de baja";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // FormProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,7 +373,7 @@ namespace ProyectoFinalTallerBD
             this.tabPage1.PerformLayout();
             this.grbDatosProveedores.ResumeLayout(false);
             this.grbDatosProveedores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
             this.ResumeLayout(false);
@@ -361,7 +388,7 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProveedores;
         private System.Windows.Forms.TabPage tabRegistro;
         private System.Windows.Forms.TextBox txtRFC;
         private System.Windows.Forms.TextBox txtRazonSocial;
@@ -379,5 +406,8 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }
