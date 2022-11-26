@@ -29,9 +29,9 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
@@ -45,14 +45,12 @@ namespace ProyectoFinalTallerBD
             this.txtModTotal = new System.Windows.Forms.TextBox();
             this.txtModProductosComprados = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.cmbModActivo1 = new System.Windows.Forms.ComboBox();
             this.cmbModPagoCredito = new System.Windows.Forms.ComboBox();
             this.txtModIdCliente = new System.Windows.Forms.TextBox();
             this.txtModIdProducto = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.dtpModFechaVenta = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -65,14 +63,12 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.cmbFormaPago = new System.Windows.Forms.ComboBox();
             this.cmbPagoconCredito = new System.Windows.Forms.ComboBox();
-            this.cmbActivo = new System.Windows.Forms.ComboBox();
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.txtProductosComprados = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,7 +82,6 @@ namespace ProyectoFinalTallerBD
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.grbModificarVentasCredito = new System.Windows.Forms.GroupBox();
             this.cmbModPagoMensualRealizado = new System.Windows.Forms.ComboBox();
-            this.cmbModActivo = new System.Windows.Forms.ComboBox();
             this.txtModMontoLiquidado = new System.Windows.Forms.TextBox();
             this.txtModTotalLiquidar = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -94,7 +89,6 @@ namespace ProyectoFinalTallerBD
             this.label34 = new System.Windows.Forms.Label();
             this.dtpModFehcaNuevoPago = new System.Windows.Forms.DateTimePicker();
             this.dtpModFechaInicioVenta = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -114,10 +108,8 @@ namespace ProyectoFinalTallerBD
             this.tabRegVentasCrd = new System.Windows.Forms.TabPage();
             this.cmbPagoMensualRealizado = new System.Windows.Forms.ComboBox();
             this.btnRegistrarVCredito = new System.Windows.Forms.Button();
-            this.cmbActivoV = new System.Windows.Forms.ComboBox();
             this.txtmontoLiquidado = new System.Windows.Forms.TextBox();
             this.txttaLiquidar = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -157,11 +149,11 @@ namespace ProyectoFinalTallerBD
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.gpbVentas);
             this.tabPage1.Controls.Add(this.dgvVenta);
             this.tabPage1.Controls.Add(this.iconButton1);
             this.tabPage1.Controls.Add(this.txtBuscarV);
             this.tabPage1.Controls.Add(this.btnBuscarVenta);
-            this.tabPage1.Controls.Add(this.gpbVentas);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -177,14 +169,14 @@ namespace ProyectoFinalTallerBD
             this.dgvVenta.AllowUserToDeleteRows = false;
             this.dgvVenta.AllowUserToResizeColumns = false;
             this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
@@ -196,7 +188,7 @@ namespace ProyectoFinalTallerBD
             this.dgvVenta.RowHeadersVisible = false;
             this.dgvVenta.RowHeadersWidth = 51;
             this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVenta.Size = new System.Drawing.Size(557, 353);
+            this.dgvVenta.Size = new System.Drawing.Size(557, 347);
             this.dgvVenta.TabIndex = 71;
             this.dgvVenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellDoubleClick);
             // 
@@ -227,7 +219,7 @@ namespace ProyectoFinalTallerBD
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(584, 6);
+            this.iconButton1.Location = new System.Drawing.Point(433, 8);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(51, 35);
             this.iconButton1.TabIndex = 70;
@@ -238,7 +230,7 @@ namespace ProyectoFinalTallerBD
             // 
             // txtBuscarV
             // 
-            this.txtBuscarV.Location = new System.Drawing.Point(640, 15);
+            this.txtBuscarV.Location = new System.Drawing.Point(489, 17);
             this.txtBuscarV.Name = "txtBuscarV";
             this.txtBuscarV.Size = new System.Drawing.Size(100, 20);
             this.txtBuscarV.TabIndex = 69;
@@ -247,7 +239,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnBuscarVenta.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarVenta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscarVenta.Location = new System.Drawing.Point(755, 6);
+            this.btnBuscarVenta.Location = new System.Drawing.Point(604, 8);
             this.btnBuscarVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarVenta.Name = "btnBuscarVenta";
             this.btnBuscarVenta.Size = new System.Drawing.Size(109, 37);
@@ -262,14 +254,12 @@ namespace ProyectoFinalTallerBD
             this.gpbVentas.Controls.Add(this.txtModTotal);
             this.gpbVentas.Controls.Add(this.txtModProductosComprados);
             this.gpbVentas.Controls.Add(this.label37);
-            this.gpbVentas.Controls.Add(this.cmbModActivo1);
             this.gpbVentas.Controls.Add(this.cmbModPagoCredito);
             this.gpbVentas.Controls.Add(this.txtModIdCliente);
             this.gpbVentas.Controls.Add(this.txtModIdProducto);
             this.gpbVentas.Controls.Add(this.label17);
             this.gpbVentas.Controls.Add(this.label18);
             this.gpbVentas.Controls.Add(this.dtpModFechaVenta);
-            this.gpbVentas.Controls.Add(this.label19);
             this.gpbVentas.Controls.Add(this.label27);
             this.gpbVentas.Controls.Add(this.label28);
             this.gpbVentas.Controls.Add(this.label29);
@@ -279,7 +269,7 @@ namespace ProyectoFinalTallerBD
             this.gpbVentas.Controls.Add(this.btnCancelarVenta);
             this.gpbVentas.Controls.Add(this.txtModIdVenta1);
             this.gpbVentas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVentas.Location = new System.Drawing.Point(574, 62);
+            this.gpbVentas.Location = new System.Drawing.Point(374, 62);
             this.gpbVentas.Name = "gpbVentas";
             this.gpbVentas.Size = new System.Drawing.Size(352, 353);
             this.gpbVentas.TabIndex = 48;
@@ -289,12 +279,13 @@ namespace ProyectoFinalTallerBD
             // 
             // cmbModFormaPago
             // 
+            this.cmbModFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModFormaPago.FormattingEnabled = true;
             this.cmbModFormaPago.Items.AddRange(new object[] {
             "EFECTIVO",
             "TARJETA DE DEBITO",
             "TARJETA DE CREDITO"});
-            this.cmbModFormaPago.Location = new System.Drawing.Point(200, 188);
+            this.cmbModFormaPago.Location = new System.Drawing.Point(216, 194);
             this.cmbModFormaPago.Margin = new System.Windows.Forms.Padding(2);
             this.cmbModFormaPago.Name = "cmbModFormaPago";
             this.cmbModFormaPago.Size = new System.Drawing.Size(131, 26);
@@ -303,7 +294,7 @@ namespace ProyectoFinalTallerBD
             // txtModTotal
             // 
             this.txtModTotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModTotal.Location = new System.Drawing.Point(200, 165);
+            this.txtModTotal.Location = new System.Drawing.Point(216, 167);
             this.txtModTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtModTotal.Name = "txtModTotal";
             this.txtModTotal.Size = new System.Drawing.Size(131, 23);
@@ -312,7 +303,7 @@ namespace ProyectoFinalTallerBD
             // txtModProductosComprados
             // 
             this.txtModProductosComprados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModProductosComprados.Location = new System.Drawing.Point(200, 139);
+            this.txtModProductosComprados.Location = new System.Drawing.Point(216, 141);
             this.txtModProductosComprados.Margin = new System.Windows.Forms.Padding(2);
             this.txtModProductosComprados.Name = "txtModProductosComprados";
             this.txtModProductosComprados.Size = new System.Drawing.Size(131, 23);
@@ -321,31 +312,20 @@ namespace ProyectoFinalTallerBD
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(6, 253);
+            this.label37.Location = new System.Drawing.Point(6, 231);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(160, 18);
             this.label37.TabIndex = 110;
             this.label37.Text = "PAGO CON CREDITO";
             // 
-            // cmbModActivo1
-            // 
-            this.cmbModActivo1.FormattingEnabled = true;
-            this.cmbModActivo1.Items.AddRange(new object[] {
-            "S",
-            "N"});
-            this.cmbModActivo1.Location = new System.Drawing.Point(200, 216);
-            this.cmbModActivo1.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModActivo1.Name = "cmbModActivo1";
-            this.cmbModActivo1.Size = new System.Drawing.Size(131, 26);
-            this.cmbModActivo1.TabIndex = 109;
-            // 
             // cmbModPagoCredito
             // 
+            this.cmbModPagoCredito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModPagoCredito.FormattingEnabled = true;
             this.cmbModPagoCredito.Items.AddRange(new object[] {
             "S",
             "N"});
-            this.cmbModPagoCredito.Location = new System.Drawing.Point(200, 246);
+            this.cmbModPagoCredito.Location = new System.Drawing.Point(216, 226);
             this.cmbModPagoCredito.Margin = new System.Windows.Forms.Padding(2);
             this.cmbModPagoCredito.Name = "cmbModPagoCredito";
             this.cmbModPagoCredito.Size = new System.Drawing.Size(131, 26);
@@ -354,7 +334,7 @@ namespace ProyectoFinalTallerBD
             // txtModIdCliente
             // 
             this.txtModIdCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModIdCliente.Location = new System.Drawing.Point(200, 87);
+            this.txtModIdCliente.Location = new System.Drawing.Point(216, 89);
             this.txtModIdCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtModIdCliente.Name = "txtModIdCliente";
             this.txtModIdCliente.Size = new System.Drawing.Size(131, 23);
@@ -363,7 +343,7 @@ namespace ProyectoFinalTallerBD
             // txtModIdProducto
             // 
             this.txtModIdProducto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModIdProducto.Location = new System.Drawing.Point(200, 113);
+            this.txtModIdProducto.Location = new System.Drawing.Point(216, 115);
             this.txtModIdProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtModIdProducto.Name = "txtModIdProducto";
             this.txtModIdProducto.Size = new System.Drawing.Size(131, 23);
@@ -372,7 +352,7 @@ namespace ProyectoFinalTallerBD
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 195);
+            this.label17.Location = new System.Drawing.Point(6, 199);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(134, 18);
             this.label17.TabIndex = 105;
@@ -389,19 +369,10 @@ namespace ProyectoFinalTallerBD
             // 
             // dtpModFechaVenta
             // 
-            this.dtpModFechaVenta.Location = new System.Drawing.Point(200, 58);
+            this.dtpModFechaVenta.Location = new System.Drawing.Point(216, 60);
             this.dtpModFechaVenta.Name = "dtpModFechaVenta";
             this.dtpModFechaVenta.Size = new System.Drawing.Size(131, 26);
             this.dtpModFechaVenta.TabIndex = 101;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 223);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(65, 18);
-            this.label19.TabIndex = 100;
-            this.label19.Text = "ACTIVO";
             // 
             // label27
             // 
@@ -452,7 +423,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnEditarVenta.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarVenta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEditarVenta.Location = new System.Drawing.Point(44, 300);
+            this.btnEditarVenta.Location = new System.Drawing.Point(43, 279);
             this.btnEditarVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarVenta.Name = "btnEditarVenta";
             this.btnEditarVenta.Size = new System.Drawing.Size(93, 37);
@@ -465,7 +436,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnCancelarVenta.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarVenta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarVenta.Location = new System.Drawing.Point(200, 300);
+            this.btnCancelarVenta.Location = new System.Drawing.Point(199, 279);
             this.btnCancelarVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarVenta.Name = "btnCancelarVenta";
             this.btnCancelarVenta.Size = new System.Drawing.Size(102, 37);
@@ -477,7 +448,7 @@ namespace ProyectoFinalTallerBD
             // txtModIdVenta1
             // 
             this.txtModIdVenta1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModIdVenta1.Location = new System.Drawing.Point(200, 36);
+            this.txtModIdVenta1.Location = new System.Drawing.Point(216, 36);
             this.txtModIdVenta1.Margin = new System.Windows.Forms.Padding(2);
             this.txtModIdVenta1.Name = "txtModIdVenta1";
             this.txtModIdVenta1.Size = new System.Drawing.Size(131, 23);
@@ -497,14 +468,12 @@ namespace ProyectoFinalTallerBD
             // 
             this.tabRegistro.Controls.Add(this.cmbFormaPago);
             this.tabRegistro.Controls.Add(this.cmbPagoconCredito);
-            this.tabRegistro.Controls.Add(this.cmbActivo);
             this.tabRegistro.Controls.Add(this.dtpFechaVenta);
             this.tabRegistro.Controls.Add(this.label11);
             this.tabRegistro.Controls.Add(this.txtProductosComprados);
             this.tabRegistro.Controls.Add(this.txtTotal);
             this.tabRegistro.Controls.Add(this.txtIdProducto);
             this.tabRegistro.Controls.Add(this.txtIdCliente);
-            this.tabRegistro.Controls.Add(this.label10);
             this.tabRegistro.Controls.Add(this.label8);
             this.tabRegistro.Controls.Add(this.label6);
             this.tabRegistro.Controls.Add(this.label4);
@@ -529,7 +498,7 @@ namespace ProyectoFinalTallerBD
             "EFECTIVO",
             "TARJETA DE DEBITO",
             "TARJETA DE CREDITO"});
-            this.cmbFormaPago.Location = new System.Drawing.Point(390, 156);
+            this.cmbFormaPago.Location = new System.Drawing.Point(390, 159);
             this.cmbFormaPago.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFormaPago.Name = "cmbFormaPago";
             this.cmbFormaPago.Size = new System.Drawing.Size(152, 21);
@@ -541,23 +510,11 @@ namespace ProyectoFinalTallerBD
             this.cmbPagoconCredito.Items.AddRange(new object[] {
             "S",
             "N"});
-            this.cmbPagoconCredito.Location = new System.Drawing.Point(208, 221);
+            this.cmbPagoconCredito.Location = new System.Drawing.Point(208, 194);
             this.cmbPagoconCredito.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPagoconCredito.Name = "cmbPagoconCredito";
             this.cmbPagoconCredito.Size = new System.Drawing.Size(152, 21);
             this.cmbPagoconCredito.TabIndex = 71;
-            // 
-            // cmbActivo
-            // 
-            this.cmbActivo.FormattingEnabled = true;
-            this.cmbActivo.Items.AddRange(new object[] {
-            "S",
-            "N"});
-            this.cmbActivo.Location = new System.Drawing.Point(208, 189);
-            this.cmbActivo.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbActivo.Name = "cmbActivo";
-            this.cmbActivo.Size = new System.Drawing.Size(152, 21);
-            this.cmbActivo.TabIndex = 70;
             // 
             // dtpFechaVenta
             // 
@@ -570,7 +527,7 @@ namespace ProyectoFinalTallerBD
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(64, 227);
+            this.label11.Location = new System.Drawing.Point(64, 200);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(114, 13);
@@ -579,10 +536,10 @@ namespace ProyectoFinalTallerBD
             // 
             // txtProductosComprados
             // 
-            this.txtProductosComprados.Location = new System.Drawing.Point(513, 120);
+            this.txtProductosComprados.Location = new System.Drawing.Point(472, 120);
             this.txtProductosComprados.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductosComprados.Name = "txtProductosComprados";
-            this.txtProductosComprados.Size = new System.Drawing.Size(137, 20);
+            this.txtProductosComprados.Size = new System.Drawing.Size(70, 20);
             this.txtProductosComprados.TabIndex = 62;
             // 
             // txtTotal
@@ -608,16 +565,6 @@ namespace ProyectoFinalTallerBD
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(175, 20);
             this.txtIdCliente.TabIndex = 56;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(64, 195);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 54;
-            this.label10.Text = "ACTIVO";
             // 
             // label8
             // 
@@ -653,7 +600,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnRegistrarVenta.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarVenta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(324, 299);
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(238, 232);
             this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
             this.btnRegistrarVenta.Size = new System.Drawing.Size(103, 40);
@@ -736,7 +683,7 @@ namespace ProyectoFinalTallerBD
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 25;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(566, 7);
+            this.iconButton3.Location = new System.Drawing.Point(423, 15);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(51, 35);
             this.iconButton3.TabIndex = 67;
@@ -748,7 +695,6 @@ namespace ProyectoFinalTallerBD
             // grbModificarVentasCredito
             // 
             this.grbModificarVentasCredito.Controls.Add(this.cmbModPagoMensualRealizado);
-            this.grbModificarVentasCredito.Controls.Add(this.cmbModActivo);
             this.grbModificarVentasCredito.Controls.Add(this.txtModMontoLiquidado);
             this.grbModificarVentasCredito.Controls.Add(this.txtModTotalLiquidar);
             this.grbModificarVentasCredito.Controls.Add(this.label35);
@@ -756,7 +702,6 @@ namespace ProyectoFinalTallerBD
             this.grbModificarVentasCredito.Controls.Add(this.label34);
             this.grbModificarVentasCredito.Controls.Add(this.dtpModFehcaNuevoPago);
             this.grbModificarVentasCredito.Controls.Add(this.dtpModFechaInicioVenta);
-            this.grbModificarVentasCredito.Controls.Add(this.label24);
             this.grbModificarVentasCredito.Controls.Add(this.label25);
             this.grbModificarVentasCredito.Controls.Add(this.label26);
             this.grbModificarVentasCredito.Controls.Add(this.label30);
@@ -768,7 +713,7 @@ namespace ProyectoFinalTallerBD
             this.grbModificarVentasCredito.Controls.Add(this.txtModIdVenta);
             this.grbModificarVentasCredito.Controls.Add(this.txtModIdVentaCredito);
             this.grbModificarVentasCredito.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbModificarVentasCredito.Location = new System.Drawing.Point(570, 59);
+            this.grbModificarVentasCredito.Location = new System.Drawing.Point(355, 59);
             this.grbModificarVentasCredito.Name = "grbModificarVentasCredito";
             this.grbModificarVentasCredito.Size = new System.Drawing.Size(352, 353);
             this.grbModificarVentasCredito.TabIndex = 47;
@@ -778,32 +723,21 @@ namespace ProyectoFinalTallerBD
             // 
             // cmbModPagoMensualRealizado
             // 
+            this.cmbModPagoMensualRealizado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModPagoMensualRealizado.FormattingEnabled = true;
             this.cmbModPagoMensualRealizado.Items.AddRange(new object[] {
             "S",
             "N"});
-            this.cmbModPagoMensualRealizado.Location = new System.Drawing.Point(200, 169);
+            this.cmbModPagoMensualRealizado.Location = new System.Drawing.Point(211, 169);
             this.cmbModPagoMensualRealizado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbModPagoMensualRealizado.Name = "cmbModPagoMensualRealizado";
             this.cmbModPagoMensualRealizado.Size = new System.Drawing.Size(131, 26);
             this.cmbModPagoMensualRealizado.TabIndex = 109;
             // 
-            // cmbModActivo
-            // 
-            this.cmbModActivo.FormattingEnabled = true;
-            this.cmbModActivo.Items.AddRange(new object[] {
-            "S",
-            "N"});
-            this.cmbModActivo.Location = new System.Drawing.Point(200, 251);
-            this.cmbModActivo.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModActivo.Name = "cmbModActivo";
-            this.cmbModActivo.Size = new System.Drawing.Size(131, 26);
-            this.cmbModActivo.TabIndex = 108;
-            // 
             // txtModMontoLiquidado
             // 
             this.txtModMontoLiquidado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModMontoLiquidado.Location = new System.Drawing.Point(200, 227);
+            this.txtModMontoLiquidado.Location = new System.Drawing.Point(211, 227);
             this.txtModMontoLiquidado.Margin = new System.Windows.Forms.Padding(2);
             this.txtModMontoLiquidado.Name = "txtModMontoLiquidado";
             this.txtModMontoLiquidado.Size = new System.Drawing.Size(131, 23);
@@ -812,7 +746,7 @@ namespace ProyectoFinalTallerBD
             // txtModTotalLiquidar
             // 
             this.txtModTotalLiquidar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModTotalLiquidar.Location = new System.Drawing.Point(200, 198);
+            this.txtModTotalLiquidar.Location = new System.Drawing.Point(211, 198);
             this.txtModTotalLiquidar.Margin = new System.Windows.Forms.Padding(2);
             this.txtModTotalLiquidar.Name = "txtModTotalLiquidar";
             this.txtModTotalLiquidar.Size = new System.Drawing.Size(131, 23);
@@ -829,7 +763,7 @@ namespace ProyectoFinalTallerBD
             // 
             // dtpModFechaLiquidacion
             // 
-            this.dtpModFechaLiquidacion.Location = new System.Drawing.Point(200, 140);
+            this.dtpModFechaLiquidacion.Location = new System.Drawing.Point(211, 140);
             this.dtpModFechaLiquidacion.Name = "dtpModFechaLiquidacion";
             this.dtpModFechaLiquidacion.Size = new System.Drawing.Size(131, 26);
             this.dtpModFechaLiquidacion.TabIndex = 104;
@@ -845,26 +779,17 @@ namespace ProyectoFinalTallerBD
             // 
             // dtpModFehcaNuevoPago
             // 
-            this.dtpModFehcaNuevoPago.Location = new System.Drawing.Point(200, 114);
+            this.dtpModFehcaNuevoPago.Location = new System.Drawing.Point(211, 114);
             this.dtpModFehcaNuevoPago.Name = "dtpModFehcaNuevoPago";
             this.dtpModFehcaNuevoPago.Size = new System.Drawing.Size(131, 26);
             this.dtpModFehcaNuevoPago.TabIndex = 102;
             // 
             // dtpModFechaInicioVenta
             // 
-            this.dtpModFechaInicioVenta.Location = new System.Drawing.Point(200, 85);
+            this.dtpModFechaInicioVenta.Location = new System.Drawing.Point(211, 85);
             this.dtpModFechaInicioVenta.Name = "dtpModFechaInicioVenta";
             this.dtpModFechaInicioVenta.Size = new System.Drawing.Size(131, 26);
             this.dtpModFechaInicioVenta.TabIndex = 101;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 258);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(55, 18);
-            this.label24.TabIndex = 100;
-            this.label24.Text = "Activo";
             // 
             // label25
             // 
@@ -949,7 +874,7 @@ namespace ProyectoFinalTallerBD
             // txtModIdVenta
             // 
             this.txtModIdVenta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModIdVenta.Location = new System.Drawing.Point(200, 61);
+            this.txtModIdVenta.Location = new System.Drawing.Point(211, 61);
             this.txtModIdVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtModIdVenta.Name = "txtModIdVenta";
             this.txtModIdVenta.Size = new System.Drawing.Size(131, 23);
@@ -958,15 +883,16 @@ namespace ProyectoFinalTallerBD
             // txtModIdVentaCredito
             // 
             this.txtModIdVentaCredito.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModIdVentaCredito.Location = new System.Drawing.Point(200, 36);
+            this.txtModIdVentaCredito.Location = new System.Drawing.Point(211, 36);
             this.txtModIdVentaCredito.Margin = new System.Windows.Forms.Padding(2);
             this.txtModIdVentaCredito.Name = "txtModIdVentaCredito";
+            this.txtModIdVentaCredito.ReadOnly = true;
             this.txtModIdVentaCredito.Size = new System.Drawing.Size(131, 23);
             this.txtModIdVentaCredito.TabIndex = 77;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(622, 16);
+            this.txtBuscar.Location = new System.Drawing.Point(479, 24);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 46;
@@ -975,7 +901,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnBuscarVC.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarVC.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscarVC.Location = new System.Drawing.Point(737, 7);
+            this.btnBuscarVC.Location = new System.Drawing.Point(594, 15);
             this.btnBuscarVC.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarVC.Name = "btnBuscarVC";
             this.btnBuscarVC.Size = new System.Drawing.Size(109, 37);
@@ -989,15 +915,14 @@ namespace ProyectoFinalTallerBD
             this.dgvVentasCrd.AllowUserToAddRows = false;
             this.dgvVentasCrd.AllowUserToDeleteRows = false;
             this.dgvVentasCrd.AllowUserToResizeColumns = false;
-            this.dgvVentasCrd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentasCrd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentasCrd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvVentasCrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentasCrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar2,
@@ -1021,6 +946,7 @@ namespace ProyectoFinalTallerBD
             this.Editar2.MinimumWidth = 6;
             this.Editar2.Name = "Editar2";
             this.Editar2.ReadOnly = true;
+            this.Editar2.Width = 169;
             // 
             // Eliminar2
             // 
@@ -1029,6 +955,7 @@ namespace ProyectoFinalTallerBD
             this.Eliminar2.MinimumWidth = 6;
             this.Eliminar2.Name = "Eliminar2";
             this.Eliminar2.ReadOnly = true;
+            this.Eliminar2.Width = 170;
             // 
             // label9
             // 
@@ -1044,10 +971,8 @@ namespace ProyectoFinalTallerBD
             // 
             this.tabRegVentasCrd.Controls.Add(this.cmbPagoMensualRealizado);
             this.tabRegVentasCrd.Controls.Add(this.btnRegistrarVCredito);
-            this.tabRegVentasCrd.Controls.Add(this.cmbActivoV);
             this.tabRegVentasCrd.Controls.Add(this.txtmontoLiquidado);
             this.tabRegVentasCrd.Controls.Add(this.txttaLiquidar);
-            this.tabRegVentasCrd.Controls.Add(this.label23);
             this.tabRegVentasCrd.Controls.Add(this.label22);
             this.tabRegVentasCrd.Controls.Add(this.label21);
             this.tabRegVentasCrd.Controls.Add(this.label20);
@@ -1070,11 +995,12 @@ namespace ProyectoFinalTallerBD
             // 
             // cmbPagoMensualRealizado
             // 
+            this.cmbPagoMensualRealizado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPagoMensualRealizado.FormattingEnabled = true;
             this.cmbPagoMensualRealizado.Items.AddRange(new object[] {
             "S",
             "N"});
-            this.cmbPagoMensualRealizado.Location = new System.Drawing.Point(265, 152);
+            this.cmbPagoMensualRealizado.Location = new System.Drawing.Point(187, 162);
             this.cmbPagoMensualRealizado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPagoMensualRealizado.Name = "cmbPagoMensualRealizado";
             this.cmbPagoMensualRealizado.Size = new System.Drawing.Size(152, 21);
@@ -1084,7 +1010,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnRegistrarVCredito.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarVCredito.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegistrarVCredito.Location = new System.Drawing.Point(361, 292);
+            this.btnRegistrarVCredito.Location = new System.Drawing.Point(172, 266);
             this.btnRegistrarVCredito.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarVCredito.Name = "btnRegistrarVCredito";
             this.btnRegistrarVCredito.Size = new System.Drawing.Size(167, 54);
@@ -1093,71 +1019,50 @@ namespace ProyectoFinalTallerBD
             this.btnRegistrarVCredito.UseVisualStyleBackColor = true;
             this.btnRegistrarVCredito.Click += new System.EventHandler(this.btnRegistrarVCredito_Click);
             // 
-            // cmbActivoV
-            // 
-            this.cmbActivoV.FormattingEnabled = true;
-            this.cmbActivoV.Items.AddRange(new object[] {
-            "S",
-            "N"});
-            this.cmbActivoV.Location = new System.Drawing.Point(265, 207);
-            this.cmbActivoV.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbActivoV.Name = "cmbActivoV";
-            this.cmbActivoV.Size = new System.Drawing.Size(152, 21);
-            this.cmbActivoV.TabIndex = 23;
-            // 
             // txtmontoLiquidado
             // 
-            this.txtmontoLiquidado.Location = new System.Drawing.Point(583, 180);
+            this.txtmontoLiquidado.Location = new System.Drawing.Point(187, 214);
             this.txtmontoLiquidado.Name = "txtmontoLiquidado";
             this.txtmontoLiquidado.Size = new System.Drawing.Size(152, 20);
             this.txtmontoLiquidado.TabIndex = 22;
             // 
             // txttaLiquidar
             // 
-            this.txttaLiquidar.Location = new System.Drawing.Point(265, 180);
+            this.txttaLiquidar.Location = new System.Drawing.Point(187, 188);
             this.txttaLiquidar.Name = "txttaLiquidar";
             this.txttaLiquidar.Size = new System.Drawing.Size(152, 20);
             this.txttaLiquidar.TabIndex = 21;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(114, 213);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 13);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Activo";
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(468, 184);
+            this.label22.Location = new System.Drawing.Point(27, 217);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 13);
+            this.label22.Size = new System.Drawing.Size(109, 13);
             this.label22.TabIndex = 16;
-            this.label22.Text = "Monto Liquidado";
+            this.label22.Text = "MONTO LIQUIDADO";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(114, 184);
+            this.label21.Location = new System.Drawing.Point(27, 191);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(80, 13);
+            this.label21.Size = new System.Drawing.Size(106, 13);
             this.label21.TabIndex = 15;
-            this.label21.Text = "Total a Liquidar";
+            this.label21.Text = "TOTAL A LIQUIDAR";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(114, 158);
+            this.label20.Location = new System.Drawing.Point(27, 165);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(125, 13);
+            this.label20.Size = new System.Drawing.Size(156, 13);
             this.label20.TabIndex = 14;
-            this.label20.Text = "Pago Mensual Realizado";
+            this.label20.Text = "PAGO MENSUAL REALIZADO";
             // 
             // dtpLiquidacion
             // 
-            this.dtpLiquidacion.Location = new System.Drawing.Point(618, 124);
+            this.dtpLiquidacion.Location = new System.Drawing.Point(187, 134);
             this.dtpLiquidacion.Name = "dtpLiquidacion";
             this.dtpLiquidacion.Size = new System.Drawing.Size(200, 20);
             this.dtpLiquidacion.TabIndex = 9;
@@ -1165,7 +1070,7 @@ namespace ProyectoFinalTallerBD
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(493, 128);
+            this.label16.Location = new System.Drawing.Point(27, 140);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(114, 13);
             this.label16.TabIndex = 8;
@@ -1173,7 +1078,7 @@ namespace ProyectoFinalTallerBD
             // 
             // dtpNuevoPago
             // 
-            this.dtpNuevoPago.Location = new System.Drawing.Point(274, 124);
+            this.dtpNuevoPago.Location = new System.Drawing.Point(187, 108);
             this.dtpNuevoPago.Name = "dtpNuevoPago";
             this.dtpNuevoPago.Size = new System.Drawing.Size(200, 20);
             this.dtpNuevoPago.TabIndex = 7;
@@ -1181,7 +1086,7 @@ namespace ProyectoFinalTallerBD
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(114, 128);
+            this.label15.Location = new System.Drawing.Point(27, 112);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(134, 13);
             this.label15.TabIndex = 6;
@@ -1189,7 +1094,7 @@ namespace ProyectoFinalTallerBD
             // 
             // dtpFechaInicioVentaCrd
             // 
-            this.dtpFechaInicioVentaCrd.Location = new System.Drawing.Point(274, 96);
+            this.dtpFechaInicioVentaCrd.Location = new System.Drawing.Point(187, 80);
             this.dtpFechaInicioVentaCrd.Name = "dtpFechaInicioVentaCrd";
             this.dtpFechaInicioVentaCrd.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaInicioVentaCrd.TabIndex = 5;
@@ -1197,7 +1102,7 @@ namespace ProyectoFinalTallerBD
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(114, 100);
+            this.label14.Location = new System.Drawing.Point(27, 84);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(152, 13);
             this.label14.TabIndex = 4;
@@ -1205,7 +1110,7 @@ namespace ProyectoFinalTallerBD
             // 
             // txtVenta
             // 
-            this.txtVenta.Location = new System.Drawing.Point(265, 72);
+            this.txtVenta.Location = new System.Drawing.Point(187, 57);
             this.txtVenta.Name = "txtVenta";
             this.txtVenta.Size = new System.Drawing.Size(152, 20);
             this.txtVenta.TabIndex = 3;
@@ -1213,7 +1118,7 @@ namespace ProyectoFinalTallerBD
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(114, 76);
+            this.label13.Location = new System.Drawing.Point(27, 60);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 2;
@@ -1221,7 +1126,7 @@ namespace ProyectoFinalTallerBD
             // 
             // txtVentasCredito
             // 
-            this.txtVentasCredito.Location = new System.Drawing.Point(265, 44);
+            this.txtVentasCredito.Location = new System.Drawing.Point(187, 29);
             this.txtVentasCredito.Name = "txtVentasCredito";
             this.txtVentasCredito.Size = new System.Drawing.Size(152, 20);
             this.txtVentasCredito.TabIndex = 1;
@@ -1229,7 +1134,7 @@ namespace ProyectoFinalTallerBD
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(114, 48);
+            this.label12.Location = new System.Drawing.Point(27, 32);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(108, 13);
             this.label12.TabIndex = 0;
@@ -1278,14 +1183,12 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.TextBox txtModTotal;
         private System.Windows.Forms.TextBox txtModProductosComprados;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.ComboBox cmbModActivo1;
         private System.Windows.Forms.ComboBox cmbModPagoCredito;
         private System.Windows.Forms.TextBox txtModIdCliente;
         private System.Windows.Forms.TextBox txtModIdProducto;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DateTimePicker dtpModFechaVenta;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
@@ -1298,14 +1201,12 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.TabPage tabRegistro;
         private System.Windows.Forms.ComboBox cmbFormaPago;
         private System.Windows.Forms.ComboBox cmbPagoconCredito;
-        private System.Windows.Forms.ComboBox cmbActivo;
         private System.Windows.Forms.DateTimePicker dtpFechaVenta;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtProductosComprados;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.TextBox txtIdCliente;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -1319,7 +1220,6 @@ namespace ProyectoFinalTallerBD
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.GroupBox grbModificarVentasCredito;
         private System.Windows.Forms.ComboBox cmbModPagoMensualRealizado;
-        private System.Windows.Forms.ComboBox cmbModActivo;
         private System.Windows.Forms.TextBox txtModMontoLiquidado;
         private System.Windows.Forms.TextBox txtModTotalLiquidar;
         private System.Windows.Forms.Label label35;
@@ -1327,7 +1227,6 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DateTimePicker dtpModFehcaNuevoPago;
         private System.Windows.Forms.DateTimePicker dtpModFechaInicioVenta;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label30;
@@ -1347,10 +1246,8 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.TabPage tabRegVentasCrd;
         private System.Windows.Forms.ComboBox cmbPagoMensualRealizado;
         private System.Windows.Forms.Button btnRegistrarVCredito;
-        private System.Windows.Forms.ComboBox cmbActivoV;
         private System.Windows.Forms.TextBox txtmontoLiquidado;
         private System.Windows.Forms.TextBox txttaLiquidar;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;

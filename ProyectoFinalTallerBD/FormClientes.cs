@@ -172,10 +172,11 @@ namespace ProyectoFinalTallerBD
                 if (row.Cells["idCliente"].Value.ToString() == buscarID)
                 {
                     MessageBox.Show("Cliente encontrado:" + row.Cells["idCliente"].Value.ToString() + "\n" + row.Cells["primerNombre"].Value.ToString());
-                    break;
+                    return;
                 }
 
             }
+            MessageBox.Show("Cliente Inexistente");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

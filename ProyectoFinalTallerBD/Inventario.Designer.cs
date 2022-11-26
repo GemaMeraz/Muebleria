@@ -31,11 +31,19 @@ namespace ProyectoFinalTallerBD
         {
             this.tabInventario = new System.Windows.Forms.TabControl();
             this.tabPageConsultaInv = new System.Windows.Forms.TabPage();
+            this.grpEditarInv = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.dtpModFechaModif = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtModStock = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtModIdProducto = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.txtBuscarInv = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageRegInv = new System.Windows.Forms.TabPage();
             this.dtpFechaModificacion = new System.Windows.Forms.DateTimePicker();
@@ -47,6 +55,7 @@ namespace ProyectoFinalTallerBD
             this.txtIdProdInventario = new System.Windows.Forms.TextBox();
             this.tabInventario.SuspendLayout();
             this.tabPageConsultaInv.SuspendLayout();
+            this.grpEditarInv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPageRegInv.SuspendLayout();
             this.SuspendLayout();
@@ -63,10 +72,9 @@ namespace ProyectoFinalTallerBD
             // 
             // tabPageConsultaInv
             // 
+            this.tabPageConsultaInv.Controls.Add(this.grpEditarInv);
             this.tabPageConsultaInv.Controls.Add(this.txtBuscarInv);
-            this.tabPageConsultaInv.Controls.Add(this.button3);
-            this.tabPageConsultaInv.Controls.Add(this.button2);
-            this.tabPageConsultaInv.Controls.Add(this.button1);
+            this.tabPageConsultaInv.Controls.Add(this.btnBuscar);
             this.tabPageConsultaInv.Controls.Add(this.dataGridView1);
             this.tabPageConsultaInv.Controls.Add(this.label1);
             this.tabPageConsultaInv.Location = new System.Drawing.Point(4, 22);
@@ -74,61 +82,145 @@ namespace ProyectoFinalTallerBD
             this.tabPageConsultaInv.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageConsultaInv.Size = new System.Drawing.Size(654, 418);
             this.tabPageConsultaInv.TabIndex = 0;
-            this.tabPageConsultaInv.Text = "REGISTRO DE INVENTARIO";
+            this.tabPageConsultaInv.Text = "INVENTARIO";
             this.tabPageConsultaInv.UseVisualStyleBackColor = true;
+            // 
+            // grpEditarInv
+            // 
+            this.grpEditarInv.Controls.Add(this.btnCancelar);
+            this.grpEditarInv.Controls.Add(this.dtpModFechaModif);
+            this.grpEditarInv.Controls.Add(this.label7);
+            this.grpEditarInv.Controls.Add(this.txtModStock);
+            this.grpEditarInv.Controls.Add(this.label6);
+            this.grpEditarInv.Controls.Add(this.txtModIdProducto);
+            this.grpEditarInv.Controls.Add(this.label4);
+            this.grpEditarInv.Controls.Add(this.btnEditar);
+            this.grpEditarInv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpEditarInv.Location = new System.Drawing.Point(333, 54);
+            this.grpEditarInv.Name = "grpEditarInv";
+            this.grpEditarInv.Size = new System.Drawing.Size(315, 358);
+            this.grpEditarInv.TabIndex = 43;
+            this.grpEditarInv.TabStop = false;
+            this.grpEditarInv.Text = "Información Inventario";
+            this.grpEditarInv.Visible = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(187, 299);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(109, 37);
+            this.btnCancelar.TabIndex = 47;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // dtpModFechaModif
+            // 
+            this.dtpModFechaModif.Location = new System.Drawing.Point(31, 206);
+            this.dtpModFechaModif.Name = "dtpModFechaModif";
+            this.dtpModFechaModif.Size = new System.Drawing.Size(265, 23);
+            this.dtpModFechaModif.TabIndex = 46;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 17);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "FECHA DE MODIFICACIÓN";
+            // 
+            // txtModStock
+            // 
+            this.txtModStock.Location = new System.Drawing.Point(163, 105);
+            this.txtModStock.Name = "txtModStock";
+            this.txtModStock.Size = new System.Drawing.Size(133, 23);
+            this.txtModStock.TabIndex = 44;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "STOCK";
+            // 
+            // txtModIdProducto
+            // 
+            this.txtModIdProducto.Location = new System.Drawing.Point(163, 26);
+            this.txtModIdProducto.Name = "txtModIdProducto";
+            this.txtModIdProducto.ReadOnly = true;
+            this.txtModIdProducto.Size = new System.Drawing.Size(133, 23);
+            this.txtModIdProducto.TabIndex = 42;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 17);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "ID PRODUCTO";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditar.Location = new System.Drawing.Point(31, 299);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(109, 37);
+            this.btnEditar.TabIndex = 40;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // txtBuscarInv
             // 
-            this.txtBuscarInv.Location = new System.Drawing.Point(509, 103);
+            this.txtBuscarInv.Location = new System.Drawing.Point(406, 15);
             this.txtBuscarInv.Name = "txtBuscarInv";
             this.txtBuscarInv.Size = new System.Drawing.Size(109, 20);
             this.txtBuscarInv.TabIndex = 42;
             // 
-            // button3
+            // btnBuscar
             // 
-            this.button3.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(509, 145);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 37);
-            this.button3.TabIndex = 41;
-            this.button3.Text = "BUSCAR";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(509, 247);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 37);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "ELIMINAR";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(509, 196);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 37);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "EDITAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscar.Location = new System.Drawing.Point(520, 6);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(109, 37);
+            this.btnBuscar.TabIndex = 41;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 41);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 54);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(455, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(623, 357);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // label1
             // 
@@ -235,6 +327,8 @@ namespace ProyectoFinalTallerBD
             this.tabInventario.ResumeLayout(false);
             this.tabPageConsultaInv.ResumeLayout(false);
             this.tabPageConsultaInv.PerformLayout();
+            this.grpEditarInv.ResumeLayout(false);
+            this.grpEditarInv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPageRegInv.ResumeLayout(false);
             this.tabPageRegInv.PerformLayout();
@@ -249,9 +343,7 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.TabPage tabPageRegInv;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscarInv;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label5;
@@ -260,5 +352,15 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.TextBox txtIdProdInventario;
         private System.Windows.Forms.Button btnRegistrarInventario;
         private System.Windows.Forms.DateTimePicker dtpFechaModificacion;
+        private System.Windows.Forms.GroupBox grpEditarInv;
+        private System.Windows.Forms.DateTimePicker dtpModFechaModif;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtModStock;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtModIdProducto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

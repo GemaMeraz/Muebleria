@@ -87,14 +87,14 @@ namespace ProyectoFinalTallerBD
             string modPagoMensualRealizado = cmbModPagoMensualRealizado.Text;
             double modTotalLiquidar = double.Parse(txtModTotalLiquidar.Text);
             double modMontoLiquidado = double.Parse(txtModMontoLiquidado.Text);
-            string modActivo = cmbModActivo.Text;
+            string modActivo = "S";
             try
             {
                 cn.conectarbd.Open();
-                cn.cmd = new SqlCommand("Update VentasCredito SET idVenta='" + modIdVenta + "',fechaInicioVenta='" + modFechaInicioVenta + "', fechaNuevoPago='" + modFechaNuevoPago + "', fechaLiquidacion='" + modFechaLiquidacion + "', pagoMensualRealizado='" + modPagoMensualRealizado + "', totalALiquidar='" + modTotalLiquidar + "', montoLiquidado'" + modMontoLiquidado + "',status='" + modActivo + "' where idVentasCredito=" + modIdVentaCredito, cn.conectarbd);
+                cn.cmd = new SqlCommand("Update VentasCredito SET idVenta='" + modIdVenta + "',fechaInicioVenta='" + modFechaInicioVenta + "', fechaNuevoPago='" + modFechaNuevoPago + "', fechaLiquidacion='" + modFechaLiquidacion + "', pagoMensualRealizado='" + modPagoMensualRealizado + "', totalALiquidar=" + modTotalLiquidar + ", montoLiquidado=" + modMontoLiquidado + ",status='" + modActivo + "' where idVentasCredito=" + modIdVentaCredito, cn.conectarbd);
                 cn.cmd.ExecuteNonQuery();
 
-                dgvVentasCrd.Size = new Size(557, 238);
+                dgvVentasCrd.Size = new Size(557, 353);
                 grbModificarVentasCredito.Visible = false;
                 MessageBox.Show("Venta a credito ingresada al sistema");
                 Cargardgv();
@@ -141,7 +141,7 @@ namespace ProyectoFinalTallerBD
 
         private void btnCancelarVC_Click(object sender, EventArgs e)
         {
-            dgvVentasCrd.Size = new Size(557, 238);
+            dgvVentasCrd.Size = new Size(557, 353);
             grbModificarVentasCredito.Visible = false;
         }
 
@@ -166,9 +166,9 @@ namespace ProyectoFinalTallerBD
 
         private void dgvVentasCrd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvVentasCrd.Columns[e.ColumnIndex].Name == "Editar")
+            if (dgvVentasCrd.Columns[e.ColumnIndex].Name == "Editar2")
             {
-                dgvVentasCrd.Size = new Size(421, 238);
+                dgvVentasCrd.Size = new Size(342, 353);
                 grbModificarVentasCredito.Visible = true;
                 //int idProvedorCon =Convert.ToInt32(dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString());
                 //txtIdProveedor.Text = idProvedorCon.ToString();
@@ -180,8 +180,7 @@ namespace ProyectoFinalTallerBD
                 cmbModPagoMensualRealizado.Text = dgvVentasCrd.CurrentRow.Cells["pagoMensualRealizado"].Value.ToString();
                 txtModTotalLiquidar.Text = dgvVentasCrd.CurrentRow.Cells["totalALiquidar"].Value.ToString();
                 txtModMontoLiquidado.Text = dgvVentasCrd.CurrentRow.Cells["montoLiquidado"].Value.ToString();
-                cmbModActivo.Text = dgvVentasCrd.CurrentRow.Cells["status"].Value.ToString();
-                dgvVentasCrd.CurrentRow.Cells["Editar"].Style.SelectionBackColor = Color.CadetBlue;
+                dgvVentasCrd.CurrentRow.Cells["Editar2"].Style.SelectionBackColor = Color.CadetBlue;
                 //dgvProveedores.AllowUserToAddRows = false;
                 //dgvProveedores.AllowUserToDeleteRows = false;
                 //dataG.AllowUserToResizeColumns = false;
@@ -189,7 +188,7 @@ namespace ProyectoFinalTallerBD
                 //dataGridView1.Columns["Editar"].ReadOnly = false;
 
             }
-            if (dgvVentasCrd.Columns[e.ColumnIndex].Name == "Eliminar")
+            if (dgvVentasCrd.Columns[e.ColumnIndex].Name == "Eliminar2")
             {
                 string eliminarUsuario = dgvVentasCrd.CurrentRow.Cells["idVentasCredito"].Value.ToString();
                 string modactivo = "N";
@@ -231,18 +230,19 @@ namespace ProyectoFinalTallerBD
             string PagoMensualRealizado = cmbPagoMensualRealizado.Text;
             double TotalLiquidar = double.Parse(txttaLiquidar.Text);
             double MontoLiquidado = double.Parse(txtmontoLiquidado.Text);
-            string Activo = cmbActivoV.Text;
+            string Activo = "S";
             int var = ComprobarVentaCredito();
             if (IdVentaCredito != var)
             {
                 try
                 {
                     cn.conectarbd.Open();
-                    cn.cmd = new SqlCommand("Insert into VentasCredito(idVentasCredito,idVenta,fechaInicioVenta,fechaNuevoPago,fechaLiquidacion,pagoMensualRealizado,totalALiquidar,montoLiquidado,status) values(" + IdVentaCredito + ",'" + IdVenta + "','" + FechaInicioVenta + "','" + FechaNuevoPago + "','" + FechaLiquidacion + "','" + PagoMensualRealizado + "','" + TotalLiquidar + "','" + MontoLiquidado + "','" + Activo + "')", cn.conectarbd);
+                    cn.cmd = new SqlCommand("Insert into VentasCredito(idVentasCredito,idVenta,fechaInicioVenta,fechaNuevoPago,fechaLiquidacion,pagoMensualRealizado,totalALiquidar,montoLiquidado,status) values(" + IdVentaCredito + "," + IdVenta + ",'" + FechaInicioVenta + "','" + FechaNuevoPago + "','" + FechaLiquidacion + "','" + PagoMensualRealizado + "'," + TotalLiquidar + "," + MontoLiquidado + ",'" + Activo + "')", cn.conectarbd);
                     cn.cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Venta con Credito ingresada al sistema");
                     Cargardgv();
+                    tabControl1.SelectedIndex = 2;
                 }
                 catch (Exception ex)
                 {
@@ -322,7 +322,7 @@ namespace ProyectoFinalTallerBD
             int ProductosComprados = int.Parse(txtProductosComprados.Text);
             double Total = double.Parse(txtTotal.Text);
             string FormaPago = cmbFormaPago.Text;
-            string status = cmbActivo.Text;
+            string status = "S";
             string PagoconCredito = cmbPagoconCredito.Text;
             int var = ComprobarVenta();
             if (idVenta1 != var)
@@ -373,7 +373,7 @@ namespace ProyectoFinalTallerBD
 
         private void btnCancelarVenta_Click(object sender, EventArgs e)
         {
-            dgvVenta.Size = new Size(557, 238);
+            dgvVenta.Size = new Size(557, 347);
             gpbVentas.Visible = false;
         }
 
@@ -386,17 +386,16 @@ namespace ProyectoFinalTallerBD
             int modProductosComprados = int.Parse(txtModProductosComprados.Text);
             double modTotal = double.Parse(txtModTotal.Text);
             string modFormaPago = cmbModFormaPago.Text;
-            string modstatus = cmbModActivo1.Text;
             string modPagoconCredito = cmbModPagoCredito.Text;
             try
             {
                 cn.conectarbd.Open();
-                cn.cmd = new SqlCommand("Update Ventas SET fechaVenta='" + modFechaVenta + "', idCliente='" + modidCliente + "', idProducto='" + modidProducto + "', productosComprados='" + modProductosComprados + "', total='" + modTotal + "', formaPago'" + modFormaPago + "',status='" + modstatus + "',pagoConCredito='" + modPagoconCredito + "' where idVenta=" + modidVenta1, cn.conectarbd);
+                cn.cmd = new SqlCommand("Update Ventas SET fechaVenta='" + modFechaVenta + "', idCliente='" + modidCliente + "', idProducto='" + modidProducto + "', productosComprados='" + modProductosComprados + "', total='" + modTotal + "', formaPago='" + modFormaPago + "',pagoConCredito='" + modPagoconCredito + "' where idVenta=" + modidVenta1, cn.conectarbd);
                 cn.cmd.ExecuteNonQuery();
 
-                dgvVenta.Size = new Size(557, 238);
+                dgvVenta.Size = new Size(557, 347);
                 gpbVentas.Visible = false;
-                MessageBox.Show("Venta ingresada al sistema");
+                MessageBox.Show("Venta editada");
                 CargardgvVenta();
 
             }
@@ -443,7 +442,7 @@ namespace ProyectoFinalTallerBD
         {
             if (dgvVenta.Columns[e.ColumnIndex].Name == "Editar")
             {
-                dgvVenta.Size = new Size(421, 238);
+                dgvVenta.Size = new Size(357, 353);
                 gpbVentas.Visible = true;
                 //int idProvedorCon =Convert.ToInt32(dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString());
                 //txtIdProveedor.Text = idProvedorCon.ToString();
@@ -454,7 +453,6 @@ namespace ProyectoFinalTallerBD
                 txtModProductosComprados.Text = dgvVenta.CurrentRow.Cells["productosComprados"].Value.ToString();
                 txtModTotal.Text = dgvVenta.CurrentRow.Cells["total"].Value.ToString();
                 cmbModFormaPago.Text = dgvVenta.CurrentRow.Cells["formaPago"].Value.ToString();
-                cmbModActivo1.Text = dgvVenta.CurrentRow.Cells["status"].Value.ToString();
                 cmbModPagoCredito.Text = dgvVenta.CurrentRow.Cells["pagoConCredito"].Value.ToString();
                 dgvVenta.CurrentRow.Cells["Editar"].Style.SelectionBackColor = Color.CadetBlue;
                 //dgvProveedores.AllowUserToAddRows = false;

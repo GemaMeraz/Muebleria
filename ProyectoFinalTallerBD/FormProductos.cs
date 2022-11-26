@@ -193,12 +193,108 @@ namespace ProyectoFinalTallerBD
             {
                 if (row.Cells["idProducto"].Value.ToString() == buscarID)
                 {
-                    MessageBox.Show("Producto encontrado:" + row.Cells["idProducto"].Value.ToString() + "\n" + row.Cells["producto"].Value.ToString());
+                    MessageBox.Show("Producto encontrado:\nId Producto: " + row.Cells["idProducto"].Value.ToString() + "\nProducto: " + row.Cells["producto"].Value.ToString());
                     return;
                 }
 
             }
             MessageBox.Show("Producto Inexistente");
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                dataGridView1.Size = new Size(399, 287);
+                grpEditarProd.Visible = true;
+                //int idProvedorCon =Convert.ToInt32(dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString());
+                //txtIdProveedor.Text = idProvedorCon.ToString();
+                txtModIdProducto.Text = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
+                txtModProducto.Text = dataGridView1.CurrentRow.Cells["producto"].Value.ToString();
+                txtModDescripcion.Text = dataGridView1.CurrentRow.Cells["descripcion"].Value.ToString();
+                txtModMaterial.Text = dataGridView1.CurrentRow.Cells["material"].Value.ToString();
+                txtModColor.Text = dataGridView1.CurrentRow.Cells["color"].Value.ToString();
+                txtModLargo.Text = dataGridView1.CurrentRow.Cells["largo"].Value.ToString();
+                txtModAncho.Text = dataGridView1.CurrentRow.Cells["ancho"].Value.ToString();
+                txtModAlto.Text = dataGridView1.CurrentRow.Cells["alto"].Value.ToString();
+                txtModDiasG.Text = dataGridView1.CurrentRow.Cells["diasGarantia"].Value.ToString();
+                txtModPrecioC.Text = dataGridView1.CurrentRow.Cells["precioCompra"].Value.ToString();
+                txtModPrecioV.Text = dataGridView1.CurrentRow.Cells["precioVenta"].Value.ToString();
+                cboModIdCategoria.Text = dataGridView1.CurrentRow.Cells["idCategoria"].Value.ToString();
+                dataGridView1.CurrentRow.Cells["Editar"].Style.SelectionBackColor = Color.CadetBlue;
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                string eliminarUsuario = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
+                string modactivo = "N";
+
+                if (MessageBox.Show("¿Desea dar de baja este producto? " + eliminarUsuario, "Confirmar operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        cn.conectarbd.Open();
+                        cn.cmd = new SqlCommand("Update Productos SET activo = '" + modactivo + "' where idProducto='" + eliminarUsuario + "'", cn.conectarbd);
+                        cn.cmd.ExecuteNonQuery();
+
+                        Cargardgv();
+                        //MessageBox.Show("Empleado ingresado al sistema");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error:" + ex);
+                    }
+                    finally
+                    {
+                        cn.conectarbd.Close();
+                    }
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Size = new Size(729, 287);
+            grpEditarProd.Visible = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string modProducto = txtModProducto.Text;
+            string modDesc = txtModDescripcion.Text;
+            string modMaterial = txtModMaterial.Text;
+            string modColor = txtModColor.Text;
+            string modLargo = txtModLargo.Text;
+            string modAncho = txtModAncho.Text;
+            string modAlto = txtModAlto.Text;
+            int modDiasG = int.Parse(txtModDiasG.Text);
+            double modPrecioC = double.Parse(txtModPrecioC.Text);
+            double modPrecioV = double.Parse(txtModPrecioV.Text);
+            string modCategoria = cboModIdCategoria.Text;
+            string modId = txtModIdProducto.Text;
+            try
+            {
+                cn.conectarbd.Open();
+                cn.cmd = new SqlCommand("Update Productos SET producto='" + modProducto + "', descripcion='" + modDesc + "',material='" + modMaterial
+                   + "',color='" + modColor + "',largo='" + modLargo + "',ancho='" + modAncho + "',alto='" + modAlto + "',diasGarantia=" +
+                   modDiasG + ",precioCompra=" + modPrecioC + ", precioVenta=" + modPrecioV + ", idCategoria='" + modCategoria + "' where idProducto='" + modId + "'", cn.conectarbd);
+                cn.cmd.ExecuteNonQuery();
+
+                dataGridView1.Size = new Size(729, 287);
+                grpEditarProd.Visible = false;
+                Cargardgv();
+                MessageBox.Show("Producto editado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex);
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
         }
     }
 }

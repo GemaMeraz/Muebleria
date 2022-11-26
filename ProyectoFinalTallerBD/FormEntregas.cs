@@ -59,15 +59,15 @@ namespace ProyectoFinalTallerBD
         {
             if (dgvEntradas.Columns[e.ColumnIndex].Name == "Editar")
             {
-                dgvEntradas.Size = new Size(440, 259);
+                dgvEntradas.Size = new Size(395, 259);
                 grpEditarEntrada.Visible = true;
 
-                txtEditIdEntrada.Text = dgvEntradas.CurrentRow.Cells[0].Value.ToString();
-                txtEditIdProveedor.Text = dgvEntradas.CurrentRow.Cells[1].Value.ToString();
-                txtEditIdProducto.Text = dgvEntradas.CurrentRow.Cells[2].Value.ToString();
-                dtpEditFechaEnt.Value = DateTime.Parse(dgvEntradas.CurrentRow.Cells[3].Value.ToString());
-                txtEditCantEntrada.Text = dgvEntradas.CurrentRow.Cells[4].Value.ToString();
-                txtEditTotalPago.Text = dgvEntradas.CurrentRow.Cells[5].Value.ToString();
+                txtEditIdEntrada.Text = dgvEntradas.CurrentRow.Cells["idEntrada"].Value.ToString();
+                txtEditIdProveedor.Text = dgvEntradas.CurrentRow.Cells["idProveedor"].Value.ToString();
+                txtEditIdProducto.Text = dgvEntradas.CurrentRow.Cells["idProducto"].Value.ToString();
+                dtpEditFechaEnt.Value = DateTime.Parse(dgvEntradas.CurrentRow.Cells["fechaEntrada"].Value.ToString());
+                txtEditCantEntrada.Text = dgvEntradas.CurrentRow.Cells["cantidadEntrada"].Value.ToString();
+                txtEditTotalPago.Text = dgvEntradas.CurrentRow.Cells["totalPago"].Value.ToString();
             }
         }
 
@@ -88,13 +88,14 @@ namespace ProyectoFinalTallerBD
             try
             {
                 cn.conectarbd.Open();
-                cn.cmd = new SqlCommand("Update Entrada SET idProveedor=" + modIdProveedor + ", idProducto='" + modIdProducto + "',fechaEntrada='" + modFechaEntrada
+                cn.cmd = new SqlCommand("Update Entradas SET idProveedor=" + modIdProveedor + ", idProducto='" + modIdProducto + "',fechaEntrada='" + modFechaEntrada
                    + "',cantidadEntrada=" + modCantEntrada + ",totalPago=" + modTotalPago + " where idEntrada='" + modIdEntrada + "'", cn.conectarbd);
                 cn.cmd.ExecuteNonQuery();
 
+                MostrarEntregas();
                 dgvEntradas.Size = new Size(608, 259);
                 grpEditarEntrada.Visible = false;
-                MessageBox.Show("Entrada ingresada al sistema");
+                MessageBox.Show("Entrada editada en el sistema");
 
             }
             catch (Exception ex)
@@ -113,9 +114,9 @@ namespace ProyectoFinalTallerBD
             string buscarID = txtBuscarIdEntrega.Text;
             foreach (DataGridViewRow row in dgvEntradas.Rows)
             {
-                if (row.Cells[0].Value.ToString() == buscarID)
+                if (row.Cells["idEntrada"].Value.ToString() == buscarID)
                 {
-                    MessageBox.Show("Entrega encontrado: \nId Entrada: " + row.Cells[0].Value.ToString() + "\nId Proveedor: " + row.Cells[1].Value.ToString() + "\nId Producto: " + row.Cells[2].Value.ToString() + "\nCant. Productos: " + row.Cells[4].Value.ToString());
+                    MessageBox.Show("Entrega encontrado: \nId Entrada: " + row.Cells["idEntrada"].Value.ToString() + "\nId Proveedor: " + row.Cells["idProveedor"].Value.ToString() + "\nId Producto: " + row.Cells["idProducto"].Value.ToString() + "\nCant. Productos: " + row.Cells["cantidadEntrada"].Value.ToString());
                     return;
                 }
             }

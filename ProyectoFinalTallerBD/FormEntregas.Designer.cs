@@ -96,7 +96,7 @@ namespace ProyectoFinalTallerBD
             this.tabEntregas.Location = new System.Drawing.Point(4, 22);
             this.tabEntregas.Name = "tabEntregas";
             this.tabEntregas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEntregas.Size = new System.Drawing.Size(788, 421);
+            this.tabEntregas.Size = new System.Drawing.Size(745, 453);
             this.tabEntregas.TabIndex = 0;
             this.tabEntregas.Text = "TODAS LAS ENTREGAS";
             this.tabEntregas.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@ namespace ProyectoFinalTallerBD
             this.grpEditarEntrada.Controls.Add(this.txtEditIdEntrada);
             this.grpEditarEntrada.Controls.Add(this.label1);
             this.grpEditarEntrada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEditarEntrada.Location = new System.Drawing.Point(482, 63);
+            this.grpEditarEntrada.Location = new System.Drawing.Point(425, 54);
             this.grpEditarEntrada.Name = "grpEditarEntrada";
             this.grpEditarEntrada.Size = new System.Drawing.Size(300, 352);
             this.grpEditarEntrada.TabIndex = 2;
@@ -302,7 +302,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.lblEntradas.AutoSize = true;
             this.lblEntradas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntradas.Location = new System.Drawing.Point(261, 27);
+            this.lblEntradas.Location = new System.Drawing.Point(176, 22);
             this.lblEntradas.Name = "lblEntradas";
             this.lblEntradas.Size = new System.Drawing.Size(112, 24);
             this.lblEntradas.TabIndex = 1;
@@ -312,6 +312,7 @@ namespace ProyectoFinalTallerBD
             // 
             this.dgvEntradas.AllowUserToAddRows = false;
             this.dgvEntradas.AllowUserToDeleteRows = false;
+            this.dgvEntradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEntradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});

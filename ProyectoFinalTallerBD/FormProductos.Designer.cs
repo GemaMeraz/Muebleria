@@ -31,10 +31,15 @@ namespace ProyectoFinalTallerBD
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtBuscarId = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabRegistro = new System.Windows.Forms.TabPage();
+            this.cboIdCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
             this.picProducto = new System.Windows.Forms.PictureBox();
             this.txtPrecVenta = new System.Windows.Forms.TextBox();
@@ -61,16 +66,39 @@ namespace ProyectoFinalTallerBD
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.cboIdCategoria = new System.Windows.Forms.ComboBox();
-            this.txtBuscarId = new System.Windows.Forms.TextBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.grpEditarProd = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtModIdProducto = new System.Windows.Forms.TextBox();
+            this.txtModProducto = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtModDescripcion = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtModMaterial = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtModColor = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtModLargo = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtModAncho = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtModAlto = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtModDiasG = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtModPrecioC = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtModPrecioV = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cboModIdCategoria = new System.Windows.Forms.ComboBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProducto)).BeginInit();
+            this.grpEditarProd.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -86,6 +114,7 @@ namespace ProyectoFinalTallerBD
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.grpEditarProd);
             this.tabPage1.Controls.Add(this.txtBuscarId);
             this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.label1);
@@ -97,6 +126,14 @@ namespace ProyectoFinalTallerBD
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TODOS LOS PRODUCTOS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscarId
+            // 
+            this.txtBuscarId.Location = new System.Drawing.Point(508, 31);
+            this.txtBuscarId.MaxLength = 9;
+            this.txtBuscarId.Name = "txtBuscarId";
+            this.txtBuscarId.Size = new System.Drawing.Size(129, 20);
+            this.txtBuscarId.TabIndex = 40;
             // 
             // btnBuscar
             // 
@@ -137,6 +174,29 @@ namespace ProyectoFinalTallerBD
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(729, 287);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 241;
+            // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "Ver";
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Width = 242;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 243;
             // 
             // tabRegistro
             // 
@@ -174,6 +234,23 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.TabIndex = 1;
             this.tabRegistro.Text = "REGISTRO DE PRODUCTOS";
             this.tabRegistro.UseVisualStyleBackColor = true;
+            // 
+            // cboIdCategoria
+            // 
+            this.cboIdCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdCategoria.FormattingEnabled = true;
+            this.cboIdCategoria.Items.AddRange(new object[] {
+            "COM-155",
+            "INF-521",
+            "JAR-789",
+            "OFN-451",
+            "REM-872",
+            "SAL-021"});
+            this.cboIdCategoria.Location = new System.Drawing.Point(189, 285);
+            this.cboIdCategoria.Name = "cboIdCategoria";
+            this.cboIdCategoria.Size = new System.Drawing.Size(100, 21);
+            this.cboIdCategoria.TabIndex = 71;
+            this.cboIdCategoria.SelectedValueChanged += new System.EventHandler(this.cboIdCategoria_SelectedValueChanged);
             // 
             // btnAgregarImagen
             // 
@@ -418,52 +495,266 @@ namespace ProyectoFinalTallerBD
             this.txtClave.Size = new System.Drawing.Size(116, 20);
             this.txtClave.TabIndex = 42;
             // 
-            // cboIdCategoria
+            // grpEditarProd
             // 
-            this.cboIdCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdCategoria.FormattingEnabled = true;
-            this.cboIdCategoria.Items.AddRange(new object[] {
+            this.grpEditarProd.Controls.Add(this.btnCancelar);
+            this.grpEditarProd.Controls.Add(this.btnEditar);
+            this.grpEditarProd.Controls.Add(this.cboModIdCategoria);
+            this.grpEditarProd.Controls.Add(this.label25);
+            this.grpEditarProd.Controls.Add(this.txtModPrecioV);
+            this.grpEditarProd.Controls.Add(this.label24);
+            this.grpEditarProd.Controls.Add(this.txtModPrecioC);
+            this.grpEditarProd.Controls.Add(this.label23);
+            this.grpEditarProd.Controls.Add(this.txtModDiasG);
+            this.grpEditarProd.Controls.Add(this.label22);
+            this.grpEditarProd.Controls.Add(this.txtModAlto);
+            this.grpEditarProd.Controls.Add(this.label21);
+            this.grpEditarProd.Controls.Add(this.txtModAncho);
+            this.grpEditarProd.Controls.Add(this.label20);
+            this.grpEditarProd.Controls.Add(this.txtModLargo);
+            this.grpEditarProd.Controls.Add(this.label19);
+            this.grpEditarProd.Controls.Add(this.txtModColor);
+            this.grpEditarProd.Controls.Add(this.label18);
+            this.grpEditarProd.Controls.Add(this.txtModMaterial);
+            this.grpEditarProd.Controls.Add(this.label17);
+            this.grpEditarProd.Controls.Add(this.txtModDescripcion);
+            this.grpEditarProd.Controls.Add(this.label16);
+            this.grpEditarProd.Controls.Add(this.txtModProducto);
+            this.grpEditarProd.Controls.Add(this.label15);
+            this.grpEditarProd.Controls.Add(this.txtModIdProducto);
+            this.grpEditarProd.Controls.Add(this.label14);
+            this.grpEditarProd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpEditarProd.Location = new System.Drawing.Point(411, 67);
+            this.grpEditarProd.Name = "grpEditarProd";
+            this.grpEditarProd.Size = new System.Drawing.Size(324, 378);
+            this.grpEditarProd.TabIndex = 41;
+            this.grpEditarProd.TabStop = false;
+            this.grpEditarProd.Text = "Información Producto";
+            this.grpEditarProd.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 17);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "ID PRODUCTO";
+            // 
+            // txtModIdProducto
+            // 
+            this.txtModIdProducto.Location = new System.Drawing.Point(164, 16);
+            this.txtModIdProducto.Name = "txtModIdProducto";
+            this.txtModIdProducto.ReadOnly = true;
+            this.txtModIdProducto.Size = new System.Drawing.Size(154, 23);
+            this.txtModIdProducto.TabIndex = 1;
+            // 
+            // txtModProducto
+            // 
+            this.txtModProducto.Location = new System.Drawing.Point(164, 43);
+            this.txtModProducto.Name = "txtModProducto";
+            this.txtModProducto.Size = new System.Drawing.Size(154, 23);
+            this.txtModProducto.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 46);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(80, 17);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "PRODUCTO";
+            // 
+            // txtModDescripcion
+            // 
+            this.txtModDescripcion.Location = new System.Drawing.Point(109, 70);
+            this.txtModDescripcion.Name = "txtModDescripcion";
+            this.txtModDescripcion.Size = new System.Drawing.Size(209, 23);
+            this.txtModDescripcion.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(96, 17);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "DESCRIPCIÓN";
+            // 
+            // txtModMaterial
+            // 
+            this.txtModMaterial.Location = new System.Drawing.Point(164, 97);
+            this.txtModMaterial.Name = "txtModMaterial";
+            this.txtModMaterial.Size = new System.Drawing.Size(154, 23);
+            this.txtModMaterial.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 100);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 17);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "MATERIAL";
+            // 
+            // txtModColor
+            // 
+            this.txtModColor.Location = new System.Drawing.Point(164, 126);
+            this.txtModColor.Name = "txtModColor";
+            this.txtModColor.Size = new System.Drawing.Size(154, 23);
+            this.txtModColor.TabIndex = 9;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 129);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(55, 17);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "COLOR";
+            // 
+            // txtModLargo
+            // 
+            this.txtModLargo.Location = new System.Drawing.Point(58, 154);
+            this.txtModLargo.Name = "txtModLargo";
+            this.txtModLargo.Size = new System.Drawing.Size(53, 23);
+            this.txtModLargo.TabIndex = 11;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 157);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 17);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "LARGO";
+            // 
+            // txtModAncho
+            // 
+            this.txtModAncho.Location = new System.Drawing.Point(169, 154);
+            this.txtModAncho.Name = "txtModAncho";
+            this.txtModAncho.Size = new System.Drawing.Size(53, 23);
+            this.txtModAncho.TabIndex = 13;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(113, 157);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(58, 17);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "ANCHO";
+            // 
+            // txtModAlto
+            // 
+            this.txtModAlto.Location = new System.Drawing.Point(265, 154);
+            this.txtModAlto.Name = "txtModAlto";
+            this.txtModAlto.Size = new System.Drawing.Size(53, 23);
+            this.txtModAlto.TabIndex = 15;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(224, 157);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(39, 17);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "ALTO";
+            // 
+            // txtModDiasG
+            // 
+            this.txtModDiasG.Location = new System.Drawing.Point(164, 181);
+            this.txtModDiasG.Name = "txtModDiasG";
+            this.txtModDiasG.Size = new System.Drawing.Size(154, 23);
+            this.txtModDiasG.TabIndex = 17;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 184);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(125, 17);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "DIAS DE GARANTIA";
+            // 
+            // txtModPrecioC
+            // 
+            this.txtModPrecioC.Location = new System.Drawing.Point(164, 208);
+            this.txtModPrecioC.Name = "txtModPrecioC";
+            this.txtModPrecioC.Size = new System.Drawing.Size(154, 23);
+            this.txtModPrecioC.TabIndex = 19;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 211);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(139, 17);
+            this.label23.TabIndex = 18;
+            this.label23.Text = "PRECIO DE COMPRA";
+            // 
+            // txtModPrecioV
+            // 
+            this.txtModPrecioV.Location = new System.Drawing.Point(164, 235);
+            this.txtModPrecioV.Name = "txtModPrecioV";
+            this.txtModPrecioV.Size = new System.Drawing.Size(154, 23);
+            this.txtModPrecioV.TabIndex = 21;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 238);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(121, 17);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "PRECIO DE VENTA";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 265);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(99, 17);
+            this.label25.TabIndex = 22;
+            this.label25.Text = "ID CATEGORIA";
+            // 
+            // cboModIdCategoria
+            // 
+            this.cboModIdCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModIdCategoria.FormattingEnabled = true;
+            this.cboModIdCategoria.Items.AddRange(new object[] {
             "COM-155",
             "INF-521",
             "JAR-789",
             "OFN-451",
             "REM-872",
             "SAL-021"});
-            this.cboIdCategoria.Location = new System.Drawing.Point(189, 285);
-            this.cboIdCategoria.Name = "cboIdCategoria";
-            this.cboIdCategoria.Size = new System.Drawing.Size(100, 21);
-            this.cboIdCategoria.TabIndex = 71;
-            this.cboIdCategoria.SelectedValueChanged += new System.EventHandler(this.cboIdCategoria_SelectedValueChanged);
+            this.cboModIdCategoria.Location = new System.Drawing.Point(164, 262);
+            this.cboModIdCategoria.Name = "cboModIdCategoria";
+            this.cboModIdCategoria.Size = new System.Drawing.Size(154, 25);
+            this.cboModIdCategoria.TabIndex = 23;
             // 
-            // txtBuscarId
+            // btnEditar
             // 
-            this.txtBuscarId.Location = new System.Drawing.Point(508, 31);
-            this.txtBuscarId.MaxLength = 9;
-            this.txtBuscarId.Name = "txtBuscarId";
-            this.txtBuscarId.Size = new System.Drawing.Size(129, 20);
-            this.txtBuscarId.TabIndex = 40;
+            this.btnEditar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(30, 321);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(101, 39);
+            this.btnEditar.TabIndex = 24;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // Editar
+            // btnCancelar
             // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 241;
-            // 
-            // Ver
-            // 
-            this.Ver.HeaderText = "Ver";
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            this.Ver.Width = 242;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 243;
+            this.btnCancelar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(201, 321);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(101, 39);
+            this.btnCancelar.TabIndex = 25;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormProductos
             // 
@@ -481,6 +772,8 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProducto)).EndInit();
+            this.grpEditarProd.ResumeLayout(false);
+            this.grpEditarProd.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -524,5 +817,32 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Ver;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.GroupBox grpEditarProd;
+        private System.Windows.Forms.TextBox txtModProducto;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtModIdProducto;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtModColor;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtModMaterial;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtModDescripcion;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtModAlto;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtModAncho;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtModLargo;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtModPrecioV;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtModPrecioC;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtModDiasG;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox cboModIdCategoria;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
