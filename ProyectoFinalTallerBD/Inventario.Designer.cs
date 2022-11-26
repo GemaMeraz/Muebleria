@@ -38,13 +38,13 @@ namespace ProyectoFinalTallerBD
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageRegInv = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtpFechaModificacion = new System.Windows.Forms.DateTimePicker();
+            this.btnRegistrarInventario = new System.Windows.Forms.Button();
+            this.txtStock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtIdProdInventario = new System.Windows.Forms.TextBox();
             this.tabInventario.SuspendLayout();
             this.tabPageConsultaInv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -142,13 +142,13 @@ namespace ProyectoFinalTallerBD
             // 
             // tabPageRegInv
             // 
-            this.tabPageRegInv.Controls.Add(this.dateTimePicker1);
-            this.tabPageRegInv.Controls.Add(this.btnBuscar);
-            this.tabPageRegInv.Controls.Add(this.textBox1);
+            this.tabPageRegInv.Controls.Add(this.dtpFechaModificacion);
+            this.tabPageRegInv.Controls.Add(this.btnRegistrarInventario);
+            this.tabPageRegInv.Controls.Add(this.txtStock);
             this.tabPageRegInv.Controls.Add(this.label5);
             this.tabPageRegInv.Controls.Add(this.label3);
             this.tabPageRegInv.Controls.Add(this.label2);
-            this.tabPageRegInv.Controls.Add(this.txtClave);
+            this.tabPageRegInv.Controls.Add(this.txtIdProdInventario);
             this.tabPageRegInv.Location = new System.Drawing.Point(4, 22);
             this.tabPageRegInv.Name = "tabPageRegInv";
             this.tabPageRegInv.Padding = new System.Windows.Forms.Padding(3);
@@ -157,13 +157,33 @@ namespace ProyectoFinalTallerBD
             this.tabPageRegInv.Text = "REGISTRO DE INVENTARIO";
             this.tabPageRegInv.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // dtpFechaModificacion
             // 
-            this.textBox1.Location = new System.Drawing.Point(332, 119);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 20);
-            this.textBox1.TabIndex = 61;
+            this.dtpFechaModificacion.Location = new System.Drawing.Point(332, 146);
+            this.dtpFechaModificacion.Name = "dtpFechaModificacion";
+            this.dtpFechaModificacion.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaModificacion.TabIndex = 64;
+            // 
+            // btnRegistrarInventario
+            // 
+            this.btnRegistrarInventario.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarInventario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegistrarInventario.Location = new System.Drawing.Point(245, 212);
+            this.btnRegistrarInventario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistrarInventario.Name = "btnRegistrarInventario";
+            this.btnRegistrarInventario.Size = new System.Drawing.Size(126, 49);
+            this.btnRegistrarInventario.TabIndex = 63;
+            this.btnRegistrarInventario.Text = "REGISTRAR PRODUCTO EN INVENTARIO";
+            this.btnRegistrarInventario.UseVisualStyleBackColor = true;
+            this.btnRegistrarInventario.Click += new System.EventHandler(this.btnRegistrarInventario_Click);
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(332, 119);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(116, 20);
+            this.txtStock.TabIndex = 61;
             // 
             // label5
             // 
@@ -195,32 +215,13 @@ namespace ProyectoFinalTallerBD
             this.label2.TabIndex = 58;
             this.label2.Text = "ID PRODUCTO";
             // 
-            // txtClave
+            // txtIdProdInventario
             // 
-            this.txtClave.Location = new System.Drawing.Point(332, 88);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(2);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(116, 20);
-            this.txtClave.TabIndex = 57;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.Location = new System.Drawing.Point(245, 212);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(126, 49);
-            this.btnBuscar.TabIndex = 63;
-            this.btnBuscar.Text = "REGISTRAR PRODUCTO EN INVENTARIO";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(332, 146);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 64;
+            this.txtIdProdInventario.Location = new System.Drawing.Point(332, 88);
+            this.txtIdProdInventario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdProdInventario.Name = "txtIdProdInventario";
+            this.txtIdProdInventario.Size = new System.Drawing.Size(116, 20);
+            this.txtIdProdInventario.TabIndex = 57;
             // 
             // Inventario
             // 
@@ -252,12 +253,12 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtBuscarInv;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtIdProdInventario;
+        private System.Windows.Forms.Button btnRegistrarInventario;
+        private System.Windows.Forms.DateTimePicker dtpFechaModificacion;
     }
 }

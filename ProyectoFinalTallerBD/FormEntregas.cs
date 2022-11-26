@@ -30,7 +30,7 @@ namespace ProyectoFinalTallerBD
         {
             try
             {
-                dgvEntradas.Rows.Clear();
+                //dgvEntradas.Rows.Clear();
                 cn.da = new SqlDataAdapter("Select * from Entradas", cn.conectarbd);
                 cn.dt = new DataTable();
                 cn.da.Fill(cn.dt);
@@ -147,7 +147,7 @@ namespace ProyectoFinalTallerBD
                     cn.cmd.ExecuteNonQuery();
 
                     MostrarEntregas();
-                    MessageBox.Show("Entrada ingresado al sistema");
+                    MessageBox.Show("Entrada ingresada al sistema");
                     tabControl1.SelectedIndex = 0;
                 }
                 catch (Exception ex)

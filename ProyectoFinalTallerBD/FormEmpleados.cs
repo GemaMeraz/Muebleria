@@ -59,6 +59,7 @@ namespace ProyectoFinalTallerBD
         private void FormEmpleados_Load(object sender, EventArgs e)
         {
             MostrarEmpleados();
+            MostrarUsuarios();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -205,6 +206,29 @@ namespace ProyectoFinalTallerBD
             }
         }
 
+        public void MostrarUsuarios()
+        {
+            try
+            {
+                cn.da = new SqlDataAdapter("Select * from vw_empleadoUsuario where status = 'AC'", cn.conectarbd);
+                cn.dt = new DataTable();
+                cn.da.Fill(cn.dt);
+                dgvUsuarios.DataSource = cn.dt;
+                dgvUsuarios.Columns["idEmpleado"].DisplayIndex = 0;
+                dgvUsuarios.Columns["nombreEmpleado"].DisplayIndex = 1;
+                dgvUsuarios.Columns["puesto"].DisplayIndex = 2;
+                dgvUsuarios.Columns["salario"].DisplayIndex = 3;
+                dgvUsuarios.Columns["status"].DisplayIndex = 4;
+                dgvUsuarios.Columns["usuario"].DisplayIndex = 5;
+                dgvUsuarios.Columns["rangoUsuario"].DisplayIndex = 6;
+                //dgvUsuarios.Columns["Editar2"].DisplayIndex = 7;
+                //dgvUsuarios.Columns["Eliminar2"].DisplayIndex = 8;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             string modPNombre = txtModPrimerNom.Text;
@@ -223,7 +247,8 @@ namespace ProyectoFinalTallerBD
 
                 dgvEmpleados.Size = new Size(616, 288);
                 grbModificarEmpleado.Visible = false;
-                MessageBox.Show("Empleado ingresado al sistema");
+                MostrarEmpleados();
+                MessageBox.Show("Empleado editado correctamente");
 
             }
             catch (Exception ex)

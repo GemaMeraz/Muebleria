@@ -134,6 +134,15 @@
   <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="Eliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAOBJREFUOE/t
+        lEEOgjAQRYleRLfqGaTEM7imBbwHBzGewXgcdaOU4CEQnI9jQ0SJJrMyvmRC+2f4pZkW70+HQulR7huD
+        uMyTMcvfY1WkrTKV9c2VngeOkqKGOZd9RqbMFkanIJyy5CgWZsKL7FjqhwpDvFCn6YCME5Yd0JBDTR7o
+        iOX3kGF1VvEsV1GM7dnAbDhFZnoNLfP1qvlSGnPqNWgAVuapM4Bpe8xpLF72NoobceRpgzN6MgOk7bET
+        nnYRNxTfMqAiuaYAKrofm+VyKHJsgOjBfiB69dqI/Rx+Fc+7ATwF6HpwQL/IAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="dataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAARdJREFUOE9j

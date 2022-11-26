@@ -29,10 +29,11 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpleados));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.txtBuscarId = new System.Windows.Forms.TextBox();
             this.grbModificarEmpleado = new System.Windows.Forms.GroupBox();
             this.txtModApeMater = new System.Windows.Forms.TextBox();
@@ -54,6 +55,8 @@ namespace ProyectoFinalTallerBD
             this.txtBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.txtAMaterno = new System.Windows.Forms.TextBox();
@@ -71,25 +74,28 @@ namespace ProyectoFinalTallerBD
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdEmpleado = new System.Windows.Forms.TextBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnInfo = new FontAwesome.Sharp.IconButton();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tabUsuario = new System.Windows.Forms.TabPage();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grbModificarEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.tabRegistro.SuspendLayout();
+            this.tabUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabRegistro);
+            this.tabControl1.Controls.Add(this.tabUsuario);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -112,6 +118,26 @@ namespace ProyectoFinalTallerBD
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TODOS LOS EMPLEADOS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.ForeColor = System.Drawing.Color.DimGray;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            this.iconButton3.IconColor = System.Drawing.Color.SkyBlue;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 25;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(417, 13);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(51, 35);
+            this.iconButton3.TabIndex = 66;
+            this.iconButton3.Text = "id";
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Visible = false;
             // 
             // txtBuscarId
             // 
@@ -353,12 +379,26 @@ namespace ProyectoFinalTallerBD
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmpleados.Size = new System.Drawing.Size(616, 288);
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellDoubleClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Dar de baja";
+            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // tabRegistro
             // 
@@ -553,54 +593,6 @@ namespace ProyectoFinalTallerBD
             this.txtIdEmpleado.Size = new System.Drawing.Size(167, 20);
             this.txtIdEmpleado.TabIndex = 42;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 307;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Dar de baja";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 306;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.DimGray;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.iconButton3.IconColor = System.Drawing.Color.SkyBlue;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 25;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(417, 13);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(51, 35);
-            this.iconButton3.TabIndex = 66;
-            this.iconButton3.Text = "id";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Visible = false;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Dar de baja";
-            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
             // iconButton2
             // 
             this.iconButton2.FlatAppearance.BorderSize = 0;
@@ -659,6 +651,49 @@ namespace ProyectoFinalTallerBD
             this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInfo.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 307;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Dar de baja";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 306;
+            // 
+            // tabUsuario
+            // 
+            this.tabUsuario.Controls.Add(this.label10);
+            this.tabUsuario.Controls.Add(this.dgvUsuarios);
+            this.tabUsuario.Location = new System.Drawing.Point(4, 22);
+            this.tabUsuario.Name = "tabUsuario";
+            this.tabUsuario.Size = new System.Drawing.Size(761, 492);
+            this.tabUsuario.TabIndex = 2;
+            this.tabUsuario.Text = "USUARIOS REGISTRADOS";
+            this.tabUsuario.UseVisualStyleBackColor = true;
+            // 
+            // dgvUsuarios
+            // 
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Location = new System.Drawing.Point(40, 139);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(672, 218);
+            this.dgvUsuarios.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(319, 61);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 24);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Usuarios";
+            // 
             // FormEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,6 +711,9 @@ namespace ProyectoFinalTallerBD
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
+            this.tabUsuario.ResumeLayout(false);
+            this.tabUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -730,5 +768,8 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.TabPage tabUsuario;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.Label label10;
     }
 }

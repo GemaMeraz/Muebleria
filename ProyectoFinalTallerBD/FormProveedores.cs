@@ -213,9 +213,9 @@ namespace ProyectoFinalTallerBD
             string buscarID = txtBuscar.Text;
             foreach (DataGridViewRow row in dgvProveedores.Rows)
             {
-                if (row.Cells[0].Value.ToString() == buscarID)
+                if (row.Cells["idProveedor"].Value.ToString() == buscarID)
                 {
-                    MessageBox.Show("Proveedor encontrado: \nId Proveedor: " + row.Cells[0].Value.ToString() + "\nRazon Social: " + row.Cells[1].Value.ToString() + "\nRFC: " + row.Cells[2].Value.ToString());
+                    MessageBox.Show("Proveedor encontrado: \nId Proveedor: " + row.Cells["idProveedor"].Value.ToString() + "\nRazon Social: " + row.Cells["razonSocial"].Value.ToString() + "\nRFC: " + row.Cells["RFC"].Value.ToString());
                     return;
                 }
             }

@@ -31,28 +31,29 @@ namespace ProyectoFinalTallerBD
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEntregas = new System.Windows.Forms.TabPage();
-            this.tabRegistrar = new System.Windows.Forms.TabPage();
-            this.dgvEntradas = new System.Windows.Forms.DataGridView();
-            this.lblEntradas = new System.Windows.Forms.Label();
+            this.iconButtonId = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscarIdEntrega = new System.Windows.Forms.TextBox();
             this.grpEditarEntrada = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEditIdEntrada = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEditIdProveedor = new System.Windows.Forms.TextBox();
-            this.txtEditIdProducto = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpEditFechaEnt = new System.Windows.Forms.DateTimePicker();
-            this.txtEditCantEntrada = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.txtEditTotalPago = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBuscarIdEntrega = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.iconButtonId = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtEditCantEntrada = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpEditFechaEnt = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtEditIdProducto = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtEditIdProveedor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtEditIdEntrada = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblEntradas = new System.Windows.Forms.Label();
+            this.dgvEntradas = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tabRegistrar = new System.Windows.Forms.TabPage();
+            this.dtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.txtCantEntrada = new System.Windows.Forms.TextBox();
             this.txtProducto = new System.Windows.Forms.TextBox();
@@ -65,22 +66,22 @@ namespace ProyectoFinalTallerBD
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabEntregas.SuspendLayout();
-            this.tabRegistrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).BeginInit();
             this.grpEditarEntrada.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).BeginInit();
+            this.tabRegistrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabEntregas);
             this.tabControl1.Controls.Add(this.tabRegistrar);
-            this.tabControl1.Location = new System.Drawing.Point(2, 1);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(796, 447);
+            this.tabControl1.Size = new System.Drawing.Size(753, 479);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -100,54 +101,45 @@ namespace ProyectoFinalTallerBD
             this.tabEntregas.Text = "TODAS LAS ENTREGAS";
             this.tabEntregas.UseVisualStyleBackColor = true;
             // 
-            // tabRegistrar
+            // iconButtonId
             // 
-            this.tabRegistrar.Controls.Add(this.dtpFechaEntrada);
-            this.tabRegistrar.Controls.Add(this.txtTotalPago);
-            this.tabRegistrar.Controls.Add(this.txtCantEntrada);
-            this.tabRegistrar.Controls.Add(this.txtProducto);
-            this.tabRegistrar.Controls.Add(this.txtProveedor);
-            this.tabRegistrar.Controls.Add(this.txtEntrada);
-            this.tabRegistrar.Controls.Add(this.label9);
-            this.tabRegistrar.Controls.Add(this.label7);
-            this.tabRegistrar.Controls.Add(this.label8);
-            this.tabRegistrar.Controls.Add(this.btnRegistrarEntrega);
-            this.tabRegistrar.Controls.Add(this.label10);
-            this.tabRegistrar.Controls.Add(this.label11);
-            this.tabRegistrar.Controls.Add(this.label12);
-            this.tabRegistrar.Location = new System.Drawing.Point(4, 22);
-            this.tabRegistrar.Name = "tabRegistrar";
-            this.tabRegistrar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistrar.Size = new System.Drawing.Size(788, 421);
-            this.tabRegistrar.TabIndex = 1;
-            this.tabRegistrar.Text = "REGISTRAR ENTREGA";
-            this.tabRegistrar.UseVisualStyleBackColor = true;
+            this.iconButtonId.FlatAppearance.BorderSize = 0;
+            this.iconButtonId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonId.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonId.ForeColor = System.Drawing.Color.DimGray;
+            this.iconButtonId.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            this.iconButtonId.IconColor = System.Drawing.Color.SkyBlue;
+            this.iconButtonId.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonId.IconSize = 25;
+            this.iconButtonId.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonId.Location = new System.Drawing.Point(436, 13);
+            this.iconButtonId.Name = "iconButtonId";
+            this.iconButtonId.Size = new System.Drawing.Size(57, 35);
+            this.iconButtonId.TabIndex = 5;
+            this.iconButtonId.Text = "id";
+            this.iconButtonId.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButtonId.UseVisualStyleBackColor = true;
+            this.iconButtonId.Visible = false;
+            this.iconButtonId.Click += new System.EventHandler(this.iconButtonId_Click);
             // 
-            // dgvEntradas
+            // btnBuscar
             // 
-            this.dgvEntradas.AllowUserToAddRows = false;
-            this.dgvEntradas.AllowUserToDeleteRows = false;
-            this.dgvEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEntradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar});
-            this.dgvEntradas.Location = new System.Drawing.Point(24, 71);
-            this.dgvEntradas.MultiSelect = false;
-            this.dgvEntradas.Name = "dgvEntradas";
-            this.dgvEntradas.ReadOnly = true;
-            this.dgvEntradas.RowHeadersVisible = false;
-            this.dgvEntradas.Size = new System.Drawing.Size(608, 259);
-            this.dgvEntradas.TabIndex = 0;
-            this.dgvEntradas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntradas_CellDoubleClick);
+            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(639, 13);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(86, 33);
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // lblEntradas
+            // txtBuscarIdEntrega
             // 
-            this.lblEntradas.AutoSize = true;
-            this.lblEntradas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntradas.Location = new System.Drawing.Point(261, 27);
-            this.lblEntradas.Name = "lblEntradas";
-            this.lblEntradas.Size = new System.Drawing.Size(112, 24);
-            this.lblEntradas.TabIndex = 1;
-            this.lblEntradas.Text = "ENTREGAS";
+            this.txtBuscarIdEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarIdEntrega.Location = new System.Drawing.Point(509, 18);
+            this.txtBuscarIdEntrega.Name = "txtBuscarIdEntrega";
+            this.txtBuscarIdEntrega.Size = new System.Drawing.Size(112, 23);
+            this.txtBuscarIdEntrega.TabIndex = 3;
             // 
             // grpEditarEntrada
             // 
@@ -174,97 +166,27 @@ namespace ProyectoFinalTallerBD
             this.grpEditarEntrada.Text = "Información Entregas";
             this.grpEditarEntrada.Visible = false;
             // 
-            // label1
+            // btnCancelar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID ENTRADA";
+            this.btnCancelar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(174, 287);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(88, 36);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtEditIdEntrada
+            // btnEditar
             // 
-            this.txtEditIdEntrada.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditIdEntrada.Location = new System.Drawing.Point(145, 30);
-            this.txtEditIdEntrada.Name = "txtEditIdEntrada";
-            this.txtEditIdEntrada.ReadOnly = true;
-            this.txtEditIdEntrada.Size = new System.Drawing.Size(142, 23);
-            this.txtEditIdEntrada.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ID PROVEEDOR";
-            // 
-            // txtEditIdProveedor
-            // 
-            this.txtEditIdProveedor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditIdProveedor.Location = new System.Drawing.Point(145, 73);
-            this.txtEditIdProveedor.Name = "txtEditIdProveedor";
-            this.txtEditIdProveedor.Size = new System.Drawing.Size(142, 23);
-            this.txtEditIdProveedor.TabIndex = 3;
-            // 
-            // txtEditIdProducto
-            // 
-            this.txtEditIdProducto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditIdProducto.Location = new System.Drawing.Point(145, 111);
-            this.txtEditIdProducto.Name = "txtEditIdProducto";
-            this.txtEditIdProducto.Size = new System.Drawing.Size(142, 23);
-            this.txtEditIdProducto.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ID PRODUCTO";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "FECHA DE ENTRADA";
-            // 
-            // dtpEditFechaEnt
-            // 
-            this.dtpEditFechaEnt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEditFechaEnt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpEditFechaEnt.Location = new System.Drawing.Point(145, 154);
-            this.dtpEditFechaEnt.Name = "dtpEditFechaEnt";
-            this.dtpEditFechaEnt.Size = new System.Drawing.Size(142, 23);
-            this.dtpEditFechaEnt.TabIndex = 7;
-            // 
-            // txtEditCantEntrada
-            // 
-            this.txtEditCantEntrada.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditCantEntrada.Location = new System.Drawing.Point(145, 192);
-            this.txtEditCantEntrada.Name = "txtEditCantEntrada";
-            this.txtEditCantEntrada.Size = new System.Drawing.Size(142, 23);
-            this.txtEditCantEntrada.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "CANT. ENTRADA";
+            this.btnEditar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(41, 287);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(88, 36);
+            this.btnEditar.TabIndex = 12;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // txtEditTotalPago
             // 
@@ -284,67 +206,123 @@ namespace ProyectoFinalTallerBD
             this.label6.TabIndex = 10;
             this.label6.Text = "TOTAL DE PAGO";
             // 
-            // txtBuscarIdEntrega
+            // txtEditCantEntrada
             // 
-            this.txtBuscarIdEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarIdEntrega.Location = new System.Drawing.Point(509, 18);
-            this.txtBuscarIdEntrega.Name = "txtBuscarIdEntrega";
-            this.txtBuscarIdEntrega.Size = new System.Drawing.Size(112, 23);
-            this.txtBuscarIdEntrega.TabIndex = 3;
+            this.txtEditCantEntrada.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditCantEntrada.Location = new System.Drawing.Point(145, 192);
+            this.txtEditCantEntrada.Name = "txtEditCantEntrada";
+            this.txtEditCantEntrada.Size = new System.Drawing.Size(142, 23);
+            this.txtEditCantEntrada.TabIndex = 9;
             // 
-            // btnBuscar
+            // label5
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(639, 13);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(86, 33);
-            this.btnBuscar.TabIndex = 4;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "CANT. ENTRADA";
             // 
-            // iconButtonId
+            // dtpEditFechaEnt
             // 
-            this.iconButtonId.FlatAppearance.BorderSize = 0;
-            this.iconButtonId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonId.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonId.ForeColor = System.Drawing.Color.DimGray;
-            this.iconButtonId.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.iconButtonId.IconColor = System.Drawing.Color.SkyBlue;
-            this.iconButtonId.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonId.IconSize = 25;
-            this.iconButtonId.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonId.Location = new System.Drawing.Point(436, 13);
-            this.iconButtonId.Name = "iconButtonId";
-            this.iconButtonId.Size = new System.Drawing.Size(57, 35);
-            this.iconButtonId.TabIndex = 5;
-            this.iconButtonId.Text = "id";
-            this.iconButtonId.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButtonId.UseVisualStyleBackColor = true;
-            this.iconButtonId.Visible = false;
-            this.iconButtonId.Click += new System.EventHandler(this.iconButtonId_Click);
+            this.dtpEditFechaEnt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEditFechaEnt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtpEditFechaEnt.Location = new System.Drawing.Point(145, 154);
+            this.dtpEditFechaEnt.Name = "dtpEditFechaEnt";
+            this.dtpEditFechaEnt.Size = new System.Drawing.Size(142, 23);
+            this.dtpEditFechaEnt.TabIndex = 7;
             // 
-            // btnEditar
+            // label4
             // 
-            this.btnEditar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(41, 287);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 36);
-            this.btnEditar.TabIndex = 12;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "FECHA DE ENTRADA";
             // 
-            // btnCancelar
+            // txtEditIdProducto
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(174, 287);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(88, 36);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.txtEditIdProducto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditIdProducto.Location = new System.Drawing.Point(145, 111);
+            this.txtEditIdProducto.Name = "txtEditIdProducto";
+            this.txtEditIdProducto.Size = new System.Drawing.Size(142, 23);
+            this.txtEditIdProducto.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "ID PRODUCTO";
+            // 
+            // txtEditIdProveedor
+            // 
+            this.txtEditIdProveedor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditIdProveedor.Location = new System.Drawing.Point(145, 73);
+            this.txtEditIdProveedor.Name = "txtEditIdProveedor";
+            this.txtEditIdProveedor.Size = new System.Drawing.Size(142, 23);
+            this.txtEditIdProveedor.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ID PROVEEDOR";
+            // 
+            // txtEditIdEntrada
+            // 
+            this.txtEditIdEntrada.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditIdEntrada.Location = new System.Drawing.Point(145, 30);
+            this.txtEditIdEntrada.Name = "txtEditIdEntrada";
+            this.txtEditIdEntrada.ReadOnly = true;
+            this.txtEditIdEntrada.Size = new System.Drawing.Size(142, 23);
+            this.txtEditIdEntrada.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID ENTRADA";
+            // 
+            // lblEntradas
+            // 
+            this.lblEntradas.AutoSize = true;
+            this.lblEntradas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntradas.Location = new System.Drawing.Point(261, 27);
+            this.lblEntradas.Name = "lblEntradas";
+            this.lblEntradas.Size = new System.Drawing.Size(112, 24);
+            this.lblEntradas.TabIndex = 1;
+            this.lblEntradas.Text = "ENTREGAS";
+            // 
+            // dgvEntradas
+            // 
+            this.dgvEntradas.AllowUserToAddRows = false;
+            this.dgvEntradas.AllowUserToDeleteRows = false;
+            this.dgvEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar});
+            this.dgvEntradas.Location = new System.Drawing.Point(24, 71);
+            this.dgvEntradas.MultiSelect = false;
+            this.dgvEntradas.Name = "dgvEntradas";
+            this.dgvEntradas.ReadOnly = true;
+            this.dgvEntradas.RowHeadersVisible = false;
+            this.dgvEntradas.Size = new System.Drawing.Size(608, 259);
+            this.dgvEntradas.TabIndex = 0;
+            this.dgvEntradas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntradas_CellDoubleClick);
             // 
             // Editar
             // 
@@ -352,6 +330,36 @@ namespace ProyectoFinalTallerBD
             this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
+            // 
+            // tabRegistrar
+            // 
+            this.tabRegistrar.Controls.Add(this.dtpFechaEntrada);
+            this.tabRegistrar.Controls.Add(this.txtTotalPago);
+            this.tabRegistrar.Controls.Add(this.txtCantEntrada);
+            this.tabRegistrar.Controls.Add(this.txtProducto);
+            this.tabRegistrar.Controls.Add(this.txtProveedor);
+            this.tabRegistrar.Controls.Add(this.txtEntrada);
+            this.tabRegistrar.Controls.Add(this.label9);
+            this.tabRegistrar.Controls.Add(this.label7);
+            this.tabRegistrar.Controls.Add(this.label8);
+            this.tabRegistrar.Controls.Add(this.btnRegistrarEntrega);
+            this.tabRegistrar.Controls.Add(this.label10);
+            this.tabRegistrar.Controls.Add(this.label11);
+            this.tabRegistrar.Controls.Add(this.label12);
+            this.tabRegistrar.Location = new System.Drawing.Point(4, 22);
+            this.tabRegistrar.Name = "tabRegistrar";
+            this.tabRegistrar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRegistrar.Size = new System.Drawing.Size(745, 453);
+            this.tabRegistrar.TabIndex = 1;
+            this.tabRegistrar.Text = "REGISTRAR ENTREGA";
+            this.tabRegistrar.UseVisualStyleBackColor = true;
+            // 
+            // dtpFechaEntrada
+            // 
+            this.dtpFechaEntrada.Location = new System.Drawing.Point(338, 158);
+            this.dtpFechaEntrada.Name = "dtpFechaEntrada";
+            this.dtpFechaEntrada.Size = new System.Drawing.Size(238, 20);
+            this.dtpFechaEntrada.TabIndex = 74;
             // 
             // txtTotalPago
             // 
@@ -475,18 +483,11 @@ namespace ProyectoFinalTallerBD
             this.label12.TabIndex = 62;
             this.label12.Text = "ID ENTRADA";
             // 
-            // dtpFechaEntrada
-            // 
-            this.dtpFechaEntrada.Location = new System.Drawing.Point(338, 158);
-            this.dtpFechaEntrada.Name = "dtpFechaEntrada";
-            this.dtpFechaEntrada.Size = new System.Drawing.Size(238, 20);
-            this.dtpFechaEntrada.TabIndex = 74;
-            // 
             // FormEntregas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(753, 479);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormEntregas";
             this.Text = "formEntregas";
@@ -494,11 +495,11 @@ namespace ProyectoFinalTallerBD
             this.tabControl1.ResumeLayout(false);
             this.tabEntregas.ResumeLayout(false);
             this.tabEntregas.PerformLayout();
-            this.tabRegistrar.ResumeLayout(false);
-            this.tabRegistrar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).EndInit();
             this.grpEditarEntrada.ResumeLayout(false);
             this.grpEditarEntrada.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).EndInit();
+            this.tabRegistrar.ResumeLayout(false);
+            this.tabRegistrar.PerformLayout();
             this.ResumeLayout(false);
 
         }

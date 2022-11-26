@@ -31,45 +31,46 @@ namespace ProyectoFinalTallerBD
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
-            this.picBoxeador = new System.Windows.Forms.PictureBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.picProducto = new System.Windows.Forms.PictureBox();
+            this.txtPrecVenta = new System.Windows.Forms.TextBox();
+            this.txtPrecCompra = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtColor = new System.Windows.Forms.TextBox();
+            this.txtAncho = new System.Windows.Forms.TextBox();
+            this.txtGarantia = new System.Windows.Forms.TextBox();
+            this.txtAlto = new System.Windows.Forms.TextBox();
+            this.txtLargo = new System.Windows.Forms.TextBox();
+            this.txtMaterial = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtProducto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnRegistrarProd = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
+            this.cboIdCategoria = new System.Windows.Forms.ComboBox();
+            this.txtBuscarId = new System.Windows.Forms.TextBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabRegistro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxeador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -80,78 +81,41 @@ namespace ProyectoFinalTallerBD
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(664, 446);
+            this.tabControl1.Size = new System.Drawing.Size(753, 479);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.txtBuscarId);
+            this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(656, 420);
+            this.tabPage1.Size = new System.Drawing.Size(745, 453);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TODOS LOS PRODUCTOS";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnBuscar
             // 
-            this.button4.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(15, 342);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 37);
-            this.button4.TabIndex = 38;
-            this.button4.Text = "MOSTRAR";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(350, 342);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 37);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "BUSCAR";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(513, 342);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 37);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "ELIMINAR";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(178, 342);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 37);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "EDITAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscar.Location = new System.Drawing.Point(642, 22);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(71, 37);
+            this.btnBuscar.TabIndex = 37;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(258, 11);
+            this.label1.Location = new System.Drawing.Point(259, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 24);
             this.label1.TabIndex = 1;
@@ -159,38 +123,45 @@ namespace ProyectoFinalTallerBD
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 41);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Ver,
+            this.Eliminar});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 76);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(600, 288);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 287);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabRegistro
             // 
+            this.tabRegistro.Controls.Add(this.cboIdCategoria);
             this.tabRegistro.Controls.Add(this.btnAgregarImagen);
-            this.tabRegistro.Controls.Add(this.picBoxeador);
-            this.tabRegistro.Controls.Add(this.textBox11);
-            this.tabRegistro.Controls.Add(this.textBox10);
-            this.tabRegistro.Controls.Add(this.textBox9);
+            this.tabRegistro.Controls.Add(this.picProducto);
+            this.tabRegistro.Controls.Add(this.txtPrecVenta);
+            this.tabRegistro.Controls.Add(this.txtPrecCompra);
             this.tabRegistro.Controls.Add(this.label13);
             this.tabRegistro.Controls.Add(this.label12);
             this.tabRegistro.Controls.Add(this.label11);
-            this.tabRegistro.Controls.Add(this.textBox8);
-            this.tabRegistro.Controls.Add(this.textBox7);
-            this.tabRegistro.Controls.Add(this.textBox6);
-            this.tabRegistro.Controls.Add(this.textBox5);
-            this.tabRegistro.Controls.Add(this.textBox4);
-            this.tabRegistro.Controls.Add(this.textBox3);
-            this.tabRegistro.Controls.Add(this.textBox2);
-            this.tabRegistro.Controls.Add(this.textBox1);
+            this.tabRegistro.Controls.Add(this.txtColor);
+            this.tabRegistro.Controls.Add(this.txtAncho);
+            this.tabRegistro.Controls.Add(this.txtGarantia);
+            this.tabRegistro.Controls.Add(this.txtAlto);
+            this.tabRegistro.Controls.Add(this.txtLargo);
+            this.tabRegistro.Controls.Add(this.txtMaterial);
+            this.tabRegistro.Controls.Add(this.txtDescripcion);
+            this.tabRegistro.Controls.Add(this.txtProducto);
             this.tabRegistro.Controls.Add(this.label10);
             this.tabRegistro.Controls.Add(this.label9);
             this.tabRegistro.Controls.Add(this.label8);
             this.tabRegistro.Controls.Add(this.label6);
             this.tabRegistro.Controls.Add(this.label4);
-            this.tabRegistro.Controls.Add(this.btnBuscar);
+            this.tabRegistro.Controls.Add(this.btnRegistrarProd);
             this.tabRegistro.Controls.Add(this.label7);
             this.tabRegistro.Controls.Add(this.label5);
             this.tabRegistro.Controls.Add(this.label3);
@@ -199,7 +170,7 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.Location = new System.Drawing.Point(4, 22);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(656, 420);
+            this.tabRegistro.Size = new System.Drawing.Size(745, 453);
             this.tabRegistro.TabIndex = 1;
             this.tabRegistro.Text = "REGISTRO DE PRODUCTOS";
             this.tabRegistro.UseVisualStyleBackColor = true;
@@ -214,40 +185,33 @@ namespace ProyectoFinalTallerBD
             this.btnAgregarImagen.TabIndex = 69;
             this.btnAgregarImagen.Text = "AGREGAR IMAGEN";
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
-            // picBoxeador
+            // picProducto
             // 
-            this.picBoxeador.Location = new System.Drawing.Point(561, 5);
-            this.picBoxeador.Margin = new System.Windows.Forms.Padding(2);
-            this.picBoxeador.Name = "picBoxeador";
-            this.picBoxeador.Size = new System.Drawing.Size(88, 109);
-            this.picBoxeador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxeador.TabIndex = 70;
-            this.picBoxeador.TabStop = false;
+            this.picProducto.Location = new System.Drawing.Point(561, 5);
+            this.picProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.picProducto.Name = "picProducto";
+            this.picProducto.Size = new System.Drawing.Size(88, 109);
+            this.picProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProducto.TabIndex = 70;
+            this.picProducto.TabStop = false;
             // 
-            // textBox11
+            // txtPrecVenta
             // 
-            this.textBox11.Location = new System.Drawing.Point(189, 281);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 68;
+            this.txtPrecVenta.Location = new System.Drawing.Point(189, 253);
+            this.txtPrecVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrecVenta.Name = "txtPrecVenta";
+            this.txtPrecVenta.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecVenta.TabIndex = 67;
             // 
-            // textBox10
+            // txtPrecCompra
             // 
-            this.textBox10.Location = new System.Drawing.Point(189, 253);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 67;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(189, 223);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 66;
+            this.txtPrecCompra.Location = new System.Drawing.Point(189, 223);
+            this.txtPrecCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrecCompra.Name = "txtPrecCompra";
+            this.txtPrecCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecCompra.TabIndex = 66;
             // 
             // label13
             // 
@@ -279,69 +243,69 @@ namespace ProyectoFinalTallerBD
             this.label11.TabIndex = 63;
             this.label11.Text = "PRECIO DE COMPRA";
             // 
-            // textBox8
+            // txtColor
             // 
-            this.textBox8.Location = new System.Drawing.Point(394, 120);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(137, 20);
-            this.textBox8.TabIndex = 62;
+            this.txtColor.Location = new System.Drawing.Point(394, 120);
+            this.txtColor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(137, 20);
+            this.txtColor.TabIndex = 62;
             // 
-            // textBox7
+            // txtAncho
             // 
-            this.textBox7.Location = new System.Drawing.Point(301, 158);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(86, 20);
-            this.textBox7.TabIndex = 61;
+            this.txtAncho.Location = new System.Drawing.Point(301, 158);
+            this.txtAncho.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAncho.Name = "txtAncho";
+            this.txtAncho.Size = new System.Drawing.Size(86, 20);
+            this.txtAncho.TabIndex = 61;
             // 
-            // textBox6
+            // txtGarantia
             // 
-            this.textBox6.Location = new System.Drawing.Point(189, 191);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 60;
+            this.txtGarantia.Location = new System.Drawing.Point(189, 191);
+            this.txtGarantia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGarantia.Name = "txtGarantia";
+            this.txtGarantia.Size = new System.Drawing.Size(100, 20);
+            this.txtGarantia.TabIndex = 60;
             // 
-            // textBox5
+            // txtAlto
             // 
-            this.textBox5.Location = new System.Drawing.Point(460, 158);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(70, 20);
-            this.textBox5.TabIndex = 59;
+            this.txtAlto.Location = new System.Drawing.Point(460, 158);
+            this.txtAlto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAlto.Name = "txtAlto";
+            this.txtAlto.Size = new System.Drawing.Size(70, 20);
+            this.txtAlto.TabIndex = 59;
             // 
-            // textBox4
+            // txtLargo
             // 
-            this.textBox4.Location = new System.Drawing.Point(163, 158);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(74, 20);
-            this.textBox4.TabIndex = 58;
+            this.txtLargo.Location = new System.Drawing.Point(163, 158);
+            this.txtLargo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLargo.Name = "txtLargo";
+            this.txtLargo.Size = new System.Drawing.Size(74, 20);
+            this.txtLargo.TabIndex = 58;
             // 
-            // textBox3
+            // txtMaterial
             // 
-            this.textBox3.Location = new System.Drawing.Point(163, 120);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 20);
-            this.textBox3.TabIndex = 57;
+            this.txtMaterial.Location = new System.Drawing.Point(163, 120);
+            this.txtMaterial.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.Size = new System.Drawing.Size(138, 20);
+            this.txtMaterial.TabIndex = 57;
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(163, 89);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(380, 20);
-            this.textBox2.TabIndex = 56;
+            this.txtDescripcion.Location = new System.Drawing.Point(163, 89);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(380, 20);
+            this.txtDescripcion.TabIndex = 56;
             // 
-            // textBox1
+            // txtProducto
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 58);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 20);
-            this.textBox1.TabIndex = 55;
+            this.txtProducto.Location = new System.Drawing.Point(163, 58);
+            this.txtProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(116, 20);
+            this.txtProducto.TabIndex = 55;
             // 
             // label10
             // 
@@ -393,17 +357,18 @@ namespace ProyectoFinalTallerBD
             this.label4.TabIndex = 50;
             this.label4.Text = "COLOR";
             // 
-            // btnBuscar
+            // btnRegistrarProd
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.Location = new System.Drawing.Point(250, 323);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(103, 40);
-            this.btnBuscar.TabIndex = 34;
-            this.btnBuscar.Text = "REGISTRAR PRODUCTO";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnRegistrarProd.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarProd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegistrarProd.Location = new System.Drawing.Point(250, 323);
+            this.btnRegistrarProd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistrarProd.Name = "btnRegistrarProd";
+            this.btnRegistrarProd.Size = new System.Drawing.Size(103, 40);
+            this.btnRegistrarProd.TabIndex = 34;
+            this.btnRegistrarProd.Text = "REGISTRAR PRODUCTO";
+            this.btnRegistrarProd.UseVisualStyleBackColor = true;
+            this.btnRegistrarProd.Click += new System.EventHandler(this.btnRegistrarProd_Click);
             // 
             // label7
             // 
@@ -453,11 +418,58 @@ namespace ProyectoFinalTallerBD
             this.txtClave.Size = new System.Drawing.Size(116, 20);
             this.txtClave.TabIndex = 42;
             // 
+            // cboIdCategoria
+            // 
+            this.cboIdCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdCategoria.FormattingEnabled = true;
+            this.cboIdCategoria.Items.AddRange(new object[] {
+            "COM-155",
+            "INF-521",
+            "JAR-789",
+            "OFN-451",
+            "REM-872",
+            "SAL-021"});
+            this.cboIdCategoria.Location = new System.Drawing.Point(189, 285);
+            this.cboIdCategoria.Name = "cboIdCategoria";
+            this.cboIdCategoria.Size = new System.Drawing.Size(100, 21);
+            this.cboIdCategoria.TabIndex = 71;
+            this.cboIdCategoria.SelectedValueChanged += new System.EventHandler(this.cboIdCategoria_SelectedValueChanged);
+            // 
+            // txtBuscarId
+            // 
+            this.txtBuscarId.Location = new System.Drawing.Point(508, 31);
+            this.txtBuscarId.MaxLength = 9;
+            this.txtBuscarId.Name = "txtBuscarId";
+            this.txtBuscarId.Size = new System.Drawing.Size(129, 20);
+            this.txtBuscarId.TabIndex = 40;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 241;
+            // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "Ver";
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Width = 242;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 243;
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 446);
+            this.ClientSize = new System.Drawing.Size(753, 479);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormProductos";
             this.Text = "FormProductos";
@@ -468,7 +480,7 @@ namespace ProyectoFinalTallerBD
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxeador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,39 +489,40 @@ namespace ProyectoFinalTallerBD
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabRegistro;
         private System.Windows.Forms.Button btnAgregarImagen;
-        private System.Windows.Forms.PictureBox picBoxeador;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.PictureBox picProducto;
+        private System.Windows.Forms.TextBox txtPrecVenta;
+        private System.Windows.Forms.TextBox txtPrecCompra;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtColor;
+        private System.Windows.Forms.TextBox txtAncho;
+        private System.Windows.Forms.TextBox txtGarantia;
+        private System.Windows.Forms.TextBox txtAlto;
+        private System.Windows.Forms.TextBox txtLargo;
+        private System.Windows.Forms.TextBox txtMaterial;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnRegistrarProd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.ComboBox cboIdCategoria;
+        private System.Windows.Forms.TextBox txtBuscarId;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Ver;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }
