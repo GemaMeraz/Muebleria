@@ -56,8 +56,6 @@ namespace ProyectoFinalTallerBD
             this.dtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.txtCantEntrada = new System.Windows.Forms.TextBox();
-            this.txtProducto = new System.Windows.Forms.TextBox();
-            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.txtEntrada = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,6 +64,8 @@ namespace ProyectoFinalTallerBD
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.cboIdProveedor = new System.Windows.Forms.ComboBox();
+            this.cboIdProducto = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabEntregas.SuspendLayout();
             this.grpEditarEntrada.SuspendLayout();
@@ -334,11 +334,11 @@ namespace ProyectoFinalTallerBD
             // 
             // tabRegistrar
             // 
+            this.tabRegistrar.Controls.Add(this.cboIdProducto);
+            this.tabRegistrar.Controls.Add(this.cboIdProveedor);
             this.tabRegistrar.Controls.Add(this.dtpFechaEntrada);
             this.tabRegistrar.Controls.Add(this.txtTotalPago);
             this.tabRegistrar.Controls.Add(this.txtCantEntrada);
-            this.tabRegistrar.Controls.Add(this.txtProducto);
-            this.tabRegistrar.Controls.Add(this.txtProveedor);
             this.tabRegistrar.Controls.Add(this.txtEntrada);
             this.tabRegistrar.Controls.Add(this.label9);
             this.tabRegistrar.Controls.Add(this.label7);
@@ -377,22 +377,6 @@ namespace ProyectoFinalTallerBD
             this.txtCantEntrada.Name = "txtCantEntrada";
             this.txtCantEntrada.Size = new System.Drawing.Size(238, 20);
             this.txtCantEntrada.TabIndex = 71;
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.Location = new System.Drawing.Point(338, 125);
-            this.txtProducto.Margin = new System.Windows.Forms.Padding(2);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(238, 20);
-            this.txtProducto.TabIndex = 70;
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.Location = new System.Drawing.Point(338, 92);
-            this.txtProveedor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(238, 20);
-            this.txtProveedor.TabIndex = 69;
             // 
             // txtEntrada
             // 
@@ -484,6 +468,24 @@ namespace ProyectoFinalTallerBD
             this.label12.TabIndex = 62;
             this.label12.Text = "ID ENTRADA";
             // 
+            // cboIdProveedor
+            // 
+            this.cboIdProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdProveedor.FormattingEnabled = true;
+            this.cboIdProveedor.Location = new System.Drawing.Point(338, 92);
+            this.cboIdProveedor.Name = "cboIdProveedor";
+            this.cboIdProveedor.Size = new System.Drawing.Size(238, 21);
+            this.cboIdProveedor.TabIndex = 75;
+            // 
+            // cboIdProducto
+            // 
+            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdProducto.FormattingEnabled = true;
+            this.cboIdProducto.Location = new System.Drawing.Point(338, 125);
+            this.cboIdProducto.Name = "cboIdProducto";
+            this.cboIdProducto.Size = new System.Drawing.Size(238, 21);
+            this.cboIdProducto.TabIndex = 76;
+            // 
             // FormEntregas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,8 +535,6 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.TextBox txtTotalPago;
         private System.Windows.Forms.TextBox txtCantEntrada;
-        private System.Windows.Forms.TextBox txtProducto;
-        private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.TextBox txtEntrada;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
@@ -544,5 +544,7 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrada;
+        private System.Windows.Forms.ComboBox cboIdProducto;
+        private System.Windows.Forms.ComboBox cboIdProveedor;
     }
 }

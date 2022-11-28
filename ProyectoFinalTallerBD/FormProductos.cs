@@ -131,7 +131,7 @@ namespace ProyectoFinalTallerBD
             }
             else
             {
-                MessageBox.Show("No deje el id del empleado vacío.");
+                MessageBox.Show("No deje el id del producto vacío.");
             }
         }
         private int ComprobarProducto()

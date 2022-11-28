@@ -22,7 +22,8 @@ namespace ProyectoFinalTallerBD
 
         private void Inventario_Load(object sender, EventArgs e)
         {
-            Cargardgv();        
+            Cargardgv();
+            CargarProductosComboBox();
         }
         private void Cargardgv()
         {
@@ -46,7 +47,7 @@ namespace ProyectoFinalTallerBD
         }
         private void btnRegistrarInventario_Click(object sender, EventArgs e)
         {
-            string idProducto = txtIdProdInventario.Text;
+            string idProducto = cboIdProducto.SelectedValue.ToString();
             int stock = int.Parse(txtStock.Text);
             string modificacionInventario = dtpFechaModificacion.Value.ToString("yyyy-MM-dd");
             char activo = 'S';
@@ -132,6 +133,27 @@ namespace ProyectoFinalTallerBD
 
             }
             MessageBox.Show("Producto Inexistente");
+        }
+        public void CargarProductosComboBox()
+        {
+            try
+            {   //Muestra todos los productos disponibles en el combo box
+                cn.da = new SqlDataAdapter("Select idProducto, producto from Productos WHERE activo = 'S'", cn.conectarbd);
+                cn.dt = new DataTable();
+                cn.da.Fill(cn.dt);
+                cboIdProducto.DataSource = cn.dt;
+                cboIdProducto.DisplayMember = "producto";
+                cboIdProducto.ValueMember = "idProducto";
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
         }
     }
 }

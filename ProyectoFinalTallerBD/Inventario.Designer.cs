@@ -52,7 +52,7 @@ namespace ProyectoFinalTallerBD
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtIdProdInventario = new System.Windows.Forms.TextBox();
+            this.cboIdProducto = new System.Windows.Forms.ComboBox();
             this.tabInventario.SuspendLayout();
             this.tabPageConsultaInv.SuspendLayout();
             this.grpEditarInv.SuspendLayout();
@@ -234,13 +234,13 @@ namespace ProyectoFinalTallerBD
             // 
             // tabPageRegInv
             // 
+            this.tabPageRegInv.Controls.Add(this.cboIdProducto);
             this.tabPageRegInv.Controls.Add(this.dtpFechaModificacion);
             this.tabPageRegInv.Controls.Add(this.btnRegistrarInventario);
             this.tabPageRegInv.Controls.Add(this.txtStock);
             this.tabPageRegInv.Controls.Add(this.label5);
             this.tabPageRegInv.Controls.Add(this.label3);
             this.tabPageRegInv.Controls.Add(this.label2);
-            this.tabPageRegInv.Controls.Add(this.txtIdProdInventario);
             this.tabPageRegInv.Location = new System.Drawing.Point(4, 22);
             this.tabPageRegInv.Name = "tabPageRegInv";
             this.tabPageRegInv.Padding = new System.Windows.Forms.Padding(3);
@@ -307,13 +307,14 @@ namespace ProyectoFinalTallerBD
             this.label2.TabIndex = 58;
             this.label2.Text = "ID PRODUCTO";
             // 
-            // txtIdProdInventario
+            // cboIdProducto
             // 
-            this.txtIdProdInventario.Location = new System.Drawing.Point(332, 88);
-            this.txtIdProdInventario.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdProdInventario.Name = "txtIdProdInventario";
-            this.txtIdProdInventario.Size = new System.Drawing.Size(116, 20);
-            this.txtIdProdInventario.TabIndex = 57;
+            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdProducto.FormattingEnabled = true;
+            this.cboIdProducto.Location = new System.Drawing.Point(332, 88);
+            this.cboIdProducto.Name = "cboIdProducto";
+            this.cboIdProducto.Size = new System.Drawing.Size(200, 21);
+            this.cboIdProducto.TabIndex = 65;
             // 
             // Inventario
             // 
@@ -349,7 +350,6 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdProdInventario;
         private System.Windows.Forms.Button btnRegistrarInventario;
         private System.Windows.Forms.DateTimePicker dtpFechaModificacion;
         private System.Windows.Forms.GroupBox grpEditarInv;
@@ -362,5 +362,6 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.ComboBox cboIdProducto;
     }
 }
