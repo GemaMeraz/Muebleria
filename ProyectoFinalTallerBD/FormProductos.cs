@@ -131,7 +131,7 @@ namespace ProyectoFinalTallerBD
             }
             else
             {
-                MessageBox.Show("No deje el id del producto vacío.");
+                MessageBox.Show("No deje el id del empleado vacío.");
             }
         }
         private int ComprobarProducto()
@@ -233,20 +233,40 @@ namespace ProyectoFinalTallerBD
             {
                 dataGridView1.Size = new Size(399, 287);
                 grpEditarProd.Visible = true;
-                //int idProvedorCon =Convert.ToInt32(dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString());
-                //txtIdProveedor.Text = idProvedorCon.ToString();
-                txtModIdProducto.Text = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
-                txtModProducto.Text = dataGridView1.CurrentRow.Cells["producto"].Value.ToString();
-                txtModDescripcion.Text = dataGridView1.CurrentRow.Cells["descripcion"].Value.ToString();
-                txtModMaterial.Text = dataGridView1.CurrentRow.Cells["material"].Value.ToString();
-                txtModColor.Text = dataGridView1.CurrentRow.Cells["color"].Value.ToString();
-                txtModLargo.Text = dataGridView1.CurrentRow.Cells["largo"].Value.ToString();
-                txtModAncho.Text = dataGridView1.CurrentRow.Cells["ancho"].Value.ToString();
-                txtModAlto.Text = dataGridView1.CurrentRow.Cells["alto"].Value.ToString();
-                txtModDiasG.Text = dataGridView1.CurrentRow.Cells["diasGarantia"].Value.ToString();
-                txtModPrecioC.Text = dataGridView1.CurrentRow.Cells["precioCompra"].Value.ToString();
-                txtModPrecioV.Text = dataGridView1.CurrentRow.Cells["precioVenta"].Value.ToString();
-                cboModIdCategoria.Text = dataGridView1.CurrentRow.Cells["idCategoria"].Value.ToString();
+                ////int idProvedorCon =Convert.ToInt32(dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString());
+                ////txtIdProveedor.Text = idProvedorCon.ToString();
+                string id = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Productos WHERE idProducto='" + id + "'", cn.conectarbd);
+                cn.conectarbd.Open();
+                SqlDataReader registro = cmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    txtModIdProducto.Text = registro["idProducto"].ToString();
+                    txtModProducto.Text = registro["producto"].ToString();
+                    txtModDescripcion.Text = registro["descripcion"].ToString();
+                    txtModMaterial.Text = registro["material"].ToString();
+                    txtModColor.Text = registro["color"].ToString();
+                    txtModLargo.Text = registro["largo"].ToString();
+                    txtModAncho.Text = registro["ancho"].ToString();
+                    txtModAlto.Text = registro["alto"].ToString();
+                    txtModDiasG.Text = registro["diasGarantia"].ToString();
+                    txtModPrecioC.Text = registro["precioCompra"].ToString();
+                    txtModPrecioV.Text = registro["precioVenta"].ToString();
+                    cboModIdCategoria.Text = registro["idCategoria"].ToString();
+                }
+                cn.conectarbd.Close();
+                //txtModIdProducto.Text = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
+                //txtModProducto.Text = dataGridView1.CurrentRow.Cells["producto"].Value.ToString();
+                //txtModDescripcion.Text = dataGridView1.CurrentRow.Cells["descripcion"].Value.ToString();
+                //txtModMaterial.Text = dataGridView1.CurrentRow.Cells["material"].Value.ToString();
+                //txtModColor.Text = dataGridView1.CurrentRow.Cells["color"].Value.ToString();
+                //txtModLargo.Text = dataGridView1.CurrentRow.Cells["largo"].Value.ToString();
+                //txtModAncho.Text = dataGridView1.CurrentRow.Cells["ancho"].Value.ToString();
+                //txtModAlto.Text = dataGridView1.CurrentRow.Cells["alto"].Value.ToString();
+                //txtModDiasG.Text = dataGridView1.CurrentRow.Cells["diasGarantia"].Value.ToString();
+                //txtModPrecioC.Text = dataGridView1.CurrentRow.Cells["precioCompra"].Value.ToString();
+                //txtModPrecioV.Text = dataGridView1.CurrentRow.Cells["precioVenta"].Value.ToString();
+                //cboModIdCategoria.Text = dataGridView1.CurrentRow.Cells["idCategoria"].Value.ToString();
                 dataGridView1.CurrentRow.Cells["Editar"].Style.SelectionBackColor = Color.CadetBlue;
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")

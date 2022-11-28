@@ -117,26 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Editar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAARdJREFUOE9j
-        SG6Yui2lfspRfDi5YYodAxCkbp/sl7J9yh4QGwyAkv9T6qZkpjZMzsCF0xpmioDUpm6fuip1+5T/qTum
-        vIdrbmhoYAJzcIC8oysi8o6sAGtAMuAaQc0Qjcv/QzCKAZPwakbS+ALMP7L8H8wAMMClGV1j7uEVO8D8
-        w8vmgfjAcCrFqpmQRgaG/4wgfRiacw8viwQpzD+y/CWEj64RBHBoBio8BFMMpHdiagQBLJpTd0yeBaLh
-        BmDVCALYNG+f8idt+5RHIDbYAKwaQQBNc9qZmazgyAfjyQegqnAANM2J2yaJJqzvF4DKEgBImlMbphqk
-        NEzTIxan1k3OBer7zZDSMOUJkPGWFJxcP+V+ckOfEACaFESveB+56AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Editar2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Editar2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAARdJREFUOE9j
@@ -148,6 +132,22 @@
 </value>
   </data>
   <metadata name="Eliminar2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Editar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAARdJREFUOE9j
+        SG6Yui2lfspRfDi5YYodAxCkbp/sl7J9yh4QGwyAkv9T6qZkpjZMzsCF0xpmioDUpm6fuip1+5T/qTum
+        vIdrbmhoYAJzcIC8oysi8o6sAGtAMuAaQc0Qjcv/QzCKAZPwakbS+ALMP7L8H8wAMMClGV1j7uEVO8D8
+        w8vmgfjAcCrFqpmQRgaG/4wgfRiacw8viwQpzD+y/CWEj64RBHBoBio8BFMMpHdiagQBLJpTd0yeBaLh
+        BmDVCALYNG+f8idt+5RHIDbYAKwaQQBNc9qZmazgyAfjyQegqnAANM2J2yaJJqzvF4DKEgBImlMbphqk
+        NEzTIxan1k3OBer7zZDSMOUJkPGWFJxcP+V+ckOfEACaFESveB+56AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

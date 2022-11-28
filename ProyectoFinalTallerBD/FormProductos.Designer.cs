@@ -65,9 +65,6 @@ namespace ProyectoFinalTallerBD
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.cboIdCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
@@ -96,6 +93,9 @@ namespace ProyectoFinalTallerBD
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grpEditarProd.SuspendLayout();
@@ -451,33 +451,6 @@ namespace ProyectoFinalTallerBD
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 40;
-            // 
-            // Ver
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            this.Ver.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Ver.HeaderText = "Ver";
-            this.Ver.Image = ((System.Drawing.Image)(resources.GetObject("Ver.Image")));
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            this.Ver.Width = 29;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 49;
-            // 
             // tabRegistro
             // 
             this.tabRegistro.Controls.Add(this.cboIdCategoria);
@@ -774,6 +747,33 @@ namespace ProyectoFinalTallerBD
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(116, 20);
             this.txtClave.TabIndex = 42;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 40;
+            // 
+            // Ver
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            this.Ver.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Ver.HeaderText = "Ver";
+            this.Ver.Image = ((System.Drawing.Image)(resources.GetObject("Ver.Image")));
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Width = 29;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 49;
             // 
             // FormProductos
             // 

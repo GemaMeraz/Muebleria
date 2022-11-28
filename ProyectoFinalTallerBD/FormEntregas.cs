@@ -24,8 +24,6 @@ namespace ProyectoFinalTallerBD
         private void FormEntregas_Load(object sender, EventArgs e)
         {
             MostrarEntregas();
-            CargarComboboxProveedor();
-            CargarProductosComboBox();
         }
 
         private void MostrarEntregas()
@@ -128,8 +126,8 @@ namespace ProyectoFinalTallerBD
         private void btnRegistrarEntrega_Click(object sender, EventArgs e)
         {
             idEntrada = txtEntrada.Text;
-            int idProveedor = int.Parse(cboIdProveedor.SelectedValue.ToString());
-            string idProducto = cboIdProducto.SelectedValue.ToString();
+            int idProveedor = int.Parse(txtProveedor.Text);
+            string idProducto = txtProducto.Text;
             string fechaEntrada = dtpFechaEntrada.Value.ToString("yyyy-MM-dd");
             int cantEntrada = int.Parse(txtCantEntrada.Text);
             double totalPago = double.Parse(txtTotalPago.Text);
@@ -199,43 +197,6 @@ namespace ProyectoFinalTallerBD
             if (tabControl1.SelectedIndex == 1)
             {
                 dtpFechaEntrada.Value = DateTime.Now;
-            }
-        }
-        public void CargarComboboxProveedor()
-        {
-            try
-            {
-                cn.da = new SqlDataAdapter("SELECT razonSocial, idProveedor FROM Proveedores WHERE activo = 'S'", cn.conectarbd);
-                cn.dt = new DataTable();
-                cn.da.Fill(cn.dt);
-                cboIdProveedor.DataSource = cn.dt;
-                cboIdProveedor.DisplayMember = "razonSocial";
-                cboIdProveedor.ValueMember = "idProveedor";
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.Message);
-            }
-        }
-        public void CargarProductosComboBox()
-        {
-            try
-            {   //Muestra todos los productos disponibles en el combo box
-                cn.da = new SqlDataAdapter("Select idProducto, producto from Productos WHERE activo = 'S'", cn.conectarbd);
-                cn.dt = new DataTable();
-                cn.da.Fill(cn.dt);
-                cboIdProducto.DataSource = cn.dt;
-                cboIdProducto.DisplayMember = "producto";
-                cboIdProducto.ValueMember = "idProducto";
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.Message);
-                throw;
-            }
-            finally
-            {
-                cn.conectarbd.Close();
             }
         }
     }

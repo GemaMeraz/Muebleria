@@ -29,11 +29,17 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dgvVenta = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.txtBuscarV = new System.Windows.Forms.TextBox();
+            this.btnBuscarVenta = new System.Windows.Forms.Button();
             this.gpbVentas = new System.Windows.Forms.GroupBox();
             this.cmbModFormaPago = new System.Windows.Forms.ComboBox();
             this.txtModTotal = new System.Windows.Forms.TextBox();
@@ -53,12 +59,6 @@ namespace ProyectoFinalTallerBD
             this.btnEditarVenta = new System.Windows.Forms.Button();
             this.btnCancelarVenta = new System.Windows.Forms.Button();
             this.txtModIdVenta1 = new System.Windows.Forms.TextBox();
-            this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txtBuscarV = new System.Windows.Forms.TextBox();
-            this.btnBuscarVenta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.cmbFormaPago = new System.Windows.Forms.ComboBox();
@@ -67,6 +67,8 @@ namespace ProyectoFinalTallerBD
             this.label11 = new System.Windows.Forms.Label();
             this.txtProductosComprados = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtIdProducto = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -121,12 +123,10 @@ namespace ProyectoFinalTallerBD
             this.label13 = new System.Windows.Forms.Label();
             this.txtVentasCredito = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.cboIdCliente = new System.Windows.Forms.ComboBox();
-            this.cboIdProducto = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.gpbVentas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
+            this.gpbVentas.SuspendLayout();
             this.tabRegistro.SuspendLayout();
             this.tabVentasCrd.SuspendLayout();
             this.grbModificarVentasCredito.SuspendLayout();
@@ -162,6 +162,91 @@ namespace ProyectoFinalTallerBD
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TODAS LAS VENTAS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dgvVenta
+            // 
+            this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.AllowUserToDeleteRows = false;
+            this.dgvVenta.AllowUserToResizeColumns = false;
+            this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Eliminar});
+            this.dgvVenta.Location = new System.Drawing.Point(11, 62);
+            this.dgvVenta.MultiSelect = false;
+            this.dgvVenta.Name = "dgvVenta";
+            this.dgvVenta.ReadOnly = true;
+            this.dgvVenta.RowHeadersVisible = false;
+            this.dgvVenta.RowHeadersWidth = 51;
+            this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVenta.Size = new System.Drawing.Size(557, 347);
+            this.dgvVenta.TabIndex = 71;
+            this.dgvVenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellDoubleClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Dar de baja";
+            this.Eliminar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_baja;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.DimGray;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            this.iconButton1.IconColor = System.Drawing.Color.SkyBlue;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(433, 8);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(51, 35);
+            this.iconButton1.TabIndex = 70;
+            this.iconButton1.Text = "id";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Visible = false;
+            // 
+            // txtBuscarV
+            // 
+            this.txtBuscarV.Location = new System.Drawing.Point(489, 17);
+            this.txtBuscarV.Name = "txtBuscarV";
+            this.txtBuscarV.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscarV.TabIndex = 69;
+            // 
+            // btnBuscarVenta
+            // 
+            this.btnBuscarVenta.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarVenta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscarVenta.Location = new System.Drawing.Point(604, 8);
+            this.btnBuscarVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarVenta.Name = "btnBuscarVenta";
+            this.btnBuscarVenta.Size = new System.Drawing.Size(109, 37);
+            this.btnBuscarVenta.TabIndex = 68;
+            this.btnBuscarVenta.Text = "BUSCAR";
+            this.btnBuscarVenta.UseVisualStyleBackColor = true;
+            this.btnBuscarVenta.Click += new System.EventHandler(this.btnBuscarVenta_Click);
             // 
             // gpbVentas
             // 
@@ -369,91 +454,6 @@ namespace ProyectoFinalTallerBD
             this.txtModIdVenta1.Size = new System.Drawing.Size(131, 23);
             this.txtModIdVenta1.TabIndex = 77;
             // 
-            // dgvVenta
-            // 
-            this.dgvVenta.AllowUserToAddRows = false;
-            this.dgvVenta.AllowUserToDeleteRows = false;
-            this.dgvVenta.AllowUserToResizeColumns = false;
-            this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar,
-            this.Eliminar});
-            this.dgvVenta.Location = new System.Drawing.Point(11, 62);
-            this.dgvVenta.MultiSelect = false;
-            this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.ReadOnly = true;
-            this.dgvVenta.RowHeadersVisible = false;
-            this.dgvVenta.RowHeadersWidth = 51;
-            this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVenta.Size = new System.Drawing.Size(557, 347);
-            this.dgvVenta.TabIndex = 71;
-            this.dgvVenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellDoubleClick);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Dar de baja";
-            this.Eliminar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_baja;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.DimGray;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.iconButton1.IconColor = System.Drawing.Color.SkyBlue;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(433, 8);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(51, 35);
-            this.iconButton1.TabIndex = 70;
-            this.iconButton1.Text = "id";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Visible = false;
-            // 
-            // txtBuscarV
-            // 
-            this.txtBuscarV.Location = new System.Drawing.Point(489, 17);
-            this.txtBuscarV.Name = "txtBuscarV";
-            this.txtBuscarV.Size = new System.Drawing.Size(100, 20);
-            this.txtBuscarV.TabIndex = 69;
-            // 
-            // btnBuscarVenta
-            // 
-            this.btnBuscarVenta.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarVenta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscarVenta.Location = new System.Drawing.Point(604, 8);
-            this.btnBuscarVenta.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscarVenta.Name = "btnBuscarVenta";
-            this.btnBuscarVenta.Size = new System.Drawing.Size(109, 37);
-            this.btnBuscarVenta.TabIndex = 68;
-            this.btnBuscarVenta.Text = "BUSCAR";
-            this.btnBuscarVenta.UseVisualStyleBackColor = true;
-            this.btnBuscarVenta.Click += new System.EventHandler(this.btnBuscarVenta_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -466,14 +466,14 @@ namespace ProyectoFinalTallerBD
             // 
             // tabRegistro
             // 
-            this.tabRegistro.Controls.Add(this.cboIdProducto);
-            this.tabRegistro.Controls.Add(this.cboIdCliente);
             this.tabRegistro.Controls.Add(this.cmbFormaPago);
             this.tabRegistro.Controls.Add(this.cmbPagoconCredito);
             this.tabRegistro.Controls.Add(this.dtpFechaVenta);
             this.tabRegistro.Controls.Add(this.label11);
             this.tabRegistro.Controls.Add(this.txtProductosComprados);
             this.tabRegistro.Controls.Add(this.txtTotal);
+            this.tabRegistro.Controls.Add(this.txtIdProducto);
+            this.tabRegistro.Controls.Add(this.txtIdCliente);
             this.tabRegistro.Controls.Add(this.label8);
             this.tabRegistro.Controls.Add(this.label6);
             this.tabRegistro.Controls.Add(this.label4);
@@ -493,7 +493,6 @@ namespace ProyectoFinalTallerBD
             // 
             // cmbFormaPago
             // 
-            this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormaPago.FormattingEnabled = true;
             this.cmbFormaPago.Items.AddRange(new object[] {
             "EFECTIVO",
@@ -507,7 +506,6 @@ namespace ProyectoFinalTallerBD
             // 
             // cmbPagoconCredito
             // 
-            this.cmbPagoconCredito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPagoconCredito.FormattingEnabled = true;
             this.cmbPagoconCredito.Items.AddRange(new object[] {
             "S",
@@ -551,6 +549,22 @@ namespace ProyectoFinalTallerBD
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(74, 20);
             this.txtTotal.TabIndex = 58;
+            // 
+            // txtIdProducto
+            // 
+            this.txtIdProducto.Location = new System.Drawing.Point(179, 120);
+            this.txtIdProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.Size = new System.Drawing.Size(138, 20);
+            this.txtIdProducto.TabIndex = 57;
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.Location = new System.Drawing.Point(208, 89);
+            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(175, 20);
+            this.txtIdCliente.TabIndex = 56;
             // 
             // label8
             // 
@@ -901,14 +915,14 @@ namespace ProyectoFinalTallerBD
             this.dgvVentasCrd.AllowUserToAddRows = false;
             this.dgvVentasCrd.AllowUserToDeleteRows = false;
             this.dgvVentasCrd.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentasCrd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentasCrd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvVentasCrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentasCrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar2,
@@ -1126,24 +1140,6 @@ namespace ProyectoFinalTallerBD
             this.label12.TabIndex = 0;
             this.label12.Text = "ID VENTA CREDITO";
             // 
-            // cboIdCliente
-            // 
-            this.cboIdCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdCliente.FormattingEnabled = true;
-            this.cboIdCliente.Location = new System.Drawing.Point(208, 90);
-            this.cboIdCliente.Name = "cboIdCliente";
-            this.cboIdCliente.Size = new System.Drawing.Size(175, 21);
-            this.cboIdCliente.TabIndex = 73;
-            // 
-            // cboIdProducto
-            // 
-            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdProducto.FormattingEnabled = true;
-            this.cboIdProducto.Location = new System.Drawing.Point(149, 120);
-            this.cboIdProducto.Name = "cboIdProducto";
-            this.cboIdProducto.Size = new System.Drawing.Size(167, 21);
-            this.cboIdProducto.TabIndex = 74;
-            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1156,9 +1152,9 @@ namespace ProyectoFinalTallerBD
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             this.gpbVentas.ResumeLayout(false);
             this.gpbVentas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
             this.tabVentasCrd.ResumeLayout(false);
@@ -1209,6 +1205,8 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtProductosComprados;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtIdProducto;
+        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -1263,7 +1261,5 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtVentasCredito;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cboIdProducto;
-        private System.Windows.Forms.ComboBox cboIdCliente;
     }
 }
