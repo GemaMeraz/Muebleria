@@ -52,15 +52,41 @@ namespace ProyectoFinalTallerBD
                 throw;
             }
         }
-        public void ValidarVenta()
+        public int ValidarVenta()
         {
+            try
+            {
+                cn.conectarbd.Open();
+                cn.cmd = new SqlCommand("sp_validarVenta", cn.conectarbd);
+                cn.cmd.CommandType = CommandType.StoredProcedure;
+                cn.cmd.Parameters.AddWithValue("@par_idProducto", cboIdProducto.SelectedValue.ToString());
+                cn.cmd.Parameters.AddWithValue("@par_cantVendido", int.Parse(txtProductosComprados.Text));
 
+                cn.dr = cn.cmd.ExecuteReader();
+                if (cn.dr.Read())
+                {
+                    return cn.dr.GetInt32(0);
+                }
+                else
+                    return -1;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return -1;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
         }
         private void FormVentas_Load(object sender, EventArgs e)
         {
             //ConsultarVentas();
             CargardgvVenta();
             Cargardgv();
+            CargarProductosComboBox();
+            CargarComboboxCliente();
         }
 
         private void tabControl1_TabIndexChanged(object sender, EventArgs e)
@@ -317,8 +343,8 @@ namespace ProyectoFinalTallerBD
         {
             idVenta1 = int.Parse(txtidVenta.Text);
             string FechaVenta = dtpFechaVenta.Value.ToString("yyyy-MM-dd");
-            int idCliente = int.Parse(txtIdCliente.Text);
-            string idProducto = txtIdProducto.Text;
+            int idCliente = int.Parse(cboIdCliente.SelectedValue.ToString());
+            string idProducto = cboIdProducto.SelectedValue.ToString();
             int ProductosComprados = int.Parse(txtProductosComprados.Text);
             double Total = double.Parse(txtTotal.Text);
             string FormaPago = cmbFormaPago.Text;
@@ -327,6 +353,14 @@ namespace ProyectoFinalTallerBD
             int var = ComprobarVenta();
             if (idVenta1 != var)
             {
+                int respuesta = ValidarVenta();
+                switch (respuesta)
+                {
+                    case -1: MessageBox.Show("Error inesperado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                    case 0: MessageBox.Show("No hay stock.", "SIN STOCK", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                    case 1: MessageBox.Show("No hay stock suficiente para completar la venta", "STOCK INSUFICIENTE", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                    case 2: break;
+                }
                 try
                 {
                     cn.conectarbd.Open();
@@ -491,6 +525,43 @@ namespace ProyectoFinalTallerBD
 
 
                 }
+            }
+        }
+        public void CargarComboboxCliente()
+        {
+            try
+            {
+                cn.da = new SqlDataAdapter("SELECT CONCAT(primerNombre, ' ', apellidoPaterno) AS cliente, idCliente FROM Clientes WHERE activo = 'S'", cn.conectarbd);
+                cn.dt = new DataTable();
+                cn.da.Fill(cn.dt);
+                cboIdCliente.DataSource = cn.dt;
+                cboIdCliente.DisplayMember = "cliente";
+                cboIdCliente.ValueMember = "idCliente";
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
+        public void CargarProductosComboBox()
+        {
+            try
+            {   //Muestra todos los productos disponibles en el combo box
+                cn.da = new SqlDataAdapter("Select idProducto, producto from Productos WHERE activo = 'S'", cn.conectarbd);
+                cn.dt = new DataTable();
+                cn.da.Fill(cn.dt);
+                cboIdProducto.DataSource = cn.dt;
+                cboIdProducto.DisplayMember = "producto";
+                cboIdProducto.ValueMember = "idProducto";
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
             }
         }
     }
