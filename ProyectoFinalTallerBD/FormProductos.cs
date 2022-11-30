@@ -300,7 +300,7 @@ namespace ProyectoFinalTallerBD
             {
                 string id = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
                 cn.conectarbd.Open();
-                SqlCommand cmd = new SqlCommand("SELECT imagen FROM Productos WHERE idProducto='n'", cn.conectarbd);
+                SqlCommand cmd = new SqlCommand("SELECT imagen FROM Productos WHERE idProducto='" + id + "'", cn.conectarbd);
                 SqlDataAdapter llenar = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet("Productos");
                 

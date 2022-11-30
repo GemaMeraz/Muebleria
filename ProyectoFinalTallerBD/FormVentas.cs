@@ -19,7 +19,7 @@ namespace ProyectoFinalTallerBD
         {
             InitializeComponent();
         }
-        int IdVentaCredito;
+        string IdVentaCredito;
         string contId;
         int idVenta1;
         private void ConsultarVentas()
@@ -47,6 +47,23 @@ namespace ProyectoFinalTallerBD
                 cn.dt = new DataTable();
                 cn.da.Fill(cn.dt);
                 dgvVentasCrd.DataSource = cn.dt;
+                dgvVentasCrd.Columns["idVenta"].DisplayIndex = 0;
+                dgvVentasCrd.Columns["idVentasCredito"].DisplayIndex = 1;
+                dgvVentasCrd.Columns["fechaVenta"].DisplayIndex = 2;
+                dgvVentasCrd.Columns["idCliente"].DisplayIndex = 3;
+                dgvVentasCrd.Columns["idProducto"].DisplayIndex = 4;
+                dgvVentasCrd.Columns["productosComprados"].DisplayIndex = 5;
+                dgvVentasCrd.Columns["total"].DisplayIndex = 6;
+                dgvVentasCrd.Columns["formaPago"].DisplayIndex = 7;
+                dgvVentasCrd.Columns["status"].DisplayIndex = 8;
+                dgvVentasCrd.Columns["pagoConCredito"].DisplayIndex = 9;
+                dgvVentasCrd.Columns["fechaInicioVenta"].DisplayIndex = 10;
+                dgvVentasCrd.Columns["fechaNuevoPago"].DisplayIndex = 11;
+                dgvVentasCrd.Columns["fechaLiquidacion"].DisplayIndex = 12;
+                dgvVentasCrd.Columns["pagoMensualRealizado"].DisplayIndex = 13;
+                dgvVentasCrd.Columns["montoLiquidado"].DisplayIndex = 14;
+                dgvVentasCrd.Columns["Editar2"].DisplayIndex = 15;
+                dgvVentasCrd.Columns["Eliminar2"].DisplayIndex = 16;
             }
             catch (Exception)
             {
@@ -86,11 +103,13 @@ namespace ProyectoFinalTallerBD
         {
             //ConsultarVentas();
             CargardgvVenta();
-            Cargardgv();
+            ConsultarVistaVentas();
+            //Cargardgv();
             CargarProductosComboBox();
             CargarComboboxCliente();
             txtidVenta.Text = BuscarId();
             txtidVenta.Enabled = false;
+            CargarComboboxVenta();
         }
 
         private void tabControl1_TabIndexChanged(object sender, EventArgs e)
@@ -98,18 +117,10 @@ namespace ProyectoFinalTallerBD
             
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (tabControl1.SelectedIndex)
-            {
-                case 0: ConsultarVentas(); break;
-                case 2: ConsultarVistaVentas(); break;
-            }
-        }
 
         private void btnEditarVC_Click(object sender, EventArgs e)
         {
-            int modIdVentaCredito = int.Parse(txtModIdVentaCredito.Text);
+            string modIdVentaCredito = txtModIdVentaCredito.Text;
             int modIdVenta = int.Parse(txtModIdVenta.Text);
             string modFechaInicioVenta = dtpModFechaInicioVenta.Value.ToString("yyyy-MM-dd");
             string modFechaNuevoPago = dtpModFehcaNuevoPago.Value.ToString("yyyy-MM-dd");
@@ -117,18 +128,18 @@ namespace ProyectoFinalTallerBD
             string modPagoMensualRealizado = cmbModPagoMensualRealizado.Text;
             double modTotalLiquidar = double.Parse(txtModTotalLiquidar.Text);
             double modMontoLiquidado = double.Parse(txtModMontoLiquidado.Text);
-            string modActivo = "AC";
+            string modActivo = "S";
             try
             {
                 cn.conectarbd.Open();
-                cn.cmd = new SqlCommand("Update VentasCredito SET idVenta='" + modIdVenta + "',fechaInicioVenta='" + modFechaInicioVenta + "', fechaNuevoPago='" + modFechaNuevoPago + "', fechaLiquidacion='" + modFechaLiquidacion + "', pagoMensualRealizado='" + modPagoMensualRealizado + "', totalALiquidar=" + modTotalLiquidar + ", montoLiquidado=" + modMontoLiquidado + ",status='" + modActivo + "' where idVentasCredito=" + modIdVentaCredito, cn.conectarbd);
+                cn.cmd = new SqlCommand("Update VentasCredito SET idVenta=" + modIdVenta + ",fechaInicioVenta='" + modFechaInicioVenta + "', fechaNuevoPago='" + modFechaNuevoPago + "', fechaLiquidacion='" + modFechaLiquidacion + "', pagoMensualRealizado='" + modPagoMensualRealizado + "', totalALiquidar=" + modTotalLiquidar + ", montoLiquidado=" + modMontoLiquidado + ",status='" + modActivo + "' where idVentasCredito='" + modIdVentaCredito + "'", cn.conectarbd);
                 cn.cmd.ExecuteNonQuery();
 
                 dgvVentasCrd.Size = new Size(557, 353);
                 grbModificarVentasCredito.Visible = false;
                 MessageBox.Show("Venta a credito ingresada al sistema");
-                Cargardgv();
-
+                //Cargardgv();
+                ConsultarVistaVentas();
             }
             catch (Exception ex)
             {
@@ -145,21 +156,21 @@ namespace ProyectoFinalTallerBD
             try
             {
                 //cn.da = new SqlDataAdapter("Select * from Proveedores", cn.conectarbd);
-                cn.da = new SqlDataAdapter("Select idVentasCredito,idVenta,fechaInicioVenta,fechaNuevoPago,fechaLiquidacion,pagoMensualRealizado,totalALiquidar,montoLiquidado,status from VentasCredito Where status = 'S'", cn.conectarbd);
-                cn.dt = new DataTable();
-                cn.da.Fill(cn.dt);
-                dgvVentasCrd.DataSource = cn.dt;
-                dgvVentasCrd.Columns["idVentasCredito"].DisplayIndex = 0;
-                dgvVentasCrd.Columns["idVenta"].DisplayIndex = 1;
-                dgvVentasCrd.Columns["fechaInicioVenta"].DisplayIndex = 2;
-                dgvVentasCrd.Columns["fechaNuevoPago"].DisplayIndex = 3;
-                dgvVentasCrd.Columns["fechaLiquidacion"].DisplayIndex = 4;
-                dgvVentasCrd.Columns["pagoMensualRealizado"].DisplayIndex = 5;
-                dgvVentasCrd.Columns["totalALiquidar"].DisplayIndex = 6;
-                dgvVentasCrd.Columns["montoLiquidado"].DisplayIndex = 7;
-                dgvVentasCrd.Columns["status"].DisplayIndex = 8;
-                dgvVentasCrd.Columns["Editar2"].DisplayIndex = 9;
-                dgvVentasCrd.Columns["Eliminar2"].DisplayIndex = 10;
+                //cn.da = new SqlDataAdapter("Select idVentasCredito,idVenta,fechaInicioVenta,fechaNuevoPago,fechaLiquidacion,pagoMensualRealizado,totalALiquidar,montoLiquidado,status from VentasCredito Where status = 'S'", cn.conectarbd);
+                //cn.dt = new DataTable();
+                //cn.da.Fill(cn.dt);
+                //dgvVentasCrd.DataSource = cn.dt;
+                //dgvVentasCrd.Columns["idVentasCredito"].DisplayIndex = 0;
+                //dgvVentasCrd.Columns["idVenta"].DisplayIndex = 1;
+                //dgvVentasCrd.Columns["fechaInicioVenta"].DisplayIndex = 2;
+                //dgvVentasCrd.Columns["fechaNuevoPago"].DisplayIndex = 3;
+                //dgvVentasCrd.Columns["fechaLiquidacion"].DisplayIndex = 4;
+                //dgvVentasCrd.Columns["pagoMensualRealizado"].DisplayIndex = 5;
+                //dgvVentasCrd.Columns["totalALiquidar"].DisplayIndex = 6;
+                //dgvVentasCrd.Columns["montoLiquidado"].DisplayIndex = 7;
+                //dgvVentasCrd.Columns["status"].DisplayIndex = 8;
+                //dgvVentasCrd.Columns["Editar2"].DisplayIndex = 9;
+                //dgvVentasCrd.Columns["Eliminar2"].DisplayIndex = 10;
 
 
             }
@@ -180,9 +191,9 @@ namespace ProyectoFinalTallerBD
             string buscarID = txtBuscar.Text;
             foreach (DataGridViewRow row in dgvVentasCrd.Rows)
             {
-                if (row.Cells[0].Value.ToString() == buscarID)
+                if (row.Cells["idVentasCredito"].Value.ToString() == buscarID)
                 {
-                    MessageBox.Show("Venta a Credito encontrada: \nId Venta a Credito: " + row.Cells[0].Value.ToString() + "\nId Venta: " + row.Cells[1].Value.ToString() + "\nFecha Inicio de Venta: " + row.Cells[2].Value.ToString());
+                    MessageBox.Show("Venta a Credito encontrada: \nId Venta a Credito: " + row.Cells["idVentasCredito"].Value.ToString() + "\nId Venta: " + row.Cells["idVenta"].Value.ToString() + "\nFecha Inicio de Venta: " + row.Cells[2].Value.ToString());
                     return;
                 }
             }
@@ -208,7 +219,7 @@ namespace ProyectoFinalTallerBD
                 dtpModFehcaNuevoPago.Value = Convert.ToDateTime(dgvVentasCrd.CurrentRow.Cells["fechaNuevoPago"].Value.ToString());
                 dtpModFechaLiquidacion.Value = Convert.ToDateTime(dgvVentasCrd.CurrentRow.Cells["fechaLiquidacion"].Value.ToString());
                 cmbModPagoMensualRealizado.Text = dgvVentasCrd.CurrentRow.Cells["pagoMensualRealizado"].Value.ToString();
-                txtModTotalLiquidar.Text = dgvVentasCrd.CurrentRow.Cells["totalALiquidar"].Value.ToString();
+                txtModTotalLiquidar.Text = dgvVentasCrd.CurrentRow.Cells["total"].Value.ToString();
                 txtModMontoLiquidado.Text = dgvVentasCrd.CurrentRow.Cells["montoLiquidado"].Value.ToString();
                 dgvVentasCrd.CurrentRow.Cells["Editar2"].Style.SelectionBackColor = Color.CadetBlue;
                 //dgvProveedores.AllowUserToAddRows = false;
@@ -221,6 +232,7 @@ namespace ProyectoFinalTallerBD
             if (dgvVentasCrd.Columns[e.ColumnIndex].Name == "Eliminar2")
             {
                 string eliminarUsuario = dgvVentasCrd.CurrentRow.Cells["idVentasCredito"].Value.ToString();
+                string eliminarVenta = dgvVentasCrd.CurrentRow.Cells["idVenta"].Value.ToString();
                 string modactivo = "N";
 
                 if (MessageBox.Show("¿Desea dar de baja a esta Venta a Credito? " + eliminarUsuario, "Confirmar operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -230,8 +242,11 @@ namespace ProyectoFinalTallerBD
                         cn.conectarbd.Open();
                         cn.cmd = new SqlCommand("Update VentasCredito SET status = '" + modactivo + "', fechaLiquidacion = GETDATE() where idVentasCredito='" + eliminarUsuario + "'", cn.conectarbd);
                         cn.cmd.ExecuteNonQuery();
+                        cn.cmd = new SqlCommand("Update Ventas SET status = '" + modactivo + "' where idVenta=" + eliminarVenta, cn.conectarbd);
+                        cn.cmd.ExecuteNonQuery();
 
-                        Cargardgv();
+                        //Cargardgv();
+                        ConsultarVistaVentas();
                         //MessageBox.Show("Empleado ingresado al sistema");
                     }
                     catch (Exception ex)
@@ -252,8 +267,8 @@ namespace ProyectoFinalTallerBD
 
         private void btnRegistrarVCredito_Click(object sender, EventArgs e)
         {
-            IdVentaCredito = int.Parse(txtVentasCredito.Text);
-            int IdVenta = int.Parse(txtVenta.Text);
+            IdVentaCredito = txtVentasCredito.Text;
+            int IdVenta = int.Parse(cboVenta.SelectedValue.ToString());
             string FechaInicioVenta = dtpFechaInicioVentaCrd.Value.ToString("yyyy-MM-dd");
             string FechaNuevoPago = dtpNuevoPago.Value.ToString("yyyy-MM-dd");
             string FechaLiquidacion = dtpLiquidacion.Value.ToString("yyyy-MM-dd");
@@ -262,16 +277,17 @@ namespace ProyectoFinalTallerBD
             double MontoLiquidado = double.Parse(txtmontoLiquidado.Text);
             string Activo = "S";
             int var = ComprobarVentaCredito();
-            if (IdVentaCredito != var)
+            if (var == 0)
             {
                 try
                 {
                     cn.conectarbd.Open();
-                    cn.cmd = new SqlCommand("Insert into VentasCredito(idVentasCredito,idVenta,fechaInicioVenta,fechaNuevoPago,fechaLiquidacion,pagoMensualRealizado,totalALiquidar,montoLiquidado,status) values(" + IdVentaCredito + "," + IdVenta + ",'" + FechaInicioVenta + "','" + FechaNuevoPago + "','" + FechaLiquidacion + "','" + PagoMensualRealizado + "'," + TotalLiquidar + "," + MontoLiquidado + ",'" + Activo + "')", cn.conectarbd);
+                    cn.cmd = new SqlCommand("Insert into VentasCredito(idVentasCredito,idVenta,fechaInicioVenta,fechaNuevoPago,fechaLiquidacion,pagoMensualRealizado,totalALiquidar,montoLiquidado,status) values('" + IdVentaCredito + "'," + IdVenta + ",'" + FechaInicioVenta + "','" + FechaNuevoPago + "','" + FechaLiquidacion + "','" + PagoMensualRealizado + "'," + TotalLiquidar + "," + MontoLiquidado + ",'" + Activo + "')", cn.conectarbd);
                     cn.cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Venta con Credito ingresada al sistema");
-                    Cargardgv();
+                    //Cargardgv();
+                    ConsultarVistaVentas();
                     tabControl1.SelectedIndex = 2;
                 }
                 catch (Exception ex)
@@ -348,7 +364,7 @@ namespace ProyectoFinalTallerBD
             {
                 int Id;
                 cn.conectarbd.Open();
-                cn.cmd = new SqlCommand("SELECT (COUNT(idVenta) + 1) FROM Ventas", cn.conectarbd);
+                cn.cmd = new SqlCommand("SELECT (COUNT(IsNull(idVenta, 0)) + 1) FROM Ventas", cn.conectarbd);
                 cn.dr = cn.cmd.ExecuteReader();
                 if (cn.dr.Read())
                 {
@@ -368,7 +384,7 @@ namespace ProyectoFinalTallerBD
             finally
             {
                 cn.conectarbd.Close();
-                cn.dr.Close();
+                //cn.dr.Close();
             }
         }
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
@@ -384,7 +400,7 @@ namespace ProyectoFinalTallerBD
             string status = "S";
             string PagoconCredito = cmbPagoconCredito.Text;
             int var = ComprobarVenta();
-            if (idVenta1 != var)
+            if (var == 0)
             {
                 //int respuesta = ValidarVenta();
                 //switch (respuesta)
@@ -401,7 +417,7 @@ namespace ProyectoFinalTallerBD
                     cn.cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Venta Realizada");
-                    Cargardgv();
+                    ConsultarVistaVentas();
                     CargardgvVenta();
                     tabControl1.SelectedIndex = 0;
                 }
@@ -601,6 +617,110 @@ namespace ProyectoFinalTallerBD
         private void txtidVenta_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        public void CalcularPrecioTotal()
+        {
+            try
+            {
+                if (cboIdProducto.SelectedValue.ToString() != null && !string.IsNullOrEmpty(txtProductosComprados.Text) && int.Parse(txtProductosComprados.Text) > 0) 
+                {
+                    double total;
+                    int cantProd = int.Parse(txtProductosComprados.Text);
+                    cn.conectarbd.Open();
+                    cn.cmd = new SqlCommand("SELECT precioVenta FROM Productos WHERE idProducto = '" + cboIdProducto.SelectedValue.ToString() + "'", cn.conectarbd);
+                    cn.dr = cn.cmd.ExecuteReader();
+                    if (cn.dr.Read()) 
+                    {
+                        total = cantProd * double.Parse(cn.dr.GetValue(0).ToString());
+                        txtTotal.Text = total.ToString();
+                    }
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
+        }
+
+        private void txtProductosComprados_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cboIdProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalcularPrecioTotal();
+        }
+
+        private void txtProductosComprados_Leave(object sender, EventArgs e)
+        {
+            CalcularPrecioTotal();
+        }
+        public void CargarComboboxVenta()
+        {
+            try
+            {   //Muestra todos los productos disponibles en el combo box
+                cn.da = new SqlDataAdapter("Select idVenta, CONCAT(idVenta, ' ',fechaVenta) AS venta FROM Ventas WHERE status = 'S' AND pagoConCredito = 'S'", cn.conectarbd);
+                cn.dt = new DataTable();
+                cn.da.Fill(cn.dt);
+                cboVenta.DataSource = cn.dt;
+                cboVenta.DisplayMember = "venta";
+                cboVenta.ValueMember = "idVenta";
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
+        }
+        public void CalcularPrecioTotalCredito()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(cboVenta.Text)) 
+                {
+                    double totLiquidar;
+                    cn.conectarbd.Open();
+                    cn.cmd = new SqlCommand("SELECT total FROM Ventas WHERE idVenta = " + cboVenta.SelectedValue.ToString(), cn.conectarbd);
+                    cn.dr = cn.cmd.ExecuteReader();
+                    if (cn.dr.Read())
+                    {
+                        totLiquidar = double.Parse(cn.dr.GetValue(0).ToString());
+                        txttaLiquidar.Text = totLiquidar.ToString();
+                    }
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
+        }
+
+        private void cboVenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0: ConsultarVentas(); break;
+                case 2: ConsultarVistaVentas(); break;
+                case 3: CargarComboboxVenta(); break;
+            }
         }
     }
 }

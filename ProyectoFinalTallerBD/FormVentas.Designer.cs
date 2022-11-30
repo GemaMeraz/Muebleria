@@ -106,6 +106,7 @@ namespace ProyectoFinalTallerBD
             this.Eliminar2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.tabRegVentasCrd = new System.Windows.Forms.TabPage();
+            this.cboVenta = new System.Windows.Forms.ComboBox();
             this.cmbPagoMensualRealizado = new System.Windows.Forms.ComboBox();
             this.btnRegistrarVCredito = new System.Windows.Forms.Button();
             this.txtmontoLiquidado = new System.Windows.Forms.TextBox();
@@ -119,7 +120,6 @@ namespace ProyectoFinalTallerBD
             this.label15 = new System.Windows.Forms.Label();
             this.dtpFechaInicioVentaCrd = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtVenta = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtVentasCredito = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -146,6 +146,7 @@ namespace ProyectoFinalTallerBD
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(901, 484);
             this.tabControl1.TabIndex = 5;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -499,6 +500,7 @@ namespace ProyectoFinalTallerBD
             this.cboIdProducto.Name = "cboIdProducto";
             this.cboIdProducto.Size = new System.Drawing.Size(167, 21);
             this.cboIdProducto.TabIndex = 76;
+            this.cboIdProducto.SelectedIndexChanged += new System.EventHandler(this.cboIdProducto_SelectedIndexChanged);
             // 
             // cboIdCliente
             // 
@@ -511,6 +513,7 @@ namespace ProyectoFinalTallerBD
             // 
             // cmbFormaPago
             // 
+            this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormaPago.FormattingEnabled = true;
             this.cmbFormaPago.Items.AddRange(new object[] {
             "EFECTIVO",
@@ -524,6 +527,7 @@ namespace ProyectoFinalTallerBD
             // 
             // cmbPagoconCredito
             // 
+            this.cmbPagoconCredito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPagoconCredito.FormattingEnabled = true;
             this.cmbPagoconCredito.Items.AddRange(new object[] {
             "S",
@@ -559,13 +563,16 @@ namespace ProyectoFinalTallerBD
             this.txtProductosComprados.Name = "txtProductosComprados";
             this.txtProductosComprados.Size = new System.Drawing.Size(70, 20);
             this.txtProductosComprados.TabIndex = 62;
+            this.txtProductosComprados.TextChanged += new System.EventHandler(this.txtProductosComprados_TextChanged);
+            this.txtProductosComprados.Leave += new System.EventHandler(this.txtProductosComprados_Leave);
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(160, 158);
+            this.txtTotal.Location = new System.Drawing.Point(149, 158);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(74, 20);
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(85, 20);
             this.txtTotal.TabIndex = 58;
             // 
             // label8
@@ -656,6 +663,7 @@ namespace ProyectoFinalTallerBD
             this.txtidVenta.Location = new System.Drawing.Point(208, 28);
             this.txtidVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtidVenta.Name = "txtidVenta";
+            this.txtidVenta.ReadOnly = true;
             this.txtidVenta.Size = new System.Drawing.Size(175, 20);
             this.txtidVenta.TabIndex = 42;
             this.txtidVenta.TextChanged += new System.EventHandler(this.txtidVenta_TextChanged);
@@ -972,6 +980,7 @@ namespace ProyectoFinalTallerBD
             // 
             // tabRegVentasCrd
             // 
+            this.tabRegVentasCrd.Controls.Add(this.cboVenta);
             this.tabRegVentasCrd.Controls.Add(this.cmbPagoMensualRealizado);
             this.tabRegVentasCrd.Controls.Add(this.btnRegistrarVCredito);
             this.tabRegVentasCrd.Controls.Add(this.txtmontoLiquidado);
@@ -985,7 +994,6 @@ namespace ProyectoFinalTallerBD
             this.tabRegVentasCrd.Controls.Add(this.label15);
             this.tabRegVentasCrd.Controls.Add(this.dtpFechaInicioVentaCrd);
             this.tabRegVentasCrd.Controls.Add(this.label14);
-            this.tabRegVentasCrd.Controls.Add(this.txtVenta);
             this.tabRegVentasCrd.Controls.Add(this.label13);
             this.tabRegVentasCrd.Controls.Add(this.txtVentasCredito);
             this.tabRegVentasCrd.Controls.Add(this.label12);
@@ -995,6 +1003,16 @@ namespace ProyectoFinalTallerBD
             this.tabRegVentasCrd.TabIndex = 3;
             this.tabRegVentasCrd.Text = "REGISTRO DE VENTAS A CREDITO";
             this.tabRegVentasCrd.UseVisualStyleBackColor = true;
+            // 
+            // cboVenta
+            // 
+            this.cboVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVenta.FormattingEnabled = true;
+            this.cboVenta.Location = new System.Drawing.Point(187, 53);
+            this.cboVenta.Name = "cboVenta";
+            this.cboVenta.Size = new System.Drawing.Size(152, 21);
+            this.cboVenta.TabIndex = 111;
+            this.cboVenta.SelectedIndexChanged += new System.EventHandler(this.cboVenta_SelectedIndexChanged);
             // 
             // cmbPagoMensualRealizado
             // 
@@ -1110,13 +1128,6 @@ namespace ProyectoFinalTallerBD
             this.label14.Size = new System.Drawing.Size(152, 13);
             this.label14.TabIndex = 4;
             this.label14.Text = "FECHA DE INICIO DE VENTA";
-            // 
-            // txtVenta
-            // 
-            this.txtVenta.Location = new System.Drawing.Point(187, 57);
-            this.txtVenta.Name = "txtVenta";
-            this.txtVenta.Size = new System.Drawing.Size(152, 20);
-            this.txtVenta.TabIndex = 3;
             // 
             // label13
             // 
@@ -1258,11 +1269,11 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker dtpFechaInicioVentaCrd;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtVenta;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtVentasCredito;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboIdProducto;
         private System.Windows.Forms.ComboBox cboIdCliente;
+        private System.Windows.Forms.ComboBox cboVenta;
     }
 }

@@ -238,5 +238,42 @@ namespace ProyectoFinalTallerBD
                 cn.conectarbd.Close();
             }
         }
+        public void CalcularPrecioTotal()
+        {
+            try
+            {
+                if (cboIdProducto.SelectedValue.ToString() != null && !string.IsNullOrEmpty(txtCantEntrada.Text) && int.Parse(txtCantEntrada.Text) > 0)
+                {
+                    double total;
+                    int cantProd = int.Parse(txtCantEntrada.Text);
+                    cn.conectarbd.Open();
+                    cn.cmd = new SqlCommand("SELECT precioCompra FROM Productos WHERE idProducto = '" + cboIdProducto.SelectedValue.ToString() + "'", cn.conectarbd);
+                    cn.dr = cn.cmd.ExecuteReader();
+                    if (cn.dr.Read())
+                    {
+                        total = cantProd * double.Parse(cn.dr.GetValue(0).ToString());
+                        txtTotalPago.Text = total.ToString();
+                    }
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+            }
+        }
+
+        private void txtCantEntrada_Leave(object sender, EventArgs e)
+        {
+            CalcularPrecioTotal();
+        }
+
+        private void cboIdProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalcularPrecioTotal();
+        }
     }
 }

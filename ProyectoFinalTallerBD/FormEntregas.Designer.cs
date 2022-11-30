@@ -53,6 +53,8 @@ namespace ProyectoFinalTallerBD
             this.dgvEntradas = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabRegistrar = new System.Windows.Forms.TabPage();
+            this.cboIdProducto = new System.Windows.Forms.ComboBox();
+            this.cboIdProveedor = new System.Windows.Forms.ComboBox();
             this.dtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.txtCantEntrada = new System.Windows.Forms.TextBox();
@@ -64,8 +66,6 @@ namespace ProyectoFinalTallerBD
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.cboIdProducto = new System.Windows.Forms.ComboBox();
-            this.cboIdProveedor = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabEntregas.SuspendLayout();
             this.grpEditarEntrada.SuspendLayout();
@@ -355,6 +355,25 @@ namespace ProyectoFinalTallerBD
             this.tabRegistrar.Text = "REGISTRAR ENTREGA";
             this.tabRegistrar.UseVisualStyleBackColor = true;
             // 
+            // cboIdProducto
+            // 
+            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdProducto.FormattingEnabled = true;
+            this.cboIdProducto.Location = new System.Drawing.Point(338, 125);
+            this.cboIdProducto.Name = "cboIdProducto";
+            this.cboIdProducto.Size = new System.Drawing.Size(238, 21);
+            this.cboIdProducto.TabIndex = 78;
+            this.cboIdProducto.SelectedIndexChanged += new System.EventHandler(this.cboIdProducto_SelectedIndexChanged);
+            // 
+            // cboIdProveedor
+            // 
+            this.cboIdProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdProveedor.FormattingEnabled = true;
+            this.cboIdProveedor.Location = new System.Drawing.Point(338, 92);
+            this.cboIdProveedor.Name = "cboIdProveedor";
+            this.cboIdProveedor.Size = new System.Drawing.Size(238, 21);
+            this.cboIdProveedor.TabIndex = 77;
+            // 
             // dtpFechaEntrada
             // 
             this.dtpFechaEntrada.Location = new System.Drawing.Point(338, 158);
@@ -367,6 +386,7 @@ namespace ProyectoFinalTallerBD
             this.txtTotalPago.Location = new System.Drawing.Point(338, 223);
             this.txtTotalPago.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalPago.Name = "txtTotalPago";
+            this.txtTotalPago.ReadOnly = true;
             this.txtTotalPago.Size = new System.Drawing.Size(238, 20);
             this.txtTotalPago.TabIndex = 72;
             // 
@@ -377,6 +397,7 @@ namespace ProyectoFinalTallerBD
             this.txtCantEntrada.Name = "txtCantEntrada";
             this.txtCantEntrada.Size = new System.Drawing.Size(238, 20);
             this.txtCantEntrada.TabIndex = 71;
+            this.txtCantEntrada.Leave += new System.EventHandler(this.txtCantEntrada_Leave);
             // 
             // txtEntrada
             // 
@@ -467,24 +488,6 @@ namespace ProyectoFinalTallerBD
             this.label12.Size = new System.Drawing.Size(83, 17);
             this.label12.TabIndex = 62;
             this.label12.Text = "ID ENTRADA";
-            // 
-            // cboIdProducto
-            // 
-            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdProducto.FormattingEnabled = true;
-            this.cboIdProducto.Location = new System.Drawing.Point(338, 125);
-            this.cboIdProducto.Name = "cboIdProducto";
-            this.cboIdProducto.Size = new System.Drawing.Size(238, 21);
-            this.cboIdProducto.TabIndex = 78;
-            // 
-            // cboIdProveedor
-            // 
-            this.cboIdProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdProveedor.FormattingEnabled = true;
-            this.cboIdProveedor.Location = new System.Drawing.Point(338, 92);
-            this.cboIdProveedor.Name = "cboIdProveedor";
-            this.cboIdProveedor.Size = new System.Drawing.Size(238, 21);
-            this.cboIdProveedor.TabIndex = 77;
             // 
             // FormEntregas
             // 
