@@ -29,9 +29,9 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gpbVentas = new System.Windows.Forms.GroupBox();
@@ -61,6 +61,8 @@ namespace ProyectoFinalTallerBD
             this.btnBuscarVenta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabRegistro = new System.Windows.Forms.TabPage();
+            this.cboIdProducto = new System.Windows.Forms.ComboBox();
+            this.cboIdCliente = new System.Windows.Forms.ComboBox();
             this.cmbFormaPago = new System.Windows.Forms.ComboBox();
             this.cmbPagoconCredito = new System.Windows.Forms.ComboBox();
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
@@ -121,8 +123,6 @@ namespace ProyectoFinalTallerBD
             this.label13 = new System.Windows.Forms.Label();
             this.txtVentasCredito = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.cboIdProducto = new System.Windows.Forms.ComboBox();
-            this.cboIdCliente = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gpbVentas.SuspendLayout();
@@ -375,14 +375,14 @@ namespace ProyectoFinalTallerBD
             this.dgvVenta.AllowUserToDeleteRows = false;
             this.dgvVenta.AllowUserToResizeColumns = false;
             this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
@@ -490,6 +490,24 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.TabIndex = 1;
             this.tabRegistro.Text = "REGISTRO DE VENTAS";
             this.tabRegistro.UseVisualStyleBackColor = true;
+            // 
+            // cboIdProducto
+            // 
+            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdProducto.FormattingEnabled = true;
+            this.cboIdProducto.Location = new System.Drawing.Point(149, 121);
+            this.cboIdProducto.Name = "cboIdProducto";
+            this.cboIdProducto.Size = new System.Drawing.Size(167, 21);
+            this.cboIdProducto.TabIndex = 76;
+            // 
+            // cboIdCliente
+            // 
+            this.cboIdCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdCliente.FormattingEnabled = true;
+            this.cboIdCliente.Location = new System.Drawing.Point(208, 90);
+            this.cboIdCliente.Name = "cboIdCliente";
+            this.cboIdCliente.Size = new System.Drawing.Size(175, 21);
+            this.cboIdCliente.TabIndex = 75;
             // 
             // cmbFormaPago
             // 
@@ -640,6 +658,7 @@ namespace ProyectoFinalTallerBD
             this.txtidVenta.Name = "txtidVenta";
             this.txtidVenta.Size = new System.Drawing.Size(175, 20);
             this.txtidVenta.TabIndex = 42;
+            this.txtidVenta.TextChanged += new System.EventHandler(this.txtidVenta_TextChanged);
             // 
             // tabVentasCrd
             // 
@@ -899,14 +918,14 @@ namespace ProyectoFinalTallerBD
             this.dgvVentasCrd.AllowUserToAddRows = false;
             this.dgvVentasCrd.AllowUserToDeleteRows = false;
             this.dgvVentasCrd.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentasCrd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentasCrd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVentasCrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentasCrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar2,
@@ -1123,24 +1142,6 @@ namespace ProyectoFinalTallerBD
             this.label12.Size = new System.Drawing.Size(108, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "ID VENTA CREDITO";
-            // 
-            // cboIdProducto
-            // 
-            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdProducto.FormattingEnabled = true;
-            this.cboIdProducto.Location = new System.Drawing.Point(149, 121);
-            this.cboIdProducto.Name = "cboIdProducto";
-            this.cboIdProducto.Size = new System.Drawing.Size(167, 21);
-            this.cboIdProducto.TabIndex = 76;
-            // 
-            // cboIdCliente
-            // 
-            this.cboIdCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdCliente.FormattingEnabled = true;
-            this.cboIdCliente.Location = new System.Drawing.Point(208, 90);
-            this.cboIdCliente.Name = "cboIdCliente";
-            this.cboIdCliente.Size = new System.Drawing.Size(175, 21);
-            this.cboIdCliente.TabIndex = 75;
             // 
             // FormVentas
             // 

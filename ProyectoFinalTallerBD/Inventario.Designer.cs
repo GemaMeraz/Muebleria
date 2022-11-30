@@ -29,6 +29,7 @@ namespace ProyectoFinalTallerBD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
             this.tabInventario = new System.Windows.Forms.TabControl();
             this.tabPageConsultaInv = new System.Windows.Forms.TabPage();
             this.grpEditarInv = new System.Windows.Forms.GroupBox();
@@ -44,15 +45,17 @@ namespace ProyectoFinalTallerBD
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageRegInv = new System.Windows.Forms.TabPage();
+            this.cboIdProducto = new System.Windows.Forms.ComboBox();
             this.dtpFechaModificacion = new System.Windows.Forms.DateTimePicker();
             this.btnRegistrarInventario = new System.Windows.Forms.Button();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboIdProducto = new System.Windows.Forms.ComboBox();
             this.tabInventario.SuspendLayout();
             this.tabPageConsultaInv.SuspendLayout();
             this.grpEditarInv.SuspendLayout();
@@ -64,10 +67,11 @@ namespace ProyectoFinalTallerBD
             // 
             this.tabInventario.Controls.Add(this.tabPageConsultaInv);
             this.tabInventario.Controls.Add(this.tabPageRegInv);
-            this.tabInventario.Location = new System.Drawing.Point(2, 1);
+            this.tabInventario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabInventario.Location = new System.Drawing.Point(0, 0);
             this.tabInventario.Name = "tabInventario";
             this.tabInventario.SelectedIndex = 0;
-            this.tabInventario.Size = new System.Drawing.Size(662, 444);
+            this.tabInventario.Size = new System.Drawing.Size(753, 479);
             this.tabInventario.TabIndex = 0;
             // 
             // tabPageConsultaInv
@@ -80,7 +84,7 @@ namespace ProyectoFinalTallerBD
             this.tabPageConsultaInv.Location = new System.Drawing.Point(4, 22);
             this.tabPageConsultaInv.Name = "tabPageConsultaInv";
             this.tabPageConsultaInv.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConsultaInv.Size = new System.Drawing.Size(654, 418);
+            this.tabPageConsultaInv.Size = new System.Drawing.Size(745, 453);
             this.tabPageConsultaInv.TabIndex = 0;
             this.tabPageConsultaInv.Text = "INVENTARIO";
             this.tabPageConsultaInv.UseVisualStyleBackColor = true;
@@ -96,7 +100,7 @@ namespace ProyectoFinalTallerBD
             this.grpEditarInv.Controls.Add(this.label4);
             this.grpEditarInv.Controls.Add(this.btnEditar);
             this.grpEditarInv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEditarInv.Location = new System.Drawing.Point(333, 54);
+            this.grpEditarInv.Location = new System.Drawing.Point(427, 54);
             this.grpEditarInv.Name = "grpEditarInv";
             this.grpEditarInv.Size = new System.Drawing.Size(315, 358);
             this.grpEditarInv.TabIndex = 43;
@@ -181,7 +185,7 @@ namespace ProyectoFinalTallerBD
             // 
             // txtBuscarInv
             // 
-            this.txtBuscarInv.Location = new System.Drawing.Point(406, 15);
+            this.txtBuscarInv.Location = new System.Drawing.Point(447, 15);
             this.txtBuscarInv.Name = "txtBuscarInv";
             this.txtBuscarInv.Size = new System.Drawing.Size(109, 20);
             this.txtBuscarInv.TabIndex = 42;
@@ -190,10 +194,10 @@ namespace ProyectoFinalTallerBD
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.Location = new System.Drawing.Point(520, 6);
+            this.btnBuscar.Location = new System.Drawing.Point(561, 6);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(109, 37);
+            this.btnBuscar.Size = new System.Drawing.Size(68, 37);
             this.btnBuscar.TabIndex = 41;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -206,14 +210,17 @@ namespace ProyectoFinalTallerBD
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar});
+            this.Editar,
+            this.Ver,
+            this.Eliminar});
             this.dataGridView1.Location = new System.Drawing.Point(6, 54);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(623, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(531, 357);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // Editar
             // 
@@ -221,6 +228,19 @@ namespace ProyectoFinalTallerBD
             this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
+            // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "Ver";
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // label1
             // 
@@ -244,10 +264,19 @@ namespace ProyectoFinalTallerBD
             this.tabPageRegInv.Location = new System.Drawing.Point(4, 22);
             this.tabPageRegInv.Name = "tabPageRegInv";
             this.tabPageRegInv.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRegInv.Size = new System.Drawing.Size(654, 418);
+            this.tabPageRegInv.Size = new System.Drawing.Size(658, 420);
             this.tabPageRegInv.TabIndex = 1;
             this.tabPageRegInv.Text = "REGISTRO DE INVENTARIO";
             this.tabPageRegInv.UseVisualStyleBackColor = true;
+            // 
+            // cboIdProducto
+            // 
+            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdProducto.FormattingEnabled = true;
+            this.cboIdProducto.Location = new System.Drawing.Point(332, 83);
+            this.cboIdProducto.Name = "cboIdProducto";
+            this.cboIdProducto.Size = new System.Drawing.Size(200, 21);
+            this.cboIdProducto.TabIndex = 66;
             // 
             // dtpFechaModificacion
             // 
@@ -307,20 +336,11 @@ namespace ProyectoFinalTallerBD
             this.label2.TabIndex = 58;
             this.label2.Text = "ID PRODUCTO";
             // 
-            // cboIdProducto
-            // 
-            this.cboIdProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdProducto.FormattingEnabled = true;
-            this.cboIdProducto.Location = new System.Drawing.Point(332, 83);
-            this.cboIdProducto.Name = "cboIdProducto";
-            this.cboIdProducto.Size = new System.Drawing.Size(200, 21);
-            this.cboIdProducto.TabIndex = 66;
-            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 446);
+            this.ClientSize = new System.Drawing.Size(753, 479);
             this.Controls.Add(this.tabInventario);
             this.Name = "Inventario";
             this.Text = "Inventario";
@@ -361,7 +381,9 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.ComboBox cboIdProducto;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Ver;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }

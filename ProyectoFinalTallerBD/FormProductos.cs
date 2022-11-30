@@ -30,6 +30,7 @@ namespace ProyectoFinalTallerBD
         {
             Cargardgv();
         }
+        
         private void Cargardgv()
         {
              try
@@ -51,12 +52,13 @@ namespace ProyectoFinalTallerBD
                 dataGridView1.Columns["precioCompra"].DisplayIndex = 8;
                 dataGridView1.Columns["precioVenta"].DisplayIndex = 9;
                 dataGridView1.Columns["idCategoria"].DisplayIndex = 10;
-                //dataGridView1.Columns["imagen"].DisplayIndex = 12;
+                //dataGridView1.Columns["imagen"].DisplayIndex = 11;
+                //dataGridView1.Columns["imagen"].Visible = false;
                 //dataGridView1.Columns["activo"].DisplayIndex = 12;
                 dataGridView1.Columns["Editar"].DisplayIndex = 11;
                 dataGridView1.Columns["Ver"].DisplayIndex = 12;
                 dataGridView1.Columns["Eliminar"].DisplayIndex = 13 ;
-
+                
 
             }
             catch (Exception)
@@ -227,6 +229,14 @@ namespace ProyectoFinalTallerBD
             //MessageBox.Show("Producto Inexistente");
         }
 
+        private MemoryStream ByteImage()
+        {
+            byte[] im = (byte[])dataGridView1.CurrentRow.Cells["Ver"].Value;
+            MemoryStream ms = new MemoryStream(im);
+            return ms;
+
+        }
+
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
@@ -255,18 +265,7 @@ namespace ProyectoFinalTallerBD
                     cboModIdCategoria.Text = registro["idCategoria"].ToString();
                 }
                 cn.conectarbd.Close();
-                //txtModIdProducto.Text = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
-                //txtModProducto.Text = dataGridView1.CurrentRow.Cells["producto"].Value.ToString();
-                //txtModDescripcion.Text = dataGridView1.CurrentRow.Cells["descripcion"].Value.ToString();
-                //txtModMaterial.Text = dataGridView1.CurrentRow.Cells["material"].Value.ToString();
-                //txtModColor.Text = dataGridView1.CurrentRow.Cells["color"].Value.ToString();
-                //txtModLargo.Text = dataGridView1.CurrentRow.Cells["largo"].Value.ToString();
-                //txtModAncho.Text = dataGridView1.CurrentRow.Cells["ancho"].Value.ToString();
-                //txtModAlto.Text = dataGridView1.CurrentRow.Cells["alto"].Value.ToString();
-                //txtModDiasG.Text = dataGridView1.CurrentRow.Cells["diasGarantia"].Value.ToString();
-                //txtModPrecioC.Text = dataGridView1.CurrentRow.Cells["precioCompra"].Value.ToString();
-                //txtModPrecioV.Text = dataGridView1.CurrentRow.Cells["precioVenta"].Value.ToString();
-                //cboModIdCategoria.Text = dataGridView1.CurrentRow.Cells["idCategoria"].Value.ToString();
+                
                 dataGridView1.CurrentRow.Cells["Editar"].Style.SelectionBackColor = Color.CadetBlue;
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
@@ -295,6 +294,28 @@ namespace ProyectoFinalTallerBD
                         cn.conectarbd.Close();
                     }
                 }
+            }
+            //falta comprobar que funcione, no deja mostrar imagenes
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver")
+            {
+                string id = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
+                cn.conectarbd.Open();
+                SqlCommand cmd = new SqlCommand("SELECT imagen FROM Productos WHERE idProducto='n'", cn.conectarbd);
+                SqlDataAdapter llenar = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet("Productos");
+                
+                //cn.cmd.Connection= cn.conectarbd;
+                Byte[] im = new byte[0];
+                llenar.Fill(ds,"Productos");
+                DataRow myRow = ds.Tables["Productos"].Rows[0];
+                im = (Byte[])myRow["imagen"];
+                MemoryStream ms = new MemoryStream(im);
+                InformacionProducto inf = new InformacionProducto();
+                pic.Image = Image.FromStream(ms);
+                //inf.picRecibeImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+                //inf.ShowDialog();
+                cn.conectarbd.Close();
+                
             }
         }
 

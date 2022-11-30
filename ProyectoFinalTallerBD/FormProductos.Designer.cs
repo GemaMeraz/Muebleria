@@ -52,7 +52,7 @@ namespace ProyectoFinalTallerBD
             this.txtModLargo = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtModColor = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.pic = new System.Windows.Forms.Label();
             this.txtModMaterial = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtModDescripcion = new System.Windows.Forms.TextBox();
@@ -65,6 +65,9 @@ namespace ProyectoFinalTallerBD
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.cboIdCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
@@ -93,15 +96,14 @@ namespace ProyectoFinalTallerBD
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grpEditarProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -117,6 +119,7 @@ namespace ProyectoFinalTallerBD
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.grpEditarProd);
             this.tabPage1.Controls.Add(this.txtBuscarId);
             this.tabPage1.Controls.Add(this.btnBuscar);
@@ -149,7 +152,7 @@ namespace ProyectoFinalTallerBD
             this.grpEditarProd.Controls.Add(this.txtModLargo);
             this.grpEditarProd.Controls.Add(this.label19);
             this.grpEditarProd.Controls.Add(this.txtModColor);
-            this.grpEditarProd.Controls.Add(this.label18);
+            this.grpEditarProd.Controls.Add(this.pic);
             this.grpEditarProd.Controls.Add(this.txtModMaterial);
             this.grpEditarProd.Controls.Add(this.label17);
             this.grpEditarProd.Controls.Add(this.txtModDescripcion);
@@ -317,14 +320,14 @@ namespace ProyectoFinalTallerBD
             this.txtModColor.Size = new System.Drawing.Size(154, 23);
             this.txtModColor.TabIndex = 9;
             // 
-            // label18
+            // pic
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 129);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(55, 17);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "COLOR";
+            this.pic.AutoSize = true;
+            this.pic.Location = new System.Drawing.Point(6, 129);
+            this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(55, 17);
+            this.pic.TabIndex = 8;
+            this.pic.Text = "COLOR";
             // 
             // txtModMaterial
             // 
@@ -450,6 +453,33 @@ namespace ProyectoFinalTallerBD
             this.dataGridView1.Size = new System.Drawing.Size(729, 278);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 40;
+            // 
+            // Ver
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            this.Ver.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Ver.HeaderText = "Ver";
+            this.Ver.Image = ((System.Drawing.Image)(resources.GetObject("Ver.Image")));
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Width = 29;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 49;
             // 
             // tabRegistro
             // 
@@ -748,32 +778,13 @@ namespace ProyectoFinalTallerBD
             this.txtClave.Size = new System.Drawing.Size(116, 20);
             this.txtClave.TabIndex = 42;
             // 
-            // Editar
+            // pictureBox1
             // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ProyectoFinalTallerBD.Properties.Resources.img_editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 40;
-            // 
-            // Ver
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            this.Ver.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Ver.HeaderText = "Ver";
-            this.Ver.Image = ((System.Drawing.Image)(resources.GetObject("Ver.Image")));
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            this.Ver.Width = 29;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 49;
+            this.pictureBox1.Location = new System.Drawing.Point(355, 382);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
             // 
             // FormProductos
             // 
@@ -793,6 +804,7 @@ namespace ProyectoFinalTallerBD
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -839,7 +851,7 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.TextBox txtModIdProducto;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtModColor;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label pic;
         private System.Windows.Forms.TextBox txtModMaterial;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtModDescripcion;
@@ -863,5 +875,6 @@ namespace ProyectoFinalTallerBD
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Ver;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

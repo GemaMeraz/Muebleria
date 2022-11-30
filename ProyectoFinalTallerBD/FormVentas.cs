@@ -20,6 +20,7 @@ namespace ProyectoFinalTallerBD
             InitializeComponent();
         }
         int IdVentaCredito;
+        string contId;
         int idVenta1;
         private void ConsultarVentas()
         {
@@ -29,6 +30,7 @@ namespace ProyectoFinalTallerBD
                 cn.dt = new DataTable();
                 cn.da.Fill(cn.dt);
                 dgvVenta.DataSource = cn.dt;
+                dgvVenta.Columns["idProducto"].DisplayIndex = 0;
                 dgvVenta.Columns["Editar"].DisplayIndex = 9;
             }
             catch (Exception x)
@@ -87,6 +89,8 @@ namespace ProyectoFinalTallerBD
             Cargardgv();
             CargarProductosComboBox();
             CargarComboboxCliente();
+            txtidVenta.Text = BuscarId();
+            txtidVenta.Enabled = false;
         }
 
         private void tabControl1_TabIndexChanged(object sender, EventArgs e)
@@ -113,7 +117,7 @@ namespace ProyectoFinalTallerBD
             string modPagoMensualRealizado = cmbModPagoMensualRealizado.Text;
             double modTotalLiquidar = double.Parse(txtModTotalLiquidar.Text);
             double modMontoLiquidado = double.Parse(txtModMontoLiquidado.Text);
-            string modActivo = "S";
+            string modActivo = "AC";
             try
             {
                 cn.conectarbd.Open();
@@ -319,7 +323,7 @@ namespace ProyectoFinalTallerBD
             try
             {
                 cn.conectarbd.Open();
-                cn.cmd = new SqlCommand("SELECT * FROM Ventas WHERE idVenta = '" + idVenta1 + "'", cn.conectarbd);
+                cn.cmd = new SqlCommand("SELECT * FROM Ventas WHERE idVenta = " + idVenta1 , cn.conectarbd);
                 cn.dr = cn.cmd.ExecuteReader();
                 while (cn.dr.Read())
                 {
@@ -338,10 +342,39 @@ namespace ProyectoFinalTallerBD
                 cn.conectarbd.Close();
             }
         }
-
+        public string BuscarId()
+        {
+            try
+            {
+                int Id;
+                cn.conectarbd.Open();
+                cn.cmd = new SqlCommand("SELECT (COUNT(idVenta) + 1) FROM Ventas", cn.conectarbd);
+                cn.dr = cn.cmd.ExecuteReader();
+                if (cn.dr.Read())
+                {
+                    Id = cn.dr.GetInt32(0);
+                    return Id.ToString("00");
+                }
+                else
+                {
+                    return "00";
+                }
+            }
+            catch (Exception x)
+            {
+                return "00";
+                throw;
+            }
+            finally
+            {
+                cn.conectarbd.Close();
+                cn.dr.Close();
+            }
+        }
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            idVenta1 = int.Parse(txtidVenta.Text);
+            contId = BuscarId();
+            idVenta1 = int.Parse(contId);
             string FechaVenta = dtpFechaVenta.Value.ToString("yyyy-MM-dd");
             int idCliente = int.Parse(cboIdCliente.SelectedValue.ToString());
             string idProducto = cboIdProducto.SelectedValue.ToString();
@@ -353,14 +386,14 @@ namespace ProyectoFinalTallerBD
             int var = ComprobarVenta();
             if (idVenta1 != var)
             {
-                int respuesta = ValidarVenta();
-                switch (respuesta)
-                {
-                    case -1: MessageBox.Show("Error inesperado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
-                    case 0: MessageBox.Show("No hay stock.", "SIN STOCK", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
-                    case 1: MessageBox.Show("No hay stock suficiente para completar la venta", "STOCK INSUFICIENTE", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
-                    case 2: break;
-                }
+                //int respuesta = ValidarVenta();
+                //switch (respuesta)
+                //{
+                //    case -1: MessageBox.Show("Error inesperado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                //    case 0: MessageBox.Show("No hay stock.", "SIN STOCK", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                //    case 1: MessageBox.Show("No hay stock suficiente para completar la venta", "STOCK INSUFICIENTE", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                //    case 2: break;
+                //}
                 try
                 {
                     cn.conectarbd.Open();
@@ -563,6 +596,11 @@ namespace ProyectoFinalTallerBD
             {
                 cn.conectarbd.Close();
             }
+        }
+
+        private void txtidVenta_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

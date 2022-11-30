@@ -75,7 +75,7 @@ namespace ProyectoFinalTallerBD
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            dataGridView1.Size = new Size(623, 357);
+            dataGridView1.Size = new Size(531, 357);
             grpEditarInv.Visible = false;
         }
 
@@ -83,7 +83,7 @@ namespace ProyectoFinalTallerBD
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
             {
-                dataGridView1.Size = new Size(321, 357);
+                dataGridView1.Size = new Size(415, 357);
                 grpEditarInv.Visible = true;
                 txtModIdProducto.Text = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
                 txtModStock.Text = dataGridView1.CurrentRow.Cells["stock"].Value.ToString();
@@ -103,7 +103,7 @@ namespace ProyectoFinalTallerBD
                 cn.cmd = new SqlCommand("Update Inventario SET stock=" + modStock + ", fechaModificacion='" + modFechaModif + "' where idProducto = '" + modIdProducto +"'", cn.conectarbd);
                 cn.cmd.ExecuteNonQuery();
 
-                dataGridView1.Size = new Size(623, 357);
+                dataGridView1.Size = new Size(415, 357);
                 grpEditarInv.Visible = false;
                 Cargardgv();
                 MessageBox.Show("Producto en inventario editado: " + modIdProducto);
@@ -153,6 +153,28 @@ namespace ProyectoFinalTallerBD
             finally
             {
                 cn.conectarbd.Close();
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "stock")
+            {
+                if (Convert.ToInt32(e.Value) <= 50)
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.BackColor = Color.FromArgb(0,183,133);
+                }
+                if (Convert.ToInt32(e.Value) <= 10)
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.BackColor = Color.Yellow;
+                }
+                if (Convert.ToInt32(e.Value) <= 5)
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.BackColor = Color.Red;
+                }
             }
         }
     }
